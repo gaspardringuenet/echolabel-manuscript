@@ -1,111 +1,51 @@
 ---
-title: La Palma Earthquakes
+title: "Echolabel: A minimalist image-based echogram annotation tool"
 author:
-  - name: Steve Purves
-    orcid: 0000-0002-0760-5497
+  - name: Gaspard Ringuenet
+    orcid: 0009-0003-4820-6999
+    github: https://github.com/gaspardringuenet
     corresponding: true
-    email: steve@curvenote.com
-    roles:
-      - Investigation
-      - Project administration
-      - Software
-      - Visualization
+    email: gaspard.ringuenet@umontpellier.fr
     affiliations:
-      - Curvenote
-  - name: Rowan Cockett
-    orcid: 0000-0002-7859-8394
-    corresponding: false
-    roles: []
-    affiliations:
-      - Curvenote
-keywords:
-  - La Palma
-  - Earthquakes
-abstract: |
-  In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). ...
-plain-language-summary: |
-  Earthquake data for the island of La Palma from the September 2021 eruption is found ...
-key-points:
-  - A web scraping script was developed to pull data from the Instituto Geogràphico Nacional into a machine-readable form for analysis
-  - Earthquake events on La Palma are consistent with the presence of both mantle and crustal reservoirs.
+      - MARBEC, University of Montpellier, CNRS, Ifremer, IRD, Montpellier, France 
 date: last-modified
 bibliography: references.bib
-citation:
-  container-title: Earth and Space Science
 number-sections: true
 ---
 
-## Introduction
+## Motivation and Significance
 
-```{r}
-eruptions <- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions <- length(eruptions)
-```
+Active acoustics is an indispensable tool for observing pelagic ecosystems. It is the only technology capable of providing continuous observations of organism distribution and behavior at the spatial and temporal scales at which these processes occur (ref). However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of echogram features has long been a common practice in marine acoustics. Targeted biological features are most often fish aggregations such as schools or shoals, but broad-ecosystem surveys provide a motivation for extracting a wider range of objects including scattering layers, or regions with homogeneous frequency-response (ref). Expert annotations may be used for direct scientific analysis (ref), modelling (ref), and increasingly to train deep learning models (ref).
 
-```{r}
-#| label: fig-timeline
-#| fig-cap: Timeline of recent earthquakes on La Palma
-#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
-#| fig-height: 1.5
-#| fig-width: 6
-par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = "|", axes = FALSE)
-axis(1)
-box()
-```
+Echogram scrutinizing and annotation has historically been performed using graphical user interface (GUI) based softwares (ref). Most of them are either proprietary (e.g. Echoview, ref) or require a Matlab license (e.g. ESP3, MOVIES3D, MATECHO). Recent years have seen a push towards open-source softwares, well illustrated by the switch of LSSS - one the main GUI-based acoustics software - from proprietary to open-source (ref).
 
-```{r}
-#| output: false
-avg_years_between_eruptions <- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions
-```
+As part of this effort, the Echostack suite has been developped, aiming at providing open-source modular Python tools for interoperable sonar data processing [@lee2024]. The suite is built around its main package Echopype, which focuses on processing and converting raw data into science-ready gridded datasets [@lee2024a], and is positioned as a future community standard. Echoregions (<https://github.com/OSOceanAcoustics/echoregions>) is one of the companion packages, and is designed to represent and parse echogram shapes and lines annotations. The combination of Echopype products (standardized $\text{MVBS}$ datasets saved as netCDF files or Zarr stores) and corresponding Echoregions annotations provides an interface between acoustic data and data analysis or machine learning pipelines within the scientific Python software ecosystem. The Echostack does not currently offer echogram annotation features. Instead, the Echoregions package can read the Echoview annotations files (.EVL and .EVR), and might extend its coverage to other formats in the future.
 
-Based on data up to and including 1971, eruptions on La Palma happen every `{r} round(avg_years_between_eruptions, 1)` years on average.
+We identify a current integration gap for users wanting to leverage the power of Echoregions without relying on complex and often expensive GUI softwares. To bridge this gap, we propose Echolabel, a minimalist Python app enabling echogram annotation in Echoregions-readable format. The use case is narrower than current GUIs, focusing purely on displaying echograms and drawing shapes on them. Echolabel is simple, lightweight, and cross-platform. It requires little computing resources, and presents a smooth GUI for annotation. This is achieved by interfacing acoustic data with a widely-used image annotation software (LabelMe, <https://labelme.io>). Although poorly suited for high-precision annotation requiring additional information (e.g. numerical values, metadata), Echolabel is relevant to annotate large number of easily recognizable acoustic structures.
 
-Studies of the magma systems feeding the volcano, such as @marrero2019, have proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
+## Software description
 
-Eight eruptions have been recorded since the late 1400s (@fig-timeline).
+### Software architecture
 
-Data and methods are discussed in @sec-data-methods.
+### Software functionalities
 
-Let $x$ denote the number of eruptions in a year. Then, $x$ can be modeled by a Poisson distribution
+## Illustrative examples
 
-$$
-p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-$$ {#eq-poisson}
+## Impact
 
-where $\lambda$ is the rate of eruptions per year. Using @eq-poisson, the probability of an eruption in the next $t$ years can be calculated.
+## Conclusions
 
-| Name                 | Year   |
-| -------------------- | ------ |
-| Current              | 2021   |
-| Teneguía             | 1971   |
-| Nambroque            | 1949   |
-| El Charco            | 1712   |
-| Volcán San Antonio   | 1677   |
-| Volcán San Martin    | 1646   |
-| Tajuya near El Paso  | 1585   |
-| Montaña Quemada      | 1492   |
+## Availability {.unnumbered}
 
-: Recent historic eruptions on La Palma {#tbl-history}
+## Funding {.unnumbered}
 
-@tbl-history summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.
+## Artificial intelligence (AI) use statement {.unnumbered}
 
-![Map of La Palma](images/la-palma-map.png){#fig-map}
+## Declaration of competing interest {.unnumbered}
 
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map). 
-
-{{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}}
-
-@fig-spatial-plot shows the location of recent Earthquakes on La Palma.
-
-## Data & Methods {#sec-data-methods}
-
-## Conclusion
+## Aknowledgement {.unnumbered}
 
 ## References {.unnumbered}
 
-:::{#refs}
-
+::: {#refs}
 :::
