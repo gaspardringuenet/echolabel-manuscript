@@ -2,22 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.15">
+<meta name="generator" content="quarto-1.11.1">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gaspard Ringuenet">
-<meta name="dcterms.date" content="2026-07-21">
+<meta name="dcterms.date" content="2026-08-04">
 
-<title>Echolabel: A minimalist image-based echogram annotation tool</title>
+<title>Echolabel: A minimalist image-based echogram annotation tool for marine ecology</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -25,10 +28,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,10 +93,13 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-11336406cf8fb0fbd1564e93963cbc50.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-d5b4e69c7e37b49c6591bcc5116dd748.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ba3c62e004a2d3246d5f56b1d702e39a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7fca231f0f6bfd3bec1af756033c583c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -66,7 +108,7 @@ div.csl-indent {
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -95,16 +137,28 @@ window.Quarto = {
 };
 </script>
 
-<meta name="citation_title" content="Echolabel: A minimalist image-based echogram annotation tool">
+<meta name="citation_title" content="Echolabel: A minimalist image-based echogram annotation tool for marine ecology">
 <meta name="citation_author" content="Gaspard Ringuenet">
-<meta name="citation_publication_date" content="2026-07-21">
-<meta name="citation_cover_date" content="2026-07-21">
+<meta name="citation_publication_date" content="2026-08-04">
+<meta name="citation_cover_date" content="2026-08-04">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-07-21">
+<meta name="citation_online_date" content="2026-08-04">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Impact of an eddy dipole of the mozambique channel on mesopelagic organisms, highlighted by multifrequency backscatter classification;,citation_author=Pavanee Annasawmy;,citation_author=Gildas Roudaut;,citation_author=Anne Lebourges-Dhaussy;,citation_publication_date=2024-09-11;,citation_cover_date=2024-09-11;,citation_year=2024;,citation_fulltext_html_url=https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0309840;,citation_issue=9;,citation_doi=10.1371/journal.pone.0309840;,citation_volume=19;,citation_language=en;,citation_journal_title=PLOS ONE;">
 <meta name="citation_reference" content="citation_title=Echostack: A flexible and scalable open-source software suite for echosounder data processing;,citation_author=Wu-Jung Lee;,citation_author=Valentina Staneva;,citation_author=Landung “Don” Setiawan;,citation_author=Emilio Mayorga;,citation_author=Caesar Tuguinay;,citation_author=Soham Butala;,citation_author=Brandyn Lucca;,citation_author=Dingrui Lei;,citation_publication_date=2024-06-03;,citation_cover_date=2024-06-03;,citation_year=2024;,citation_fulltext_html_url=https://proceedings.scipy.org/articles/WXRH8633;,citation_doi=10.25080/WXRH8633;,citation_language=en;,citation_journal_title=Python in Science Conference;">
 <meta name="citation_reference" content="citation_title=Interoperable and scalable echosounder data processing with echopype;,citation_author=Wu-Jung Lee;,citation_author=Landung Setiawan;,citation_author=Caesar Tuguinay;,citation_author=Emilio Mayorga;,citation_author=Valentina Staneva;,citation_publication_date=2024-12-01;,citation_cover_date=2024-12-01;,citation_year=2024;,citation_fulltext_html_url=https://doi.org/10.1093/icesjms/fsae133;,citation_issue=10;,citation_doi=10.1093/icesjms/fsae133;,citation_volume=81;,citation_journal_title=ICES Journal of Marine Science;">
+<meta name="citation_reference" content="citation_title=Labelme: Image polygonal annotation with python;,citation_author=Kentaro Wada;,citation_publication_date=2026-03-28;,citation_cover_date=2026-03-28;,citation_year=2026;,citation_fulltext_html_url=https://github.com/wkentaro/labelme;,citation_doi=10.5281/zenodo.5711226;">
+<meta name="citation_reference" content="citation_title=A consistent approach to definitions and symbols in fisheries acoustics;,citation_author=David N. Maclennan;,citation_author=Paul G. Fernandes;,citation_author=John Dalen;,citation_publication_date=2002-01-01;,citation_cover_date=2002-01-01;,citation_year=2002;,citation_fulltext_html_url=https://doi.org/10.1006/jmsc.2001.1158;,citation_issue=2;,citation_doi=10.1006/jmsc.2001.1158;,citation_volume=59;,citation_journal_title=ICES Journal of Marine Science;">
+<meta name="citation_reference" content="citation_title=The SONAR-netCDF4 convention for sonar data, version 1.0;,citation_author=Gavin Macaulay;,citation_author=Hector Peña;,citation_publication_date=2018-05-01;,citation_cover_date=2018-05-01;,citation_year=2018;,citation_fulltext_html_url=https://ices-library.figshare.com/articles/report/The_SONAR-netCDF4_convention_for_sonar_data_Version_1_0/18624056/1;,citation_doi=10.17895/ices.pub.4392;,citation_language=en;">
+<meta name="citation_reference" content="citation_title=IMOS SOOP-BA netCDF conventions. Version 2.2;,citation_author=Haris Kunnath;,citation_author=Rudy Kloser;,citation_author=Tim Ryan;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_language=en;">
+<meta name="citation_reference" content="citation_title=Echolevels: Discussions on water column sonar data processing levels;,citation_fulltext_html_url=https://github.com/echostack-org/echolevels;">
+<meta name="citation_reference" content="citation_title=Acoustic seascape partitioning through functional data analysis;,citation_author=Alejandro Ariza;,citation_author=Anne Lebourges-Dhaussy;,citation_author=David Nerini;,citation_author=Etienne Pauthenet;,citation_author=Gildas Roudaut;,citation_author=Ramilla Assunção;,citation_author=Everton Tosetto;,citation_author=Arnaud Bertrand;,citation_publication_date=2022-11-23;,citation_cover_date=2022-11-23;,citation_year=2022;,citation_fulltext_html_url=https://onlinelibrary.wiley.com/doi/10.1111/jbi.14534;,citation_doi=10.1111/jbi.14534;,citation_language=en;,citation_journal_title=Journal of Biogeography;">
+<meta name="citation_reference" content="citation_title=Micronekton distributions and assemblages at two shallow seamounts of the south-western indian ocean: Insights from acoustics and mesopelagic trawl data;,citation_author=Pavanee Annasawmy;,citation_author=Jean-François Ternon;,citation_author=Pascal Cotel;,citation_author=Yves Cherel;,citation_author=Evgeny V. Romanov;,citation_author=Gildas Roudaut;,citation_author=Anne Lebourges-Dhaussy;,citation_author=Fréderic Ménard;,citation_author=Francis Marsac;,citation_publication_date=2019-11-01;,citation_cover_date=2019-11-01;,citation_year=2019;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S0079661118302313;,citation_doi=10.1016/j.pocean.2019.102161;,citation_volume=178;,citation_journal_title=Progress in Oceanography;">
+<meta name="citation_reference" content="citation_title=Escore;,citation_fulltext_html_url=https://forge.ird.fr/lemar/active_acoustics/multifrequency_classification/-/tree/master/Escore;">
+<meta name="citation_reference" content="citation_title=ABRACOS 1 cruise. Acoustic data;,citation_author=Arnaud Bertrand;,citation_author=Gildas Roudaut;,citation_author=Anne Lebourges-Dhaussy;,citation_author=Gary Vargas;,citation_author=Fabrice Roubaud;,citation_editor=undefined SEANOE;,citation_doi=10.17882/77035;">
+<meta name="citation_reference" content="citation_title=Echoview;,citation_fulltext_html_url=https://echoview.com/support/release-notes/;">
+<meta name="citation_reference" content="citation_title=LSSS;,citation_fulltext_html_url=https://github.com/marec-open-source/lsss;">
+<meta name="citation_reference" content="citation_title=Acoustic fish species identification using deep learning and machine learning algorithms: A systematic review;,citation_author=Anas Yassir;,citation_author=Said Jai Andaloussi;,citation_author=Ouail Ouchetto;,citation_author=Kamal Mamza;,citation_author=Mansour Serghini;,citation_publication_date=2023-10-01;,citation_cover_date=2023-10-01;,citation_year=2023;,citation_fulltext_html_url=https://www.sciencedirect.com/science/article/pii/S0165783623001832;,citation_doi=10.1016/j.fishres.2023.106790;,citation_volume=266;,citation_journal_title=Fisheries Research;">
 </head>
 
 <body class="quarto-light">
@@ -112,7 +166,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Echolabel: A minimalist image-based echogram annotation tool</h1>
+      <h1 class="title">Echolabel: A minimalist image-based echogram annotation tool for marine ecology</h1>
           </div>
 
     
@@ -138,7 +192,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">July 21, 2026</p>
+              <p class="date">August 4, 2026</p>
             </div>
           </div>
           
@@ -159,13 +213,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#motivation-and-significance" id="toc-motivation-and-significance" class="nav-link active" data-scroll-target="#motivation-and-significance"><span class="header-section-number">1</span> Motivation and Significance</a></li>
+  <li><a href="#metadata" id="toc-metadata" class="nav-link active" data-scroll-target="#metadata">Metadata</a></li>
+  <li><a href="#motivation-and-significance" id="toc-motivation-and-significance" class="nav-link" data-scroll-target="#motivation-and-significance"><span class="header-section-number">1</span> Motivation and Significance</a></li>
   <li><a href="#software-description" id="toc-software-description" class="nav-link" data-scroll-target="#software-description"><span class="header-section-number">2</span> Software description</a>
   <ul class="collapse">
   <li><a href="#software-architecture" id="toc-software-architecture" class="nav-link" data-scroll-target="#software-architecture"><span class="header-section-number">2.1</span> Software architecture</a></li>
   <li><a href="#software-functionalities" id="toc-software-functionalities" class="nav-link" data-scroll-target="#software-functionalities"><span class="header-section-number">2.2</span> Software functionalities</a></li>
   </ul></li>
-  <li><a href="#illustrative-examples" id="toc-illustrative-examples" class="nav-link" data-scroll-target="#illustrative-examples"><span class="header-section-number">3</span> Illustrative examples</a></li>
+  <li><a href="#illustrative-examples" id="toc-illustrative-examples" class="nav-link" data-scroll-target="#illustrative-examples"><span class="header-section-number">3</span> Illustrative examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1--training-dataset-for-escore-classification" id="toc-example-1--training-dataset-for-escore-classification" class="nav-link" data-scroll-target="#example-1--training-dataset-for-escore-classification"><span class="header-section-number">3.1</span> Example 1 -Training dataset for Escore classification</a></li>
+  <li><a href="#example-2--" id="toc-example-2--" class="nav-link" data-scroll-target="#example-2--"><span class="header-section-number">3.2</span> Example 2 - (?)</a></li>
+  </ul></li>
   <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact"><span class="header-section-number">4</span> Impact</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">5</span> Conclusions</a></li>
   <li><a href="#availability" id="toc-availability" class="nav-link" data-scroll-target="#availability">Availability</a></li>
@@ -173,6 +232,7 @@ window.Quarto = {
   <li><a href="#artificial-intelligence-ai-use-statement" id="toc-artificial-intelligence-ai-use-statement" class="nav-link" data-scroll-target="#artificial-intelligence-ai-use-statement">Artificial intelligence (AI) use statement</a></li>
   <li><a href="#declaration-of-competing-interest" id="toc-declaration-of-competing-interest" class="nav-link" data-scroll-target="#declaration-of-competing-interest">Declaration of competing interest</a></li>
   <li><a href="#aknowledgement" id="toc-aknowledgement" class="nav-link" data-scroll-target="#aknowledgement">Aknowledgement</a></li>
+  <li><a href="#supplementary-material" id="toc-supplementary-material" class="nav-link" data-scroll-target="#supplementary-material">Supplementary material</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -186,59 +246,261 @@ window.Quarto = {
   
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I have been writing this manuscript as a SoftwareX article. The “Aims and scope” section of SoftwareX’s <a href="https://www.sciencedirect.com/journal/softwarex/publish/guide-for-authors#writing-and-formatting">guide for authors</a> seems to match Echolabel.</p>
+<p>See also this <a href="https://www.sciencedirect.com/science/article/pii/S2352711026003511">article</a>, which I have used as a model.</p>
+</div>
+</div>
+<section id="metadata" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="metadata">Metadata</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Nr</th>
+<th>Code metadata description</th>
+<th>Metadata</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C1</td>
+<td>Current code version</td>
+<td>V1.0.0</td>
+</tr>
+<tr class="even">
+<td>C2</td>
+<td>Permanent link to code/repository used for this code version</td>
+<td><a href="https://github.com/gaspardringuenet/echolabel" class="uri">https://github.com/gaspardringuenet/echolabel</a></td>
+</tr>
+<tr class="odd">
+<td>C3</td>
+<td>Permanent link to reproducible capsule</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>C4</td>
+<td>Legal code license</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>C5</td>
+<td>Code versioning system used</td>
+<td>Git</td>
+</tr>
+<tr class="even">
+<td>C6</td>
+<td>Software code languages, tools and services used</td>
+<td>Python</td>
+</tr>
+<tr class="odd">
+<td>C7</td>
+<td>Compilation requirements, operating environments and dependencies</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>C8</td>
+<td>If available, link to developer documentation/manual</td>
+<td><a href="https://echolabel.readthedocs.io/" class="uri">https://echolabel.readthedocs.io/</a></td>
+</tr>
+<tr class="odd">
+<td>C9</td>
+<td>Support email for questions</td>
+<td><a href="mailto:gaspard.ringuenet@umontpellier.fr" class="email">gaspard.ringuenet@umontpellier.fr</a></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="motivation-and-significance" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="motivation-and-significance"><span class="header-section-number">1</span> Motivation and Significance</h2>
-<p>Active acoustics is an indispensable tool for observing pelagic ecosystems. It is the only technology capable of providing continuous observations of organism distribution and behavior at the spatial and temporal scales at which these processes occur (ref). However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of echogram features has long been a common practice in marine acoustics. Targeted biological features are most often fish aggregations such as schools or shoals, but broad-ecosystem surveys provide a motivation for extracting a wider range of objects including scattering layers, or regions with homogeneous frequency-response (ref). Expert annotations may be used for direct scientific analysis (ref), modelling (ref), and increasingly to train deep learning models (ref).</p>
-<p>Echogram scrutinizing and annotation has historically been performed using graphical user interface (GUI) based softwares (ref). Most of them are either proprietary (e.g.&nbsp;Echoview, ref) or require a Matlab license (e.g.&nbsp;ESP3, MOVIES3D, MATECHO). Recent years have seen a push towards open-source softwares, well illustrated by the switch of LSSS - one the main GUI-based acoustics software - from proprietary to open-source (ref).</p>
-<p>As part of this effort, the Echostack suite has been developped, aiming at providing open-source modular Python tools for interoperable sonar data processing <span class="citation" data-cites="lee2024">(<a href="#ref-lee2024" role="doc-biblioref">Lee, Staneva, et al. 2024</a>)</span>. The suite is built around its main package Echopype, which focuses on processing and converting raw data into science-ready gridded datasets <span class="citation" data-cites="lee2024a">(<a href="#ref-lee2024a" role="doc-biblioref">Lee, Setiawan, et al. 2024</a>)</span>, and is positioned as a future community standard. Echoregions (<a href="https://github.com/OSOceanAcoustics/echoregions" class="uri">https://github.com/OSOceanAcoustics/echoregions</a>) is one of the companion packages, and is designed to represent and parse echogram shapes and lines annotations. The combination of Echopype products (standardized <span class="math inline">\(\text{MVBS}\)</span> datasets saved as netCDF files or Zarr stores) and corresponding Echoregions annotations provides an interface between acoustic data and data analysis or machine learning pipelines within the scientific Python software ecosystem. The Echostack does not currently offer echogram annotation features. Instead, the Echoregions package can read the Echoview annotations files (.EVL and .EVR), and might extend its coverage to other formats in the future.</p>
-<p>We identify a current integration gap for users wanting to leverage the power of Echoregions without relying on complex and often expensive GUI softwares. To bridge this gap, we propose Echolabel, a minimalist Python app enabling echogram annotation in Echoregions-readable format. The use case is narrower than current GUIs, focusing purely on displaying echograms and drawing shapes on them. Echolabel is simple, lightweight, and cross-platform. It requires little computing resources, and presents a smooth GUI for annotation. This is achieved by interfacing acoustic data with a widely-used image annotation software (LabelMe, <a href="https://labelme.io" class="uri">https://labelme.io</a>). Although poorly suited for high-precision annotation requiring additional information (e.g.&nbsp;numerical values, metadata), Echolabel is relevant to annotate large number of easily recognizable acoustic structures.</p>
+<p>Active acoustics is an indispensable tool for observing pelagic ecosystems. It is the only technology capable of providing continuous observations of organism distribution and behavior at the spatial and temporal scales at which these processes occur (ref). However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of echogram features has long been a common practice in marine acoustics. Targeted biological features are most often fish aggregations such as schools or shoals, but broad-ecosystem surveys provide a motivation for extracting a wider range of objects including scattering layers, or regions with homogeneous frequency-response (ref). Expert annotations may be used for direct scientific analysis (ref), modelling (ref), and increasingly to train deep learning models <span class="citation" data-cites="yassir2023">[<a href="#ref-yassir2023" role="doc-biblioref">1</a>]</span>.</p>
+<p>Echogram scrutinizing and annotation has historically been performed using graphical user interface (GUI) based softwares (ref). Most of them are either proprietary (e.g.&nbsp;Echoview <span class="citation" data-cites="echoview">[<a href="#ref-echoview" role="doc-biblioref">2</a>]</span>) or require a MATLAB license (e.g.&nbsp;ESP3, MOVIES3D, MATECHO). Recent years have seen a push towards open-source softwares (ref). This is illustrated by the switch of LSSS - one the main GUI-based acoustics software - from proprietary to open-source <span class="citation" data-cites="lsssopensource">[<a href="#ref-lsssopensource" role="doc-biblioref">3</a>]</span>.</p>
+<p>As part of this effort, the Echostack suite has been developped, aiming at providing open-source modular Python tools for interoperable sonar data processing <span class="citation" data-cites="lee2024">[<a href="#ref-lee2024" role="doc-biblioref">4</a>]</span>. The suite is built around its main package Echopype, which focuses on processing and converting raw data into science-ready gridded datasets <span class="citation" data-cites="lee2024a">[<a href="#ref-lee2024a" role="doc-biblioref">5</a>]</span>, and is positioned as a future community standard. Echoregions (<a href="https://github.com/OSOceanAcoustics/echoregions" class="uri">https://github.com/OSOceanAcoustics/echoregions</a>) is one of the companion packages, and is designed to represent and parse echogram shapes and lines annotations. The combination of Echopype products (standardized <span class="math inline">\(\text{MVBS}\)</span> datasets saved as netCDF files or Zarr stores) and corresponding Echoregions annotations provides an interface between acoustic data and data analysis or machine learning pipelines within the scientific Python software ecosystem. The Echostack does not currently offer echogram annotation features. Instead, the Echoregions package can read the Echoview annotations files (.EVL and .EVR), and might extend its coverage to other formats in the future.</p>
+<p>We identify a current integration gap for users wanting to leverage the power of Echoregions without relying on complex and often expensive GUI softwares. To bridge this gap, we propose Echolabel, a minimalist Python app enabling echogram annotation in Echoregions-readable format. The use case is narrower than existing GUIs, focusing purely on displaying echograms and drawing shapes on them. Echolabel is simple, lightweight, and cross-platform. It requires little computing resources, and presents a smooth GUI for annotation. This is achieved by interfacing acoustic data with widely-used image annotation software LabelMe <span class="citation" data-cites="kentaro">[<a href="#ref-kentaro" role="doc-biblioref">6</a>]</span>. Although poorly suited for high-precision annotation requiring additional information (e.g.&nbsp;numerical values, metadata), Echolabel is relevant to annotate large number of easily recognizable acoustic structures.</p>
 </section>
 <section id="software-description" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="software-description"><span class="header-section-number">2</span> Software description</h2>
 <section id="software-architecture" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="software-architecture"><span class="header-section-number">2.1</span> Software architecture</h3>
+<p>The software is written in Python, following PEPXXX recommendations for syntax and PEPXXX for packaged application directory structure (ref). Separate modules are responsible of command line inputs, app configuration, cached images data management, and parsing annotation files.</p>
+<p>The software is minimalist (~ 10 files) and avoids re-implementing existing functionalities as much as possible. It focused instead on enabling LabelMe and parsing annotations to and from Echoregions. The annotation parsing module is called <code>regions2d_extension</code> and mimics Echoregions’ code for parsing Echoview annotation data, with the aim of providing a clear insight on the application’s purpose.</p>
+<p>Echolabel has been developed with a focus on the command line interface (CLI; see <a href="#lst-escore-demo" class="quarto-xref">Listing&nbsp;1</a>). The main <code>process</code> command triggers conversion of the acoustic data into images before automatically running LabelMe. It features a number of optional parameters, allowing the user to modify the echogram. Passed CLI parameters are used to override a default configuration file, which can be directly edited for improved control and reproducibility. If necessary, a programmatic interface remains available with the <code>EcholabelApp</code> and <code>Config</code> classes at the top level.</p>
+<p>A series of unit tests ensure that core features are preserved in future updates. Tested functionalities include configuration, data loading, images dataset management, and parsing annotations. Git is used for version control.</p>
 </section>
 <section id="software-functionalities" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="software-functionalities"><span class="header-section-number">2.2</span> Software functionalities</h3>
+<p>Echolabel wraps LabelMe. It loads acoustic data, chunks it into an echogram images dataset, and runs LabelMe. When the user exits the LabelMe GUI, internal images annotations are converted to physical (time, depth) coordinates and saved in a format that can be read using Echoregions.</p>
+<p>The software operates on acoustic data written as NetCDF file(s) or Zarr store, two widely used formats in natural sciences, and marine acoustics in particular, for computing on multidimensional arrays. Several NetCDF files in the same directory may be loaded as a single dataset as long as their coordinates are compatible. The marine acoustics community has not yet converged toward a single standard convention for dimensions and variable names. The SONAR-netCDF4 convention has been proposed in an effort to provide a unified model for all fisheries sonar systems <span class="citation" data-cites="macaulay2018">[<a href="#ref-macaulay2018" role="doc-biblioref">7</a>]</span>. On the other hand, the IMOS SOOP-BA convention appears to have been much used so far <span class="citation" data-cites="kunnath2018">[<a href="#ref-kunnath2018" role="doc-biblioref">8</a>]</span>. Besides, discussion is still active, with Echopype using a modified version of the SONAR-netCDF4 convention for the representation of raw data, as well as the ongoing development of data processing levels, providing a clearer distinction between products <span class="citation" data-cites="echolevels">[<a href="#ref-echolevels" role="doc-biblioref">9</a>]</span>. Echolabel typically operates on processed data, converted into a gridded acoustic variable. The variability in convention mostly implies that the app needs to enable flexibility in the naming of the time, depth and channel dimensions. By default, the app tries to match input data with both Echopype’s model or the IMOS SOOP-BA convention. The user may also specify variable names in the configuration file. This also gives the opportunity to change the visualized channel - by default “Sv”, the mean volume backscattering strength <span class="citation" data-cites="maclennan2002">[<a href="#ref-maclennan2002" role="doc-biblioref">10</a>]</span>.</p>
+<p>Common echogram visualization options are provided. The user can select the visualized frequency, and specify value bounds as well as the colormap. A wide range of matplotlib colormaps can be selected using their names. In addition to single-frequency echograms, Echolabel offers a triple-frequency <em>RGB echogram</em> mode in which three channels are mapped to each of the red, green, and blue channel (with equal bounds). This visualization method is very effective to gain knowledge on the distribution of frequency-responses accross the echogram (for examples see <span class="citation" data-cites="ariza2022 annasawmy2019">[<a href="#ref-ariza2022" role="doc-biblioref">11</a>,<a href="#ref-annasawmy2019" role="doc-biblioref">12</a>]</span>). It is a key part of the Escore echoclassification method, and has been a Matecho feature for years. Background - defined as where no channel is active - color can also be specified in configuration (as a matplotlib compatible string or tuple).</p>
+<p>Running the app triggers data loading and the building and caching of an echogram images dataset using visualization options. Echogram images are the representation of acoustic data once color mapping has been applied. Each pixel represents a sampled volume. Each image’s physical (time and depth) coordinates are saved in cache. The images dataset building step is the only step involving significant computation. While lazy-loading of the acoustic dataset prevents memory overload (data is loaded per image<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>), this step may take up to a few minutes for large scale surveys with high resolution echointegration. To alleviate the pain of re-building at each session, Echolabel enables re-using the cached images, triggering instantaneous launch of the GUI.</p>
+<p>A prominent feature of Echolabel is the LabelMe graphical user interface (GUI), which is used to create annotations. Leveraging it is made possible by the prior conversion into images. Within the open window, the user can loop through the images in the “File List”. They can also visualize and edit existing annotations using the “Annotation List” panel and point clicks. Most importantly, they can use “CreateShapeTools” to add new shapes. All changes are automatically saved in cache as LabelMe JSON annotations during GUI editing session. The GUI is customizable, and the user has the option to edit the LabelMe configuration file on their system. Since Echolabel runs LabelMe as a subprocess, there should be no conflict in most cases.</p>
+<p>When closing the GUI, shapes annotations are parsed and saved as a CSV file compatible with the <a href="https://echoregions.readthedocs.io/en/latest/api/echoregions.regions2d.Regions2D.html"><code>echoregions.Regions2D</code></a> class. This is done using the saved images coordinates to convert pixel-wise annotations into (time, depth) points. <code>Regions2D</code> object can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only one whose shapes can be converted. Once annotation format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.</p>
+<p>Additional features include a “demo” command triggering demo data download and processing. It is also worth noting that LabelMe provides an AI polygon creation tool. The tool installs an image segmentation model (Meta’s Segment Anything Model 2 as of LabelMe v6.0.0) locally to provide assistance by automatically delineating objects. While such models are efficient on natural images, they appear much less useful on echogram. However, since the tool produces polygons, annotations are correctly parsed by Echolabel.</p>
 </section>
 </section>
 <section id="illustrative-examples" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="illustrative-examples"><span class="header-section-number">3</span> Illustrative examples</h2>
+<p>We propose two examples in which our software may be helpful. As echogram feature annotations are rarely a final product, proposed examples extend beyond the domain of Echolabel and include downstream data analysis or modelling.</p>
+<section id="example-1--training-dataset-for-escore-classification" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="example-1--training-dataset-for-escore-classification"><span class="header-section-number">3.1</span> Example 1 -Training dataset for Escore classification</h3>
+<p>The Escore method is a multi-frequency classification method designed for high diversity context with little-to-no ground-truth data <span class="citation" data-cites="annasawmy2024">[<a href="#ref-annasawmy2024" role="doc-biblioref">13</a>]</span>. Re-implementing the method within the scientific Python ecosystem was the motivation case for developing Echolabel. The method relies on expert selection of regions of interest (ROI) containing echogram features with consistent frequency response. Details on ROI choice are out-of-scope for the present work. In short, hundreds of rectangle box annotations are required to build a library of relative frequency responses (<span class="math inline">\(R(f) = \Delta \text{MVBS}_{38 \text{ kHz}}\)</span>). This library is then clustered and clusters are processed to build a prediction rule.</p>
+<p>The previous implementation of the ROI selection step is written in MATLAB <span class="citation" data-cites="escorematlab">[<a href="#ref-escorematlab" role="doc-biblioref">14</a>]</span>. ROI bounding boxes are drawn on a dynamically rendered RGB echogram. Rendering, however, is computationally heavy, inducing strong latency when moving or zooming on the echogram. As a result, it requires up to a week’s time to process a one-month survey by creating a few hundreds ROI.</p>
+<div id="lst-escore-demo" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-escore-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing&nbsp;1: Example bash command to build an RGB echogram and run the ROI demonstration.
+</figcaption>
+<div aria-describedby="lst-escore-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">echolabel</span> process <span class="dt">\</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>-s Abracos_A1_3pings1m_FDN.zarr <span class="dt">\ </span>  <span class="co"># acoustic data store</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">-o</span> rois_ab1_FDN.csv <span class="dt">\ </span>              <span class="co"># annotation file</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">-f</span> 38000 <span class="at">-f</span> 70000 <span class="at">-f</span> 12000 <span class="dt">\ </span>       <span class="co"># mapped frequencies (Hz)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">--cmap</span> RGB                          <span class="co"># RGB composite echogram</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</figure>
+</div>
+<div id="fig-demo-gui" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-demo-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/escore_demo_gui.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: LabelMe graphical user interface showing regions of interest selection on an RGB composite echogram (R: 38 kHz; G: 70 kHz; B: 120 kHz - as commanded in Listing&nbsp;1; see Figure&nbsp;2 b. for color bar) in the image panel (center). The grey shape on the right of the echogram indicates pixel below the ocean floor. Similarly, horizontal color boundaries show the channels’ range limits. Regions of interest are defined as rectangles visible on top of the echogram. Labels are associated to the rectangle shapes (visible in “Annotation List” panel, and as a non-duplicated list in “Label List” panel). The “File List” panel shows all available echogram images."><img src="images/escore_demo_gui.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-demo-gui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: LabelMe graphical user interface showing regions of interest selection on an RGB composite echogram (R: 38 kHz; G: 70 kHz; B: 120 kHz - as commanded in <a href="#lst-escore-demo" class="quarto-xref">Listing&nbsp;1</a>; see <a href="#fig-escore" class="quarto-xref">Figure&nbsp;2</a> b. for color bar) in the image panel (center). The grey shape on the right of the echogram indicates pixel below the ocean floor. Similarly, horizontal color boundaries show the channels’ range limits. Regions of interest are defined as rectangles visible on top of the echogram. Labels are associated to the rectangle shapes (visible in “Annotation List” panel, and as a non-duplicated list in “Label List” panel). The “File List” panel shows all available echogram images.
+</figcaption>
+</figure>
+</div>
+<p>As a demonstration, the Escore method was performed on a subset of the ABRAÇOS I survey’s acoustic data <span class="citation" data-cites="abracos1">[<a href="#ref-abracos1" role="doc-biblioref">15</a>]</span> echo-integrated with a temporal resolution of 3 pings (~ 15 s) and a depth resolution of 1 m. Selected data is made of pings located less than 40 nm from the Fernando de Noronha archipelago. Sampling in this area was performed in radial and parallels around the islands, resulting in a “flower” shape”. Annotation was made on the survey’s RGB echogram using Echolabel (see <a href="#lst-escore-demo" class="quarto-xref">Listing&nbsp;1</a> for the CLI command). ROI were only selected above 250 m deep, where 3 channels were available (38, 70, and 120 kHz). The 98 ROI were delineated in approx. 2 hours, significantly reducing manual processing time. <a href="#fig-demo-gui" class="quarto-xref">Figure&nbsp;1</a> shows ROI displayed in the LabelMe interface. An additional post-processing step (applying KMeans of clustering <span class="math inline">\(R(f)\)</span>; see <span class="citation" data-cites="annasawmy2024">[<a href="#ref-annasawmy2024" role="doc-biblioref">13</a>]</span> for details) was applied on each ROI to fetch the desired echogram feature within (called “echotype”). This step was performed interactively in a notebook using a utility workflow class which will not be detailed here (see <a href="https://github.com/gaspardringuenet/escore-python/blob/design/ml-pipeline/src/escore/utils/extraction.py">code</a>). Echotypes extraction took an additional 3 hours, resulting in a final Escore training set (called an “echotypes library”) of 87 echotypes. <a href="#fig-escore" class="quarto-xref">Figure&nbsp;2</a> provides a summary of the training dataset, as well as a possible boundary plot for Escore prediction using a model fitted on the train data.</p>
+<div id="fig-escore" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-escore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="images/escore_combined.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Example Escore training using regions of interest annotated with Echolabel. (a) Echotypes library sample. Echotypes are post-processed ROI, in which non-relevant pixels are discared using frequency-response analysis. Each echotype is displayed as an RGB composite echogram using the color mapping from (b). (b) Distribution of echotype in the relative frequency response space. Scatterplot show the mean \Delta \text{MVBS} values. Hue is mapped to corresponding RGB value according to the composite color bar. Numbers above the red, green and blue color bars indicate mapped frequencies in kHz. (c) Boundary plot for an Escore model trained on the echotypes library. Each class is represented by an integer label and a color. “> Q thresh” and “< E thresh” labels are associated with failing quality control thresholds and values assigned those labels are discarded."><img src="images/escore_combined.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-escore-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Example Escore training using regions of interest annotated with Echolabel. <strong>(a)</strong> Echotypes library sample. Echotypes are post-processed ROI, in which non-relevant pixels are discared using frequency-response analysis. Each echotype is displayed as an RGB composite echogram using the color mapping from (b). <strong>(b)</strong> Distribution of echotype in the relative frequency response space. Scatterplot show the mean <span class="math inline">\(\Delta \text{MVBS}\)</span> values. Hue is mapped to corresponding RGB value according to the composite color bar. Numbers above the red, green and blue color bars indicate mapped frequencies in kHz. <strong>(c)</strong> Boundary plot for an Escore model trained on the echotypes library. Each class is represented by an integer label and a color. “&gt; Q thresh” and “&lt; E thresh” labels are associated with failing quality control thresholds and values assigned those labels are discarded.
+</figcaption>
+</figure>
+</div>
+<p>While the validity of this model is out-of-scope for the present work, using Echolabel resulted in a strong improvement of manual processing speed, from several days to a few hours. Additionally, the produced ROI library is now stored as a standalone - thus easy to share - CSV file, with Python tooling to correctly load, represent and manipulate it.</p>
+</section>
+<section id="example-2--" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="example-2--"><span class="header-section-number">3.2</span> Example 2 - (?)</h3>
+<p>Proposition: Computing Diel Vertical Migration (DVM) speed</p>
+<ul>
+<li>Delineate migrating layers at dawn for ABRAÇOS II.</li>
+<li>Fetch data with Echoregions.</li>
+<li>Compute mean diving speed &amp; max depth &amp; <span class="math inline">\(R(f)\)</span></li>
+<li>PCA of <span class="math inline">\(R(f)\)</span></li>
+<li>Plot((Speed | Depth) vs.&nbsp;PC1) (color points by RGB)</li>
+</ul>
+<p>(Does not work so well with Abraços I because migrating layers are poorly defined).</p>
+</section>
 </section>
 <section id="impact" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="impact"><span class="header-section-number">4</span> Impact</h2>
+<p>Echolabel bridges a gap for marine scientist Python users wanting to integrate in Echoregions-dependent pipelines. The flexible acoustic dataset loading framework allows most acoustic netCDF conventions to be laoded, and parsing annotated shapes using Echoregions CSV writer enables further analysis using the package. In between, relying on cached echogram images makes the annotation fluid for most machines. Together with the smooth and fast LabelMe GUI, this ensures fast echogram annotation. The RGB composite mode also makes frequency-response-aware labelling possible.</p>
+<p>Echolabel is a single-purpose tool, and it is not designed to replace acoustic processing softwares. This tool was primarily developed for an internal purpose. Its core functionality - annotating polygonal shapes on echograms - can be achieved using most general purpose GUI-based acoustic softwares (although the use of the RGB echogram remains limited among those). However, not all such softwares’ outputs can be parse by Echoregions yet.</p>
+<p>Besides, we believe that a minimalist and fast tool might be of use to the community. It is particularly well-suited to individual researcher wanting to annotate a large number of echogram features that do not require inspecting data / metadata values on-the-job (image files do not provide such information; although it may be checked during post processing with Echoregions).</p>
+<p>Future development of open-source acoustic tools might render Echolabel deprecated. Echoregions might extend supported annotation formats. Other tools might arise for the annotation of dynamic echogram, possibly in Python using shading mechanisms to alleviate the computational cost of rendering. A shallow layer over the <a href="https://holoviews.org/">HoloViews</a> library might be best, allowing users to create custom interfaces easily using <a href="https://panel.holoviz.org/">Panel</a>. Such developments are called for in order to build a full acoustic data analysis Python stack. In the meantime, Echolabel remains the only open-source echogram annotation software with directly Echoregions-compatible outputs.</p>
 </section>
 <section id="conclusions" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">5</span> Conclusions</h2>
+<p>Echolabel provides a simple command line trigger for echogram annotation, which outputs integrate in the Echostack - specifically into the Echoregions package -, a Python processing and analysis ecosystem for active acoustic data anticipated to become the domain’s standard.</p>
+<p>Our tool leverages a widely used image annotation software by saving echogram image file, and annotating those images with LabelMe. netCDF and Zarr formats are accepted, and most conventions can be used as input (IMOS SOOP-BA and Echopype conventions are accepted by default). No innovation is made with regards to echogram generation: either basic single-channel mapping or tri-frequency RGB echograms can be printed.</p>
+<p>Example use shows increased speed compared to one other software, with the labelling of ~ 100 shapes on real-life data taking only a few hours. However, the manual nature of the annotation task does not allow an objective measurement of performance. Still, the absence of rendering cost after images generation, and the widespread use of LabelMe within the computer vision community are strong evidence of our tool’s ease-of-use.</p>
+<p>Scope is voluntarily limited to echogram images generation and annotation. Strong limitations are inherent to the image-based design: losing actual data and metadata values, splitting dataset into frames. LabelMe also renders images using bilinear interpolation, causing a small-scale bluring which is a potential issue for pixel-precision annotation.</p>
+<p>While our tool is far from ideal, and should be deprecated by future developments in the marine acoustics open-source community, we feel it is efficient and convenient enough for others to find use in it, especially for tasks requiring fast annotation of a large number of shapes.</p>
 </section>
 <section id="availability" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="availability">Availability</h2>
+<p>Echolabel is open-source and available at <a href="https://github.com/gaspardringuenet/echolabel" class="uri">https://github.com/gaspardringuenet/echolabel</a>. Additional source code, scripts and data used to demonstrate Echolabel are available at (ref - need to create repo).</p>
 </section>
 <section id="funding" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="funding">Funding</h2>
+<p>This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.</p>
 </section>
 <section id="artificial-intelligence-ai-use-statement" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="artificial-intelligence-ai-use-statement">Artificial intelligence (AI) use statement</h2>
+<p>AI-based tools were used to assist with planning, code review, improvement suggestions, and writing tests during software development. All AI-written code has been reviewed. AI tools were used for review only during manuscript preparation.</p>
 </section>
 <section id="declaration-of-competing-interest" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="declaration-of-competing-interest">Declaration of competing interest</h2>
+<p>The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.</p>
 </section>
 <section id="aknowledgement" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="aknowledgement">Aknowledgement</h2>
 </section>
+<section id="supplementary-material" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="supplementary-material">Supplementary material</h2>
+<ul>
+<li>RGB echogram demo <a href="supplementary/demo_rgb.sh">script</a></li>
+</ul>
+</section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-lee2024a" class="csl-entry" role="listitem">
-Lee, Wu-Jung, Landung Setiawan, Caesar Tuguinay, Emilio Mayorga, and Valentina Staneva. 2024. <span>“Interoperable and Scalable Echosounder Data Processing with Echopype.”</span> <em>ICES Journal of Marine Science</em> 81 (10): 1941–51. <a href="https://doi.org/10.1093/icesjms/fsae133">https://doi.org/10.1093/icesjms/fsae133</a>.
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-yassir2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">A. Yassir, S. Jai Andaloussi, O. Ouchetto, K. Mamza, M. Serghini, Acoustic fish species identification using deep learning and machine learning algorithms: A systematic review, Fisheries Research 266 (2023) 106790. https://doi.org/<a href="https://doi.org/10.1016/j.fishres.2023.106790">10.1016/j.fishres.2023.106790</a>.</div>
+</div>
+<div id="ref-echoview" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Echoview, (n.d.). <a href="https://echoview.com/support/release-notes/">https://echoview.com/support/release-notes/</a> (accessed July 31, 2026).</div>
+</div>
+<div id="ref-lsssopensource" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">LSSS, (n.d.). <a href="https://github.com/marec-open-source/lsss">https://github.com/marec-open-source/lsss</a> (accessed August 2, 2026).</div>
 </div>
 <div id="ref-lee2024" class="csl-entry" role="listitem">
-Lee, Wu-Jung, Valentina Staneva, Landung “Don” Setiawan, et al. 2024. <span>“Echostack: A Flexible and Scalable Open-Source Software Suite for Echosounder Data Processing.”</span> <em>Python in Science Conference</em>, June 3, 386–97. <a href="https://doi.org/10.25080/WXRH8633">https://doi.org/10.25080/WXRH8633</a>.
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">W.-J. Lee, V. Staneva, L.“Don”. Setiawan, E. Mayorga, C. Tuguinay, S. Butala, B. Lucca, D. Lei, Echostack: A flexible and scalable open-source software suite for echosounder data processing, Python in Science Conference (2024) 386–397. https://doi.org/<a href="https://doi.org/10.25080/WXRH8633">10.25080/WXRH8633</a>.</div>
+</div>
+<div id="ref-lee2024a" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">W.-J. Lee, L. Setiawan, C. Tuguinay, E. Mayorga, V. Staneva, Interoperable and scalable echosounder data processing with echopype, ICES Journal of Marine Science 81 (2024) 1941–1951. https://doi.org/<a href="https://doi.org/10.1093/icesjms/fsae133">10.1093/icesjms/fsae133</a>.</div>
+</div>
+<div id="ref-kentaro" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">K. Wada, Labelme: Image polygonal annotation with python, (2026). https://doi.org/<a href="https://doi.org/10.5281/zenodo.5711226">10.5281/zenodo.5711226</a>.</div>
+</div>
+<div id="ref-macaulay2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">G. Macaulay, H. Peña, The SONAR-netCDF4 convention for sonar data, version 1.0, 2018. https://doi.org/<a href="https://doi.org/10.17895/ices.pub.4392">10.17895/ices.pub.4392</a>.</div>
+</div>
+<div id="ref-kunnath2018" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">H. Kunnath, R. Kloser, T. Ryan, IMOS SOOP-BA netCDF conventions. Version 2.2, Commonwealth Scientific; Industrial Research Organisation, Hobart, TAS, 2018.</div>
+</div>
+<div id="ref-echolevels" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[9] </div><div class="csl-right-inline">Echolevels: Discussions on water column sonar data processing levels, (n.d.). <a href="https://github.com/echostack-org/echolevels">https://github.com/echostack-org/echolevels</a> (accessed July 30, 2026).</div>
+</div>
+<div id="ref-maclennan2002" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[10] </div><div class="csl-right-inline">D.N. Maclennan, P.G. Fernandes, J. Dalen, A consistent approach to definitions and symbols in fisheries acoustics, ICES Journal of Marine Science 59 (2002) 365–369. https://doi.org/<a href="https://doi.org/10.1006/jmsc.2001.1158">10.1006/jmsc.2001.1158</a>.</div>
+</div>
+<div id="ref-ariza2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[11] </div><div class="csl-right-inline">A. Ariza, A. Lebourges-Dhaussy, D. Nerini, E. Pauthenet, G. Roudaut, R. Assunção, E. Tosetto, A. Bertrand, Acoustic seascape partitioning through functional data analysis, Journal of Biogeography (2022) jbi.14534. https://doi.org/<a href="https://doi.org/10.1111/jbi.14534">10.1111/jbi.14534</a>.</div>
+</div>
+<div id="ref-annasawmy2019" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[12] </div><div class="csl-right-inline">P. Annasawmy, J.-F. Ternon, P. Cotel, Y. Cherel, E.V. Romanov, G. Roudaut, A. Lebourges-Dhaussy, F. Ménard, F. Marsac, Micronekton distributions and assemblages at two shallow seamounts of the south-western indian ocean: Insights from acoustics and mesopelagic trawl data, Progress in Oceanography 178 (2019) 102161. https://doi.org/<a href="https://doi.org/10.1016/j.pocean.2019.102161">10.1016/j.pocean.2019.102161</a>.</div>
+</div>
+<div id="ref-annasawmy2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">P. Annasawmy, G. Roudaut, A. Lebourges-Dhaussy, Impact of an eddy dipole of the mozambique channel on mesopelagic organisms, highlighted by multifrequency backscatter classification, PLOS ONE 19 (2024) e0309840. https://doi.org/<a href="https://doi.org/10.1371/journal.pone.0309840">10.1371/journal.pone.0309840</a>.</div>
+</div>
+<div id="ref-escorematlab" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">Escore, (n.d.). <a href="https://forge.ird.fr/lemar/active_acoustics/multifrequency_classification/-/tree/master/Escore">https://forge.ird.fr/lemar/active_acoustics/multifrequency_classification/-/tree/master/Escore</a> (accessed July 31, 2026).</div>
+</div>
+<div id="ref-abracos1" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">A. Bertrand, G. Roudaut, A. Lebourges-Dhaussy, G. Vargas, F. Roubaud, ABRACOS 1 cruise. Acoustic data, (n.d.). https://doi.org/<a href="https://doi.org/10.17882/77035">10.17882/77035</a>.</div>
 </div>
 </div>
 </section>
 
-</main>
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I do not actually know if memory is freed after the image is saved.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -641,6 +903,38 @@ Lee, Wu-Jung, Valentina Staneva, Landung “Don” Setiawan, et al. 2024. <span>
   });
   </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
