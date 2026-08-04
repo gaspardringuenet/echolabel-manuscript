@@ -11,6 +11,9 @@ format:
       hypothesis: true
   docx: default
   jats: default
+  
+resources:
+  - supplementary/**
 
 
 
