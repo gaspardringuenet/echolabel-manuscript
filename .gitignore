@@ -14,3 +14,6 @@
 
 **/*.quarto_ipynb
 .venv
+.private
+/data
+_freeze

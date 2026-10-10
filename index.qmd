@@ -7,186 +7,213 @@ author:
     corresponding: true
     email: gaspard.ringuenet@umontpellier.fr
     affiliations:
-      - MARBEC, University of Montpellier, CNRS, Ifremer, IRD, Montpellier, France 
+      - MARBEC, University of Montpellier, CNRS, Ifremer, IRD, Montpellier, France
+  - name: Alejandro Ariza
+    orcid: 0000-0001-7864-4381
+    email: alejandro.ariza@ifremer.fr
+    affiliations:
+      - DECOD, Ifremer, INRAE, Institut Agro, Nantes, France
+  - name: Arnaud Bertrand
+    orcid: 0000-0003-4723-179X
+    email: arnaud.bertrand@ird.fr
+    affiliations:
+      - MARBEC, University of Montpellier, CNRS, Ifremer, IRD, Montpellier, France
+      
 date: last-modified
 bibliography: references.bib
 csl: elsevier_num_wtitles.csl
 number-sections: true
+
+keywords:
+  - Active acoustics
+  - Multifrequency
+  - Echogram annotation
+  - Pelagic ecology
+  - Open source
+
+abstract: "Active acoustic systems are essential for studying deep-sea ecosystems, delivering high-resolution information over large spatial scales. Yet processing these data still relies heavily on manual annotation, and no open-source annotation tool currently integrates with Echostack, the emerging Python toolkit of the field. We present Echolabel, an open-source cross-platform tool for fast echogram visualization and annotation that produces CSV outputs directly compatible with Echoregions, the Echostack package for annotation processing. Echolabel is deliberately minimal and task-specific; it is not intended to replace general-purpose acoustic processing software. The tool is available both as a command-line interface and as a Python application programming interface. It builds on the LabelMe graphical user interface to annotate cached echogram images, and transparently handles the conversion between image and physical coordinates. Visualization options include RGB-composite echograms, which combine several acoustic frequencies and enable annotations informed by the frequency response of the imaged targets. We demonstrate Echolabel's practical utility, together with Echoregions, on routine annotation tasks and a brief ecological analysis. Echolabel proves particularly useful for delineating irregular, fuzzy objects such as sound scattering layers, thereby supporting sonar-based deep-sea ecology."
+
 ---
-
-::: callout-note
-I have been writing this manuscript as a SoftwareX article. The "Aims and scope" section of SoftwareX's [guide for authors](https://www.sciencedirect.com/journal/softwarex/publish/guide-for-authors#writing-and-formatting) seems to match Echolabel.
-
-See also this [article](https://www.sciencedirect.com/science/article/pii/S2352711026003511), which I have used as a model.
-:::
 
 ## Metadata {.unnumbered}
 
 ::: list-table
--   
+- 
 
-    -   Nr
-    -   Code metadata description
-    -   Metadata
+  - Nr
+  - Code metadata description
+  - Metadata
 
--   
+- 
 
-    -   C1
-    -   Current code version
-    -   V1.0.0
+  - C1
+  - Current code version
+  - V1.0.0
 
--   
+- 
 
-    -   C2
-    -   Permanent link to code/repository used for this code version
-    -   <https://github.com/gaspardringuenet/echolabel>
+  - C2
+  - Permanent link to code/repository used for this code version
+  - <https://github.com/gaspardringuenet/echolabel>
 
--   
+- 
 
-    -   C3
-    -   Permanent link to reproducible capsule
-    -   
+  - C3
+  - Permanent link to reproducible capsule
+  - 
 
--   
+- 
 
-    -   C4
-    -   Legal code license
-    -   
+  - C4
+  - Legal code license
+  - 
 
--   
+- 
 
-    -   C5
-    -   Code versioning system used
-    -   Git
+  - C5
+  - Code versioning system used
+  - Git
 
--   
+- 
 
-    -   C6
-    -   Software code languages, tools and services used
-    -   Python
+  - C6
+  - Software code languages, tools and services used
+  - Python
 
--   
+- 
 
-    -   C7
-    -   Compilation requirements, operating environments and dependencies
-    -   
+  - C7
+  - Compilation requirements, operating environments and dependencies
+  - 
 
--   
+- 
 
-    -   C8
-    -   If available, link to developer documentation/manual
-    -   <https://echolabel.readthedocs.io/>
+  - C8
+  - If available, link to developer documentation/manual
+  - <https://echolabel.readthedocs.io/>
 
--   
+- 
 
-    -   C9
-    -   Support email for questions
-    -   [gaspard.ringuenet\@umontpellier.fr](mailto:gaspard.ringuenet@umontpellier.fr){.email}
+  - C9
+  - Support email for questions
+  - [gaspard.ringuenet\@umontpellier.fr](mailto:gaspard.ringuenet@umontpellier.fr){.email}
 :::
 
 ## Motivation and Significance
 
-Active acoustics is an indispensable tool for observing pelagic ecosystems. It is the only technology capable of providing continuous observations of organism distribution and behavior at the spatial and temporal scales at which these processes occur (ref). However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of echogram features has long been a common practice in marine acoustics. Targeted biological features are most often fish aggregations such as schools or shoals, but broad-ecosystem surveys provide a motivation for extracting a wider range of objects including scattering layers, or regions with homogeneous frequency-response (ref). Expert annotations may be used for direct scientific analysis (ref), modelling (ref), and increasingly to train deep learning models [@yassir2023].
+The pelagic zone designates the water column away from the seabed. This vast three-dimensional habitat represents more than 90 % of the available living volume on the planet. Lacking hard physical structures in comparison to the benthic zone (i.e., the seabed) or land, it can be divided into depth layers based on light penetration. The mesopelagic, where less than 1 % of light reaches, typically spans from 200 to 1000 m. Its significance is evident from its large biomass and diversity [@irigoien2014; @eduardo2024; @haddock2024], its crucial role in ocean functioning [@robinson2010; @passow2012], and its interdependence with human societies [@martin2020; @eduardo2025].
 
-Echogram scrutinizing and annotation has historically been performed using graphical user interface (GUI) based softwares (ref). Most of them are either proprietary (e.g. Echoview [@echoview]) or require a MATLAB license (e.g. ESP3, MOVIES3D, MATECHO). Recent years have seen a push towards open-source softwares (ref). This is illustrated by the switch of LSSS - one the main GUI-based acoustics software - from proprietary to open-source [@lsssopensource].
+In spite of this, the “twilight zone” remains understudied, primarily due to technical limitations in investigating deep waters. In this context, active acoustic systems (sonars) provide crucial information. By sounding the water column up to ~ 1000 m with high resolution, active acoustics systems are the only technology capable of providing continuous observations of organism distribution and behaviour at the spatial and temporal scales at which physical and ecological processes occur.
 
-As part of this effort, the Echostack suite has been developed, aiming at providing open-source modular Python tools for interoperable sonar data processing [@lee2024]. The suite is built around its main package Echopype, which focuses on processing and converting raw data into science-ready gridded datasets [@lee2024a], and is positioned as a future community standard. Echoregions (<https://github.com/OSOceanAcoustics/echoregions>) is one of the companion packages, and is designed to represent and parse echogram shapes and lines annotations. The combination of Echopype products (standardized $\text{MVBS}$ datasets saved as netCDF files or Zarr stores) and corresponding Echoregions annotations provides an interface between acoustic data and data analysis or machine learning pipelines within the scientific Python software ecosystem. The Echostack does not currently offer echogram annotation features. Instead, the Echoregions package can read the Echoview annotations files (.EVL and .EVR), and might extend its coverage to other formats in the future.
+However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of features in echograms has long been a common practice in marine acoustics. Targeted biological features are most often aggregations such as fish schools or krill swarms, but may also include sound-scattering layers, which comprise a wide variety of organisms, from invertebrates to fish, distributed horizontally in the water column.
 
-We identify a current integration gap for users wanting to leverage the power of Echoregions without relying on complex and often expensive GUI softwares. To bridge this gap, we propose Echolabel, a minimalist Python app enabling echogram annotation in Echoregions-readable format. The use case is narrower than existing GUIs, focusing purely on displaying echograms and drawing shapes on them. Echolabel is simple, lightweight, and cross-platform. It requires little computing resources, and presents a smooth GUI for annotation. This is achieved by interfacing acoustic data with widely-used image annotation software LabelMe [@kentaro]. Although poorly suited for high-precision annotation requiring additional information (e.g. numerical values, metadata), Echolabel is relevant to annotate large number of easily recognizable acoustic structures.
+Annotating these features is part of the daily routine in ecosystem acoustic surveys, whether for subsequent analyses of distribution and biomass or to populate libraries used to train machine learning models for species identification. Several software solutions are currently available for this purpose: commercial options such as Echoview [@echoview]; free but closed-source Windows-based software such as LSSS[^1] [@korneliussen2006] and Movies3D [@trenkel2009];  or open-source software requiring a proprietary MATLAB license, such as ESP3 and Matecho [@ladroit2020; @perrot2018].
+
+[^1]: LSSS now has an open-source version [@lsssopensource], and it is available for linux and macOs (<https://marec.no/downloads.htm>).
+
+In recent years,  there has been significant development of free, open-source, cross-platform software for ecosystem acoustics. The most notable example, both in terms of development and engagement from the scientific community, is Echostack, a suite of Python packages for performing various routine tasks with scientific echosounder data [@lee2024; @lee2024a]. Echostack includes the Echoregions package (<https://github.com/OSOceanAcoustics/echoregions>), designed to parse acoustic annotations and interface them with the gridded acoustic data. The package contains functions to create masks for machine learning models training or for routine processing tasks such as biomass estimation. However, no open-source solution is available for such annotations yet, despite this being one of the areas most in demand by the scientific community in ecosystem acoustics.
+
+To bridge this gap, we propose Echolabel, a minimalist Python app for echogram annotation, built to be interoperable with Echostack / Echoregions. Its scope is narrower than that of most GUI-based acoustic software, which provide suites of analysis-ready computation tools. Echolabel focuses on the annotation task only, leveraging the power of LabelMe [@kentaro], a widely used open-source Python application for image annotation, by converting acoustic data into a set of echogram images. The output is an Echoregions-compatible CSV file, ensuring integration into the Python acoustic data processing environment. Echolabel is free, open-source, cross-platform, and free of proprietary dependencies. It requires little computing power, and offers an easy-to-use GUI for annotation.
 
 ## Software description
 
 ### Software architecture
 
-The software is written in Python, following PEPXXX recommendations for syntax and PEPXXX for packaged application directory structure (ref). Separate modules are responsible for command line inputs, app configuration, cached images data management, and parsing annotation files.
+The software is written in Python, with separate modules responsible for app configuration, command-line inputs, cached data management, and parsing annotation files.
 
-The software is minimalist (\~ 10 files) and avoids re-implementing existing functionalities as much as possible. It focused instead on enabling LabelMe and parsing annotations to and from Echoregions. The annotation parsing module is called `regions2d_extension` and mimics Echoregions' code for parsing Echoview annotation data, with the aim of providing a clear insight on the application's purpose.
+It is minimalist, comprising 13 Python source files, totalling 898 lines of code as measured by `cloc` [@adanial_cloc], and avoids re-implementing existing functionalities as much as possible. The annotation interface is entirely provided by LabelMe v6.0.0, and Echolabel focuses on parsing annotations between LabelMe and Echoregions. The annotation parsing module is called `regions2d_extension` and mimics Echoregions’ code to parse Echoview annotation data, with the aim of providing clear insight into the application’s purpose.
 
-Echolabel has been developed with a focus on the command line interface (CLI; see @lst-escore-demo). The main `process` command triggers conversion of the acoustic data into images before automatically running LabelMe. It features a number of optional parameters, allowing the user to modify the echogram. Passed CLI parameters are used to override a default configuration file, which can be directly edited for improved control and reproducibility. If necessary, a programmatic interface remains available with the `EcholabelApp` and `Config` classes at the top level.
+Echolabel has been developed to be primarily used from the command-line interface (CLI; see @lst-escore-demo). The main `process` command triggers conversion of the acoustic data into images before automatically running LabelMe. It features a number of optional parameters, allowing the user to modify the echogram. Passed CLI parameters are used to override a default configuration file, which can be directly edited for improved control and reproducibility. If necessary, a programmatic interface remains available with the `EcholabelApp` and `Config` classes at the top level.
 
-A series of unit tests ensure that core features are preserved in future updates. Tested functionalities include configuration, data loading, images dataset management, and parsing annotations. Git is used for version control.
+A series of unit tests ensure that core features are preserved across future updates. Tested functionalities include configuration, data loading, image-dataset management, and annotation parsing. Git is used for version control.
 
 ### Software functionalities
 
-Echolabel wraps LabelMe. It loads acoustic data, chunks it into an echogram images dataset, and runs LabelMe. When the user exits the LabelMe GUI, internal images annotations are converted to physical (time, depth) coordinates and saved in a format that can be read using Echoregions.
+Echolabel wraps LabelMe. It loads acoustic data, chunks it into a dataset of echogram images, and runs LabelMe. When the user exits the LabelMe GUI, the image-based annotations are converted to physical (time, depth) coordinates and saved in a format that can be read using Echoregions.
 
-The software operates on acoustic data written as NetCDF file(s) or Zarr store, two widely used formats in natural sciences, and marine acoustics in particular, for computing on multidimensional arrays. Several NetCDF files in the same directory may be loaded as a single dataset as long as their coordinates are compatible. The marine acoustics community has not yet converged toward a single standard convention for dimensions and variable names. The SONAR-netCDF4 convention has been proposed in an effort to provide a unified model for all fisheries sonar systems [@macaulay2018]. On the other hand, the IMOS SOOP-BA convention appears to have been much used so far [@kunnath2018]. Besides, discussion is still active, with Echopype using a modified version of the SONAR-netCDF4 convention for the representation of raw data, as well as the ongoing development of data processing levels, providing a clearer distinction between products [@echolevels]. Echolabel typically operates on processed data, converted into a gridded acoustic variable. The variability in convention mostly implies that the app needs to enable flexibility in the naming of the time, depth and channel dimensions. By default, the app tries to match input data with both Echopype's model or the IMOS SOOP-BA convention. The user may also specify variable names in the configuration file. This also gives the opportunity to change the visualized channel - by default "Sv", the mean volume backscattering strength [@maclennan2002].
+Echolabel works with processed, gridded volume backscattering strength data (Sv, dB) [@maclennan2002], i.e., the widely used acoustic measure for characterizing the distribution of organisms in the water column, after the data have been cleaned of artifacts and regridded onto a consistent grid across frequency, depth, and time–distance dimensions. By default, Echolabel supports two widely used conventions for distributing data with this structure and level of processing: the IMOS SOOP-BA NetCDF convention [@kunnath2018] and the coordinate/variable names adopted by Echostack. For full flexibility, it can support any variable names, provided that the user manually identifies Sv, depth, and time–distance variables in the configuration file. Both NetCDF files and Zarr stores are accepted as input formats. Several files in the same directory may be loaded as a single dataset as long as their coordinates are compatible.
 
-Common echogram visualization options are provided. The user can select the visualized frequency, and specify value bounds as well as the colormap. A wide range of matplotlib colormaps can be selected using their names. In addition to single-frequency echograms, Echolabel offers a triple-frequency *RGB echogram* mode in which three channels are mapped to each of the red, green, and blue channels (with equal bounds). This visualization method is very effective to gain knowledge on the distribution of frequency-responses across the echogram (for examples see [@ariza2022; @annasawmy2019]). It is a key part of the Escore echoclassification method, and has been a Matecho feature for years. Background - defined as where no channel is active - color can also be specified in configuration (as a matplotlib compatible string or tuple).
+Common echogram visualization options are provided. The user can select the visualized frequency and specify value bounds as well as the colormap. A wide range of matplotlib colormaps can be selected using their names. In addition to single-frequency echograms, Echolabel offers a triple-frequency RGB echogram mode in which three channels are mapped to each of the red, green, and blue channels (with equal bounds). This visualization method is very effective for assessing the distribution of frequency responses across the echogram (for examples see [@ariza2022; @annasawmy2019]). The background (defined as where no channel is active) colour can also be specified in the configuration (as a matplotlib-compatible string or tuple).
 
-Running the app triggers data loading and the building and caching of an echogram images dataset using visualization options. Echogram images are the representation of acoustic data once color mapping has been applied. Each pixel represents a sampled volume. Each image's physical (time and depth) coordinates are saved in cache. The images dataset building step is the only step involving significant computation. While lazy-loading of the acoustic dataset prevents memory overload (data is loaded per image[^1]), this step may take up to a few minutes for large scale surveys with high resolution echointegration. To alleviate the pain of re-building at each session, Echolabel enables re-using the cached images, triggering instantaneous launch of the GUI.
+Running the app triggers data loading and the building and caching of an echogram image dataset using visualization options. Echogram images are the representation of acoustic data once colour mapping has been applied. Each pixel represents a sampled volume. Each image’s physical (time and depth) coordinates are saved in cache. The image dataset building step is the only step involving significant computation. While lazy-loading of the acoustic dataset prevents memory overload, this step may take up to a few minutes for large-scale surveys with high resolution data. To avoid rebuilding the images at each session, Echolabel enables reuse of the cached images, allowing the GUI to launch almost instantaneously.
 
-[^1]: I do not actually know if memory is freed after the image is saved.
+A prominent feature of Echolabel is the LabelMe graphical user interface (GUI; @fig-demo-gui), which is used to create annotations. This relies on the prior conversion of the acoustic data into images. Within the open window, the user can loop through the images in the “File List” panel. They can also visualize and edit existing annotations using the “Annotation List” panel and point clicks. Most importantly, they can use the “CreateShapeTools” to add new shapes. All changes are automatically saved in cache as LabelMe JSON annotations during the GUI editing session. The GUI is customizable, and the user has the option to edit the LabelMe configuration file on their system. Since Echolabel runs LabelMe as a subprocess and only operates on annotation files, modifying the LabelMe configuration should not create conflicts.
 
-A prominent feature of Echolabel is the LabelMe graphical user interface (GUI), which is used to create annotations. Leveraging it is made possible by the prior conversion into images. Within the open window, the user can loop through the images in the "File List". They can also visualize and edit existing annotations using the "Annotation List" panel and point clicks. Most importantly, they can use "CreateShapeTools" to add new shapes. All changes are automatically saved in cache as LabelMe JSON annotations during GUI editing session. The GUI is customizable, and the user has the option to edit the LabelMe configuration file on their system. Since Echolabel runs LabelMe as a subprocess, there should be no conflict in most cases.
+When closing the GUI, shape annotations are parsed and saved as a CSV file compatible with the [`echoregions.Regions2D`](https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py) class. This conversion uses the saved image coordinates to convert pixel-wise annotations into (time, depth) points. Regions2D objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted (output from other tools is ignored). Once the annotation-format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.
 
-When closing the GUI, shapes annotations are parsed and saved as a CSV file compatible with the [`echoregions.Regions2D`](https://echoregions.readthedocs.io/en/latest/api/echoregions.regions2d.Regions2D.html) class. This is done using the saved images coordinates to convert pixel-wise annotations into (time, depth) points. `Regions2D` objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted. Once annotation format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.
-
-Additional features include a "demo" command triggering demo data download and processing. It is also worth noting that LabelMe provides an AI polygon creation tool. The tool installs an image segmentation model (Meta's Segment Anything Model 2 as of LabelMe v6.0.0) locally to provide assistance by automatically delineating objects. While such models are efficient on natural images, they appear much less useful on echograms. However, since the tool produces polygons, annotations are correctly parsed by Echolabel.
+Additional features include a `demo` command that downloads and processes demonstration data. It is also worth noting that LabelMe provides an AI polygon creation tool. The tool installs an image segmentation model (Meta’s Segment Anything Model 2 as of LabelMe v6.0.0) locally to provide assistance by automatically delineating objects. While such models are efficient on natural images, they appear much less useful on echograms. However, since the tool produces polygons, annotations are correctly parsed by Echolabel.
 
 ## Illustrative examples
 
-We propose two examples in which our software may be helpful. As echogram feature annotations are rarely a final product, proposed examples extend beyond the domain of Echolabel and include downstream data analysis or modelling.
+### Polygon annotation on RGB echogram
 
-### Example 1 -Training dataset for Escore classification
+The ABRAÇOS II survey was conducted off the north-eastern coast of Brazil during the Austral fall of 2017 (April 9^th^ – May 7^th^). Research vessel Antea of the French oceanographic fleet operated a hull-mounted EK60 echosounder at four frequencies (38, 70, 120, and 200 kHz) with a pulse length of 512 μs [@bertrand]. Two configurations were used:  a ping rate of 0.45 s for seabed depth less than 150 m, and a ping rate of 2.4 seconds for deeper areas, recording to depth up to 750 m. The echosounder was calibrated mid-survey in Fernando de Noronha using standard protocols [@demer2015]. Acoustic data processing was conducted using the Matecho software. Noise and artifact removal was performed using a combination of automated and manual cleaning tools. Volume backscattering strength was echo-integrated with a minimum threshold of -90 dB in 3-pings by 1-m cells. A conversion from the MATLAB format used by Matecho to a Zarr store was applied to the echo-integrated product. The demonstration data used thereafter are a 10-hour subset of the ABRAÇOS II survey, spanning both open ocean and a \~50 m deep seamount.
 
-The Escore method is a multi-frequency classification method designed for high diversity context with little-to-no ground-truth data [@annasawmy2024]. Re-implementing the method within the scientific Python ecosystem was the motivation for developing Echolabel. The method relies on expert selection of regions of interest (ROI) containing echogram features with consistent frequency response. Details on ROI choice are out-of-scope for the present work. In short, hundreds of rectangle box annotations are required to build a library of relative frequency responses ($R(f) = \Delta \text{MVBS}_{38 \text{ kHz}}$). This library is then clustered and clusters are processed to build a prediction rule.
-
-The previous implementation of the ROI selection step is written in MATLAB [@escorematlab]. ROI bounding boxes are drawn on a dynamically rendered RGB echogram. Rendering, however, is computationally heavy, inducing strong latency when moving or zooming on the echogram. As a result, it requires up to a week's time to process a one-month survey by creating a few hundreds ROI.
+Several objects of interest are selected from the demonstration dataset using Echolabel. The GUI is launched from the terminal using a simple command, rendering an RGB composite echogram showing 38, 70, and 120 kHz channels simultaneously (@lst-escore-demo). Selected features are delineated using the “Create Polygons” and “Create Rectangles” tools and assigned text labels (@fig-demo-gui): a sound-scattering layer (“Layer”), a probable fish aggregation (“School”), a v-shaped anomaly probably caused by a lowered instrument (“Artifact”), and rectangle areas of varying hue (“Unknown”). The eight annotated regions are saved as a CSV file when closing the graphical interface. 
 
 ::: {#lst-escore-demo}
 ``` bash
 echolabel process \
--s Abracos_A1_3pings1m_FDN.zarr \   # acoustic data store
--o rois_ab1_FDN.csv \               # annotation file
--f 38000 -f 70000 -f 12000 \        # mapped frequencies (Hz)
+-s data/demo.zarr \                 # acoustic data store
+-o data/demo_regions.csv \          # annotation file
+-f 38000 -f 70000 -f 120000 \       # mapped frequencies (Hz)
 --cmap RGB                          # RGB composite echogram
 ```
 
 Example bash command to build an RGB echogram and run the ROI demonstration.
 :::
 
-![LabelMe graphical user interface showing regions of interest selection on an RGB composite echogram (R: 38 kHz; G: 70 kHz; B: 120 kHz - as commanded in @lst-escore-demo; see @fig-escore b. for color bar) in the image panel (center). The  grey shape on the right of the echogram indicates pixels below the ocean floor. Similarly, horizontal color boundaries show the channels' range limits. Regions of interest are defined as rectangles visible on top of the echogram. Labels are associated with the rectangle shapes (visible in the "Annotation List" panel, and as a non-duplicated list in the "Label List" panel). The "File List" panel shows all available echogram images.](images/escore_demo_gui.png){#fig-demo-gui}
+![LabelMe graphical user interface showing drawn regions on an RGB composite echogram (R: 38 kHz; G: 70 kHz; B: 120 kHz - as specified in @lst-escore-demo) in the image panel (center). The grey shape on the right of the echogram indicates pixels below the ocean floor. Similarly, horizontal colour boundaries show the channels’ range limits. Regions of interest are defined as rectangles visible on top of the echogram. Labels are associated with the rectangle shapes (visible in the “Annotation List” panel, and as a non-duplicated list in the “Label List” panel). The “File List” panel shows all available echogram images.](images/region_selection.png){#fig-demo-gui}
 
-As a demonstration, the Escore method was performed on a subset of the ABRAÇOS I survey's acoustic data [@abracos1] echo-integrated with a temporal resolution of 3 pings (\~ 15 s) and a depth resolution of 1 m. Selected data is made of pings located less than 40 nm from the Fernando de Noronha archipelago. Sampling in this area was performed in radial and parallels around the islands, resulting in a "flower" shape". Annotation was made on the survey's RGB echogram using Echolabel (see @lst-escore-demo for the CLI command). ROI were only selected above 250 m deep, where 3 channels were available (38, 70, and 120 kHz). The 98 ROI were delineated in approx. 2 hours, significantly reducing manual processing time. @fig-demo-gui shows ROI displayed in the LabelMe interface. An additional post-processing step (applying KMeans of clustering $R(f)$; see [@annasawmy2024] for details) was applied on each ROI to fetch the desired echogram feature within (called "echotype"). This step was performed interactively in a notebook using a utility workflow class which will not be detailed here (see [code](https://github.com/gaspardringuenet/escore-python/blob/design/ml-pipeline/src/escore/utils/extraction.py)). Echotypes extraction took an additional 3 hours, resulting in a final Escore training set (called an "echotypes library") of 87 echotypes. @fig-escore provides a summary of the training dataset, as well as a possible boundary plot for Escore prediction using a model fitted on the train data.
+Echolabel solely focuses on creating the annotations, but the software’s strength lies in its immediate compatibility with the Echoregion package. Hence, the following sections demonstrate first-order use cases for such annotations using Echoregions.
 
-![Example Escore training using regions of interest annotated with Echolabel. **(a)** Echotypes library sample. Echotypes are post-processed ROI, in which non-relevant pixels are discarded using frequency-response analysis. Each echotype is displayed as an RGB composite echogram using the color mapping from (b). **(b)** Distribution of echotype in the relative frequency response space. Scatterplot show the mean $\Delta \text{MVBS}$ values. Hue is mapped to the corresponding RGB value according to the composite color bar. Numbers above the red, green and blue color bars indicate mapped frequencies in kHz. **(c)** Boundary plot for an Escore model trained on the echotypes library. Each class is represented by an integer label and a color. "> Q thresh" and "< E thresh" labels are associated with failing quality control thresholds and values assigned to those labels are discarded.](images/escore_combined.png){#fig-escore}
+### Use case 1 - Routine tasks
 
-While the validity of this model is out-of-scope for the present work, using Echolabel resulted in a strong improvement of manual processing speed, from several days to a few hours. Additionally, the produced ROI library is now stored as a standalone - thus easy to share - CSV file, with Python tooling to correctly load, represent and manipulate it.
+@fig-basic-tasks shows regions with the “Unknown”, “Artifact”, and “School” labels (a), along with processing or data analysis steps corresponding to the underlying echogram features (b-g): frequency response investigation, artifact removal, and aggregation mask extraction, respectively. All of those are made possible by the masking functionality of Echoregions (using the [regionmask](https://regionmask.readthedocs.io) package) and each requires less than **X** lines of code to compute (omitting figure building).
 
-### Example 2 - (?)
+The most basic task is computing the frequency responses of an echogram region. The influence of the organisms’ anatomy on their back-scattering properties has long been acknowledged, and is the motivation for multifrequency acoustics [@benoit-bird2016]. Spatio-temporal variations in frequency responses can then be attributed to variations in the species (or age) composition in the sampled volumes. While the RGB echogram successfully renders part of this contrast, a quantitative comparison of back-scattering between regions of interest provides a more exhaustive and objective insight. @fig-basic-tasks b,c compares two reddish (38 kHz strong) and two greenish (70 kHz) regions, in different oceanographic setups (pelagic or on seamount edge), depths (150 m or 50 m) and intensity (seemingly stronger near the seamount) by computing the frequency response relative to the 38 kHz channel ($R(f) = \Delta \text{MVBS}_{f - 38 \text{kHz}} = S_{v}(f) - S_{v}(38 \text{ kHz})$; see @maclennan2002 for notation) for all regions. Green regions contain similar $R(f)$. On the other hand, red regions show great differences, especially at 120 and 200 kHz, suggesting a very different biological composition. Further analysis using this kind of regions of interest may include target strength (TS) modelling, or building a training set for a multifrequency classification algorithm.
 
-Proposition: Computing Diel Vertical Migration (DVM) speed
+In spite of a thorough cleaning of acoustic data, some unwanted signal or noise may remain in the final product. This is accentuated by the context-dependence of unwanted signal. Manual cleaning of the echo-integrated product can easily be conducted with the combination of Echolabel and Echoregions. This is demonstrated in @fig-basic-tasks d,e in which the back-scattering of a probable CTD profiler is removed using a polygonal shape.
 
--   Delineate migrating layers at dawn for ABRAÇOS II.
--   Fetch data with Echoregions.
--   Compute mean diving speed & max depth & $R(f)$
--   PCA of $R(f)$
--   Plot((Speed \| Depth) vs. PC1) (color points by RGB)
+On the contrary, one may want to extract the mask of a biological aggregation of interest. This is common for fish schools and shoals, and illustrated in @fig-basic-tasks f,g. A typical use of such masks is supervised deep learning model training. Computation of acoustic variables, or post processing of the mask (for instance to remove unwanted pixels) may also apply to fish aggregations.
 
-(Does not work so well with Abraços I because migrating layers are poorly defined).
+![Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed.](images/basic-annotation-tasks-e.png){#fig-basic-tasks}
+
+### Use case 2 - Analysis of a sound-scattering layer
+
+![Example first-order analysis of a diffuse sound-scattering layer (selected as the "layer" polygon in @fig-demo-gui). (a) Smoothed $s_A$-weighted mean depth profile of the layer. The color indicates the sign and intensity of relative frequency response. (b) Scatter plot of $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ and downward vertical speed. The red line shows the linear regression predictions, and the fitted equation is written on the top left side. Grey lines indicate the mean of both variables.](images/fuzzy-layer-analysis_2-e.png){#fig-layer-analysis}
+
+A wide variety of data analyses can be conducted using masked echograms. We briefly demonstrate how Echolabel can be used to test a simple hypothesis. A close inspection of the “Layer” polygon’s data on the RGB echogram shows an interesting pattern. The layer varies both in depth, with variations of higher order than the diel vertical migration pattern, and in frequency response, with some sections appearing brown while others appear grey (most visible in @fig-basic-tasks a). We hypothesize that changes in frequency response are linked to changes in the mean tilt angle of mesopelagic organisms (presumably fish in this case). To test this simply, we compare the $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ variable to the downward speed of the layer, assuming speed is tightly linked to the average tilt angle of the fish.
+
+The layer is extracted manually using Echolabel, as shown in @fig-demo-gui, and masking is done using Echoregions. The irregular and fuzzy nature of the extracted object calls for manual extraction, making this an exemplary ecological use case for our software. For each timestamp, the mean depth of the layer is computed, weighted by the nautical area scattering coefficient ($\text{NASC } [\text{m}^2 \text{ nmi}^{-2}]$, a linear measure of the back-scattered energy @maclennan2002). The computed line is smoothed using a rolling mean spanning 50 timestamps. From this vector, the layer's downward migration speed is obtained by differentiation relative to time. The vertical average $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ is visually compared to both migration depth and speed (@fig-layer-analysis). A linear regression is used to test the dependence of frequency response on vertical speed.
+
+@fig-layer-analysis a confirms the RGB echogram intuition. The marked upward swimming events correspond to a higher response at 38 kHz compared to 70 kHz. As a matter of fact, those events are the only occurrences of extreme (-2 to -4 dB) $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$, while a large proportion of points have smaller frequency response differences. This is coherent with the scatter plot in @fig-layer-analysis a, which shows a majority data falls within within a small range of $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ (-1 to 1 dB) and vertical speed (-5 to 5 cm s^-1^) values. A minority of points are associated either to both negative or both positive extreme frequency response and speed values. Even accounting for the mass of near-zero points, the linear model shows a positive dependence of  $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ on downward speed with $p < 10^{-3}$ and satisfactory residual distributions.
+
+This exploratory analysis visually identifies a correlation of vertical speed and $\Delta \text{MVBS}_{70 - 38 \text{kHz}}$ and shows the statistical dependence of the latter on the former. This may be interpreted as a confirmation of the tilt angle hypothesis: variation in frequency response here are associated to the fishes' movements, and not to changes in organisms compositions. Besides, the stronger intensity of the effect during swift upward swimming events (visible both in @fig-layer-analysis a and in the lesser quality of modelling for small values) could indicate that those events are more coordinated than downward migrations events, with more aligned animals swimming in the same direction. We can also observe that the organisms eventually go back down to a depth aligning with a first-order u-shape diel vertical migration. We know that the main explanatory variable for the diel vertical migration is light level, as the organisms seek refuge in deeper waters during the day to avoid predators. The observed upward swimming events sometimes move more than 50 m above the nominal depth (@fig-layer-analysis a). 
+
+This could be interpreted as taking a risk, and combined with the sudden and coordinated nature of the event it could suggest that the layer is actually avoiding a threat or a physical barrier. Another explanation could be weather events changing skylight intensity, as animals may also avoid darkening waters. Further analysis and evidence are required to properly understand the phenomenon. This analysis nonetheless underlines the potential of manual acoustic data annotation, and so of Echolabel, to shed some light on deep sea ecology questions.
 
 ## Impact
 
-Echolabel bridges a gap for marine scientist Python users wanting to integrate in Echoregions-dependent pipelines. The flexible acoustic dataset loading framework allows most acoustic netCDF conventions to be loaded, and parsing annotated shapes using Echoregions CSV writer enables further analysis using the package. In between, relying on cached echogram images makes the annotation fluid for most machines. Together with the smooth and fast LabelMe GUI, this ensures fast echogram annotation. The RGB composite mode also makes frequency-response-aware labelling possible.
+Echolabel bridges a gap for marine scientists using Python who want to integrate acoustic annotation into Echoregions-dependent pipelines. The flexible acoustic dataset loading framework allows most acoustic NetCDF conventions to be loaded, and the use of Echoregions’ CSV convention for annotated shapes enables subsequent analysis with the package. In addition, relying on cached echogram images makes the annotation process responsive on most machines. Together with the smooth and fast LabelMe GUI, this enables efficient echogram annotation. The RGB composite mode also makes frequency-response-aware labelling possible.
 
-Echolabel is a single-purpose tool, and it is not designed to replace acoustic processing softwares. This tool was primarily developed for an internal purpose. Its core functionality - annotating polygonal shapes on echograms - can be achieved using most general purpose GUI-based acoustic softwares (although the use of the RGB echogram remains limited among those). However, not all such softwares' outputs can be parsed by Echoregions yet.
+Echolabel is a single-purpose tool, and it is not designed to replace acoustic processing software. This tool was primarily developed for an internal purpose. Its core functionality, i.e., annotating polygonal shapes on echograms, can be achieved using most general-purpose GUI-based acoustic software (although the use of RGB echograms remains relatively uncommon among them). However, the outputs of few such software packages can currently be parsed by Echoregions.
 
-Besides, we believe that a minimalist and fast tool might be of use to the community. It is particularly well-suited to individual researcher wanting to annotate a large number of echogram features that do not require inspecting data / metadata values on-the-job (image files do not provide such information; although it may be checked during post processing with Echoregions).
+Nevertheless, we believe that a minimalist and fast tool might be of use to the community. It is particularly well-suited to individual researchers wanting to annotate a large number of echogram features that do not require inspecting data/metadata values during annotation (image files do not provide such information; such information can, however, be accessed during subsequent processing with Echoregions).
 
-Future development of open-source acoustic tools might render Echolabel deprecated. Echoregions might extend supported annotation formats. Other tools might arise for the annotation of dynamic echograms, possibly in Python using shading mechanisms to alleviate the computational cost of rendering. A shallow layer over the [HoloViews](https://holoviews.org/) library might be best, allowing users to create custom interfaces easily using [Panel](https://panel.holoviz.org/). Such developments are called for in order to build a full acoustic data analysis Python stack. In the meantime, Echolabel remains the only open-source echogram annotation software with directly Echoregions-compatible outputs.
+Future development of open-source acoustic tools might render Echolabel obsolete. Echoregions might extend its supported annotation formats. Other tools might arise for the annotation of dynamic echograms, possibly in Python using datashader-based mechanisms to reduce the computational cost of rendering. A shallow layer over the [HoloViews](https://holoviews.org/) library might be a suitable approach, allowing users to create custom interfaces easily using [Panel](https://panel.holoviz.org/). Such developments are needed to support a comprehensive Python stack for acoustic data analysis. To our knowledge, Echolabel remains the only open-source echogram annotation software directly compatible with Echoregions.
 
 ## Conclusions
 
-Echolabel provides a simple command line trigger for echogram annotation, which outputs integrate in the Echostack - specifically into the Echoregions package -, a Python processing and analysis ecosystem for active acoustic data anticipated to become the domain's standard. 
+Echolabel provides a simple command-line interface for echogram annotation, producing outputs that integrate into Echostack, specifically the Echoregions package, a Python ecosystem for processing and analysing active acoustic data that is expected to become a standard in the field.
 
-Our tool leverages a widely used image annotation software by saving echogram image files, and annotating those images with LabelMe. netCDF and Zarr formats are accepted, and most conventions can be used as input (IMOS SOOP-BA and Echopype conventions are accepted by default). No innovation is made with regards to echogram generation: either basic single-channel mapping or tri-frequency RGB echograms can be printed.
+Our tool leverages a widely used image annotation software package by converting acoustic data into echogram image files and using LabelMe to annotate them. NetCDF and Zarr formats are accepted, and most conventions can be used as input (IMOS SOOP-BA and Echopype conventions are accepted by default). No innovation is claimed with respect to echogram generation: the software provides either basic single-channel mapping or tri-frequency RGB echograms.
 
-Example use shows increased speed compared to one other software, with the labelling of ~ 100 shapes on real-life data taking only a few hours. However, the manual nature of the annotation task does not allow an objective measurement of performance. Still, the absence of rendering cost after generating images, and the widespread use of LabelMe within the computer vision community are strong evidence of our tool's ease-of-use.
+Example use cases demonstrate the ease with which various echogram features can be selected, and how the underlying data may be processed or analysed with minimal effort using the masking functionality of Echoregions after annotation with Echolabel. Such manual annotation proves particularly useful for fuzzy objects with unclear boundaries, which are commonplace in active acoustics (e.g. sound-scattering layers). Aside from convenience, Echolabel also enables very fast annotation workflows. However, the manual nature of the annotation task does not allow an objective measurement of performance, which is why no performance example was proposed in this work. Nevertheless, the absence of rendering cost after generating images, together with the widespread use of LabelMe within the computer vision community, supports the practical usability of the approach.
 
-Scope is voluntarily limited to echogram images generation and annotation. Strong limitations are inherent to the image-based design: losing actual data and metadata values, splitting dataset into frames. LabelMe also renders images using bilinear interpolation, causing a pixel-scale blurring which is a potential issue for precise annotation.
+The scope of Echolabel is deliberately limited to echogram images generation and annotation. Strong limitations are inherent to the image-based design: the loss of direct access to data and metadata values, and the division of the dataset into individual frames. LabelMe also renders images using bilinear interpolation, causing pixel-scale blurring that may affect the precision of fine-scale annotations.
 
-While our tool is far from ideal, and should be deprecated by future developments in the marine acoustics open-source community, we feel it is efficient and convenient enough for others to find use in it, especially for tasks requiring fast annotation of a large number of shapes.
+While Echolabel has clear limitations, it provides an efficient and convenient solution for tasks requiring the rapid annotation of large numbers of shapes. Future developments in the open-source marine acoustics community may eventually provide more comprehensive alternatives, but Echolabel currently offers a lightweight, cross-platform, and Echoregions-compatible solution for this specific use case.
 
 ## Availability {.unnumbered}
 
@@ -204,13 +231,16 @@ AI-based tools were used to assist with planning, code review, improvement sugge
 
 The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
-## Aknowledgement {.unnumbered}
+## Acknowledgement {.unnumbered}
 
-## Supplementary material {.unnumbered}
-
--   RGB echogram demo [script](supplementary/demo_rgb.sh)
+We acknowledge the French oceanographic fleet for funding ABRAÇOS II ship-time and the officers and crew of the R/V Antea for their contribution to the success of the operations. This work is a contribution to and was supported by the International Joint Laboratory TAPIOCA ([www.tapioca.ird.fr](<https://www.tapioca.ird.fr>)).
 
 ## References {.unnumbered}
 
 ::: {#refs}
 :::
+
+
+## Supplementary
+
+![Example first-order analysis of a diffuse sound-scattering layer (selected as the "layer" polygon in @fig-demo-gui). (a) RGB echogram of data within the layer mask. See @fig-basic-tasks for color bar. The red line indicates the smoothed $s_A$-weighted mean depth. (b) Comparison of downward vertical speed (compute from the smoothed mean depth) with $\Delta \text{MVBS}_{70 - 38 \text{kHz}} \text{[dB]}$.](images/fuzzy-layer-analysis-e.png){#fig-layer-analysis-supp}
