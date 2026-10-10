@@ -1,4 +1,3 @@
-## A Quarto Manuscript Template
+## Echolabel: image-based echogram annotation tool for deep-sea ecology
 
-This is a template repo for generating a manuscript from Quarto that accompanies the tutorial at: [Quarto Manuscripts: RStudio](https://quarto.org/docs/manuscripts/authoring/rstudio.html)
-
+Quarto manuscript project for an article introducing the [Echolabel](https://github.com/gaspardringuenet/echolabel) app. The last published HTML version of the manuscript is available at <https://gaspardringuenet.github.io/echolabel-manuscript/>.
