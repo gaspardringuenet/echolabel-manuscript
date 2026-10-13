@@ -1,5 +1,5 @@
 ---
-title: "Echolabel: Image-based echogram annotation tool for marine ecology"
+title: "Echolabel: Image-based echogram annotation tool for aquatic ecology"
 author:
   - name: Gaspard Ringuenet
     orcid: 0009-0003-4820-6999
@@ -153,7 +153,7 @@ Running the app triggers data loading and the building and caching of an echogra
 
 A prominent feature of Echolabel is the LabelMe graphical user interface (GUI; @fig-demo-gui), which is used to create annotations. This relies on the prior conversion of the acoustic data into images. Within the open window, the user can loop through the images in the “File List” panel. They can also visualize and edit existing annotations using the “Annotation List” panel and point clicks. Most importantly, they can use the “CreateShapeTools” to add new shapes. All changes are automatically saved in cache as LabelMe JSON annotations during the GUI editing session. The GUI is customizable, and the user has the option to edit the LabelMe configuration file on their system. Since Echolabel runs LabelMe as a subprocess and only operates on annotation files, modifying the LabelMe configuration should not create conflicts.
 
-When closing the GUI, shape annotations are parsed and saved as a CSV file compatible with the [`echoregions.Regions2D`](https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py) class. This conversion uses the saved image coordinates to convert pixel-wise annotations into (time, depth) points. Regions2D objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted (output from other tools is ignored). Once the annotation-format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.
+When closing the GUI, shape annotations are parsed and saved as a CSV file compatible with the [`echoregions.Regions2D`](https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py) class. This conversion uses the saved image coordinates to convert pixel-wise annotations into (time, depth) points. `Regions2D` objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted (output from other tools is ignored). Once the annotation-format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.
 
 Additional features include a `demo` command that downloads and processes demonstration data. It is also worth noting that LabelMe provides an AI polygon creation tool. The tool installs an image segmentation model (Meta’s Segment Anything Model 2 as of LabelMe v6.0.0) locally to provide assistance by automatically delineating objects. While such models are efficient on natural images, they appear much less useful on echograms. However, since the tool produces polygons, annotations are correctly parsed by Echolabel.
 
@@ -191,7 +191,7 @@ In spite of a thorough cleaning of acoustic data, some unwanted signal or noise 
 
 On the contrary, one may want to extract the mask of a biological aggregation of interest. This is common for fish schools and shoals, and illustrated in @fig-basic-tasks f,g. A typical use of such masks is supervised deep learning model training. Computation of acoustic variables, or post processing of the mask (for instance to remove unwanted pixels) may also apply to fish aggregations.
 
-![Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, whith the dashed line representing the "Layer" polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed.](images/basic-annotation-tasks-wlayer-e.png){#fig-basic-tasks}
+![Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, with the dashed line representing the "Layer" polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed.](images/basic-annotation-tasks-wlayer-e.png){#fig-basic-tasks}
 
 ### Use case 2 - Analysis of a sound-scattering layer
 
