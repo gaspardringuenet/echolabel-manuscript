@@ -281,18 +281,18 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   [<xref alt="9" rid="ref-echoview" ref-type="bibr">9</xref>]; free but
   closed-source Windows-based software such as
   LSSS<xref ref-type="fn" rid="fn1">1</xref>
-  [<xref alt="11" rid="ref-korneliussen2006" ref-type="bibr">11</xref>]
+  [<xref alt="10" rid="ref-korneliussen2006" ref-type="bibr">10</xref>]
   and Movies3D
-  [<xref alt="12" rid="ref-trenkel2009" ref-type="bibr">12</xref>];  or
+  [<xref alt="11" rid="ref-trenkel2009" ref-type="bibr">11</xref>]; or
   open-source software requiring a proprietary MATLAB license, such as
   ESP3 and Matecho
-  [<xref alt="13" rid="ref-ladroit2020" ref-type="bibr">13</xref>,<xref alt="14" rid="ref-perrot2018" ref-type="bibr">14</xref>].</p>
+  [<xref alt="12" rid="ref-ladroit2020" ref-type="bibr">12</xref>,<xref alt="13" rid="ref-perrot2018" ref-type="bibr">13</xref>].</p>
   <p>In recent years, there has been significant development of free,
   open-source, cross-platform software for ecosystem acoustics. The most
   notable example, both in terms of development and engagement from the
   scientific community, is Echostack, a suite of Python packages for
   performing various routine tasks with scientific echosounder data
-  [<xref alt="15" rid="ref-lee2024" ref-type="bibr">15</xref>,<xref alt="16" rid="ref-lee2024a" ref-type="bibr">16</xref>].
+  [<xref alt="14" rid="ref-lee2024" ref-type="bibr">14</xref>,<xref alt="15" rid="ref-lee2024a" ref-type="bibr">15</xref>].
   Echostack includes the
   <ext-link ext-link-type="uri" xlink:href="https://github.com/OSOceanAcoustics/echoregions">Echoregions</ext-link>
   package, designed to parse acoustic annotations and interface them
@@ -308,7 +308,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   acoustic software, which provide suites of analysis-ready computation
   tools. Echolabel focuses on the annotation task only, leveraging the
   power of LabelMe
-  [<xref alt="17" rid="ref-kentaro" ref-type="bibr">17</xref>], a widely
+  [<xref alt="16" rid="ref-kentaro" ref-type="bibr">16</xref>], a widely
   used open-source Python application for image annotation, by
   converting acoustic data into a set of echogram images. The output is
   an Echoregions-compatible CSV file, ensuring integration into the
@@ -359,7 +359,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     read using Echoregions.</p>
     <p>Echolabel works with processed, gridded volume backscattering
     strength data (Sv, dB)
-    [<xref alt="18" rid="ref-maclennan2002" ref-type="bibr">18</xref>],
+    [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>],
     i.e., the widely used acoustic measure for characterizing the
     distribution of organisms in the water column, after the data have
     been cleaned of artifacts and regridded onto a consistent grid
@@ -367,7 +367,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     Echolabel supports two widely used conventions for distributing data
     with this structure and level of processing: the IMOS SOOP-BA NetCDF
     convention
-    [<xref alt="19" rid="ref-kunnath2018" ref-type="bibr">19</xref>] and
+    [<xref alt="18" rid="ref-kunnath2018" ref-type="bibr">18</xref>] and
     the coordinate/variable names adopted by Echostack. For full
     flexibility, it can support any variable names, provided that the
     user manually identifies Sv, depth, and time–distance variables in
@@ -384,7 +384,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     (with equal bounds). This visualization method is very effective for
     assessing the distribution of frequency responses across the
     echogram (for examples see
-    [<xref alt="20" rid="ref-ariza2022" ref-type="bibr">20</xref>,<xref alt="21" rid="ref-annasawmy2019" ref-type="bibr">21</xref>]).
+    [<xref alt="19" rid="ref-ariza2022" ref-type="bibr">19</xref>,<xref alt="20" rid="ref-annasawmy2019" ref-type="bibr">20</xref>]).
     The background (defined as where no channel is active) colour can
     also be specified in the configuration (as a matplotlib-compatible
     string or tuple).</p>
@@ -444,12 +444,12 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     May 7<sup>th</sup>). Research vessel Antea of the French
     oceanographic fleet operated a hull-mounted EK60 echosounder at four
     frequencies (38, 70, 120, and 200 kHz) with a pulse length of 512 μs
-    [<xref alt="22" rid="ref-abracos2cruise" ref-type="bibr">22</xref>,<xref alt="23" rid="ref-bertrand2026" ref-type="bibr">23</xref>].
+    [<xref alt="21" rid="ref-abracos2cruise" ref-type="bibr">21</xref>,<xref alt="22" rid="ref-bertrand2026" ref-type="bibr">22</xref>].
     Two configurations were used: a ping rate of 0.45 s for seabed depth
     less than 150 m, and a ping rate of 2.4 seconds for deeper areas,
     recording to depth up to 750 m. The echosounder was calibrated
     mid-survey in Fernando de Noronha using standard protocols
-    [<xref alt="24" rid="ref-demer2015" ref-type="bibr">24</xref>].
+    [<xref alt="23" rid="ref-demer2015" ref-type="bibr">23</xref>].
     Acoustic data processing was conducted using the Matecho software.
     Noise and artifact removal was performed using a combination of
     automated and manual cleaning tools. Volume backscattering strength
@@ -532,7 +532,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <tex-math><![CDATA[R(f) = \Delta \text{MVBS}_{f - 38 \text{kHz}} = S_{v}(f) - S_{v}(38 \text{ kHz})]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mi>f</mml:mi><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>38</mml:mn><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> kHz</mml:mtext></mml:mrow><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
     ; see
-    [<xref alt="18" rid="ref-maclennan2002" ref-type="bibr">18</xref>]
+    [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>]
     for notation) for all regions. Green regions contain similar R(f).
     On the other hand, red regions show great differences, especially at
     120 and 200 kHz, suggesting a very different biological composition.
@@ -614,7 +614,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <tex-math><![CDATA[\text{NASC } [\text{m}^2 \text{ nmi}^{-2}]]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mrow><mml:mtext mathvariant="normal">NASC </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:msup><mml:mtext mathvariant="normal">m</mml:mtext><mml:mn>2</mml:mn></mml:msup><mml:msup><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> nmi</mml:mtext></mml:mrow><mml:mrow><mml:mi>−</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>,
     a linear measure of the back-scattered energy
-    [<xref alt="18" rid="ref-maclennan2002" ref-type="bibr">18</xref>]).
+    [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>]).
     The computed line is smoothed using a rolling mean spanning 50
     timestamps. From this vector, the layer’s downward migration speed
     is obtained by differentiation with respect to time. The
@@ -671,7 +671,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <p>Light level is the main driver of diel vertical migration, with
     organisms seeking refuge in deeper waters during the day to avoid
     visual predators
-    [<xref alt="25" rid="ref-brierley2014" ref-type="bibr">25</xref>].
+    [<xref alt="24" rid="ref-brierley2014" ref-type="bibr">24</xref>].
     Yet, during some observed upward-swimming events, the layer raised
     more than 50 m above its nominal depth
     (<xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a).
@@ -963,13 +963,6 @@ facilitates the sonar-based investigation of aquatic ecosystems.
       <article-title>Echoview</article-title>
       <date-in-citation content-type="access-date"><year iso-8601-date="2026-07-31">2026</year><month>07</month><day>31</day></date-in-citation>
       <uri>https://echoview.com/support/release-notes/</uri>
-    </element-citation>
-  </ref>
-  <ref id="ref-lsssopensource">
-    <element-citation publication-type="webpage">
-      <article-title>LSSS</article-title>
-      <date-in-citation content-type="access-date"><year iso-8601-date="2026-08-02">2026</year><month>08</month><day>02</day></date-in-citation>
-      <uri>https://github.com/marec-open-source/lsss</uri>
     </element-citation>
   </ref>
   <ref id="ref-korneliussen2006">
@@ -1369,9 +1362,8 @@ facilitates the sonar-based investigation of aquatic ecosystems.
 </ref-list>
 <fn-group>
   <fn id="fn1">
-    <label>1</label><p>LSSS now has an open-source version
-    [<xref alt="10" rid="ref-lsssopensource" ref-type="bibr">10</xref>],
-    and it is available for linux and macOs
+    <label>1</label><p>LSSS now has an open-source version, and it is
+    available for linux and macOs
     (<ext-link ext-link-type="uri" xlink:href="https://marec.no/downloads.htm">https://marec.no/downloads.htm</ext-link>).</p>
   </fn>
 </fn-group>
