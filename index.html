@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.5">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,7 +13,7 @@
 <meta name="dcterms.date" content="2026-10-13">
 <meta name="keywords" content="Active acoustics, Multifrequency, Echogram annotation, Aquatic ecology, Open source">
 
-<title>Echolabel: Image-based echogram annotation tool for marine ecology</title>
+<title>Echolabel: Image-based echogram annotation tool for aquatic ecology</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -97,10 +97,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-3b9ea68436acb9022c2fbce6dbb58b06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-deb10828e67638621ea84613cdc954fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c2e55264ed47ce3b2e0326a2269f9400.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -141,7 +141,7 @@ window.Quarto = {
 };
 </script>
 
-<meta name="citation_title" content="Echolabel: Image-based echogram annotation tool for marine ecology">
+<meta name="citation_title" content="Echolabel: Image-based echogram annotation tool for aquatic ecology">
 <meta name="citation_abstract" content="Active acoustic systems are essential for studying aquatic ecosystems, delivering high-resolution information over large spatial scales. Yet processing these data still relies heavily on manual annotation, and no open-source annotation tool currently integrates with Echostack, the emerging Python toolkit for echosounder data. We present Echolabel, an open-source, cross-platform tool for fast echogram visualization and annotation, which produces CSV outputs directly compatible with Echoregions, the Echostack package for handling annotation. Echolabel is deliberately minimal and task-specific, and is not intended to replace general-purpose acoustic processing software. The tool is available as a command-line interface and as a Python application programming interface. It builds on the LabelMe graphical user interface to annotate cached echogram images and transparently converts between images and physical (time, depth) coordinates. Visualization options include RGB-composite echograms, which combine several acoustic frequencies and enable annotations informed by the frequency response of the imaged targets. We demonstrate the practical utility of Echolabel, combined with Echoregions, on routine annotation tasks and a brief ecological analysis. Echolabel is particularly well suited to delineating irregular, fuzzy objects such as sound-scattering layers, and thus facilitates the sonar-based investigation of aquatic ecosystems.">
 <meta name="citation_keywords" content="Active acoustics,Multifrequency,Echogram annotation,Aquatic ecology,Open source">
 <meta name="citation_author" content="Gaspard Ringuenet">
@@ -187,12 +187,12 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Diel vertical migration;,citation_author=Andrew S. Brierley;,citation_publication_date=2014-11-17;,citation_cover_date=2014-11-17;,citation_year=2014;,citation_fulltext_html_url=https://www.cell.com/current-biology/abstract/S0960-9822(14)01067-7;,citation_issue=22;,citation_doi=10.1016/j.cub.2014.08.054;,citation_volume=24;,citation_language=en-US;,citation_journal_title=Current Biology;">
 </head>
 
-<body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+<body class="quarto-light">
 
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Echolabel: Image-based echogram annotation tool for marine ecology</h1>
+      <h1 class="title">Echolabel: Image-based echogram annotation tool for aquatic ecology</h1>
           </div>
 
     
@@ -271,7 +271,7 @@ window.Quarto = {
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+  <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -302,7 +302,7 @@ window.Quarto = {
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
@@ -393,7 +393,7 @@ window.Quarto = {
 <p>Common echogram visualization options are provided. The user can select the visualized frequency and specify value bounds as well as the colormap. A wide range of matplotlib colormaps can be selected using their names. In addition to single-frequency echograms, Echolabel offers a triple-frequency RGB echogram mode in which three channels are mapped to each of the red, green, and blue channels (with equal bounds). This visualization method is very effective for assessing the distribution of frequency responses across the echogram (for examples see <span class="citation" data-cites="ariza2022 annasawmy2019">[<a href="#ref-ariza2022" role="doc-biblioref">19</a>,<a href="#ref-annasawmy2019" role="doc-biblioref">20</a>]</span>). The background (defined as where no channel is active) colour can also be specified in the configuration (as a matplotlib-compatible string or tuple).</p>
 <p>Running the app triggers data loading and the building and caching of an echogram image dataset using visualization options. Echogram images are the representation of acoustic data once colour mapping has been applied. Each pixel represents a sampled volume. Each image’s physical (time and depth) coordinates are saved in cache. The image dataset building step is the only step involving significant computation. While lazy-loading of the acoustic dataset prevents memory overload, this step may take up to a few minutes for large-scale surveys with high resolution data. To avoid rebuilding the images at each session, Echolabel enables reuse of the cached images, allowing the GUI to launch almost instantaneously.</p>
 <p>A prominent feature of Echolabel is the LabelMe graphical user interface (GUI; <a href="#fig-demo-gui" class="quarto-xref">Figure&nbsp;1</a>), which is used to create annotations. This relies on the prior conversion of the acoustic data into images. Within the open window, the user can loop through the images in the “File List” panel. They can also visualize and edit existing annotations using the “Annotation List” panel and point clicks. Most importantly, they can use the “CreateShapeTools” to add new shapes. All changes are automatically saved in cache as LabelMe JSON annotations during the GUI editing session. The GUI is customizable, and the user has the option to edit the LabelMe configuration file on their system. Since Echolabel runs LabelMe as a subprocess and only operates on annotation files, modifying the LabelMe configuration should not create conflicts.</p>
-<p>When closing the GUI, shape annotations are parsed and saved as a CSV file compatible with the <a href="https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py"><code>echoregions.Regions2D</code></a> class. This conversion uses the saved image coordinates to convert pixel-wise annotations into (time, depth) points. Regions2D objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted (output from other tools is ignored). Once the annotation-format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.</p>
+<p>When closing the GUI, shape annotations are parsed and saved as a CSV file compatible with the <a href="https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py"><code>echoregions.Regions2D</code></a> class. This conversion uses the saved image coordinates to convert pixel-wise annotations into (time, depth) points. <code>Regions2D</code> objects can represent polygons only. For this reason, the polygon and rectangle LabelMe tools are the only ones whose shapes can be converted (output from other tools is ignored). Once the annotation-format conversion is done, the CSV file is created or updated. It is ready to be loaded into Echoregions in a single line.</p>
 <p>Additional features include a <code>demo</code> command that downloads and processes demonstration data. It is also worth noting that LabelMe provides an AI polygon creation tool. The tool installs an image segmentation model (Meta’s Segment Anything Model 2 as of LabelMe v6.0.0) locally to provide assistance by automatically delineating objects. While such models are efficient on natural images, they appear much less useful on echograms. However, since the tool produces polygons, annotations are correctly parsed by Echolabel.</p>
 </section>
 </section>
@@ -438,10 +438,10 @@ Figure&nbsp;1: LabelMe graphical user interface showing drawn regions on an RGB 
 <div id="fig-basic-tasks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-basic-tasks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/basic-annotation-tasks-wlayer-e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, whith the dashed line representing the “Layer” polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed."><img src="images/basic-annotation-tasks-wlayer-e.png" class="img-fluid figure-img"></a>
+<a href="images/basic-annotation-tasks-wlayer-e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, with the dashed line representing the “Layer” polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed."><img src="images/basic-annotation-tasks-wlayer-e.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-basic-tasks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, whith the dashed line representing the “Layer” polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed.
+Figure&nbsp;2: Annotated echogram regions and simple use cases. (a) Annotated polygonal regions displayed on top of an RGB echogram, with the dashed line representing the “Layer” polygon. (b-g) Use cases: the annotated rectangles (b) can be used to compute the mean and standard deviation of relative frequency responses of data within (c); a v-shaped anomaly, typical of a lowered instrument (d) can be masked out (e); the binary mask (g) of a fish aggregation (f) can be computed.
 </figcaption>
 </figure>
 </div>
