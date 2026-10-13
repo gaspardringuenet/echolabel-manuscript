@@ -163,15 +163,16 @@ cbar_title_ax.text(
 
 # Annotated regions
 for _, row in regions_closed.iterrows():
-    if row["region_class"] == "Layer":
-        continue
+    linestyle = "dashed" if row["region_class"] == "Layer" else "solid"
+    
     ax.plot(
         row["time"],
         row["depth"],
         fillstyle="full",
-        markersize=0.5,
         c="red",
         zorder=2,
+        linestyle=linestyle,
+        linewidth=1,
     )
 
 ax.set_ylim(300, 0)
@@ -296,7 +297,7 @@ right_ax.xaxis.set_major_locator(MinuteLocator(byminute=[30, 35, 40]))
 right_ax.xaxis.set_major_formatter(DateFormatter("%H:%M"))
 
 plt.show()
-fig.savefig("./images/basic-annotation-tasks.png", dpi=300)
+fig.savefig("./images/basic-annotation-tasks-wlayer.png", dpi=300)
 
 
 # --- NEW FIG --- #
