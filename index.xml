@@ -1,91 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
 and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
-  <front>
-    <article-meta>
-      <title-group>
-        <article-title>Echolabel: Image-based echogram annotation tool for
+
+<front>
+
+
+<article-meta>
+
+
+<title-group>
+<article-title>Echolabel: Image-based echogram annotation tool for
 aquatic ecology</article-title>
-      </title-group>
-      <contrib-group>
-        <contrib contrib-type="author" corresp="yes">
-          <contrib-id contrib-id-type="orcid">0009-0003-4820-6999</contrib-id>
-          <name>
-            <surname>Ringuenet</surname>
-            <given-names>Gaspard</given-names>
-          </name>
-          <string-name>Gaspard Ringuenet</string-name>
-          <email>gaspard.ringuenet@umontpellier.fr</email>
-          <role vocab="https://credit.niso.org" vocab-term="conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">conceptualization</role>
-          <role vocab="https://credit.niso.org" vocab-term="writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">writing</role>
-          <role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">software</role>
-          <role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">visualization</role>
-          <xref ref-type="aff" rid="aff-1">a</xref>
-          <xref ref-type="corresp" rid="cor-1">*</xref>
-        </contrib>
-        <contrib contrib-type="author">
-          <contrib-id contrib-id-type="orcid">0009-0000-5197-0873</contrib-id>
-          <name>
-            <surname>Roudaut</surname>
-            <given-names>Gildas</given-names>
-          </name>
-          <string-name>Gildas Roudaut</string-name>
-          <email>gildas.roudaut@ird.fr</email>
-          <role vocab="https://credit.niso.org" vocab-term="data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">data
+</title-group>
+
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0009-0003-4820-6999</contrib-id>
+<name>
+<surname>Ringuenet</surname>
+<given-names>Gaspard</given-names>
+</name>
+<string-name>Gaspard Ringuenet</string-name>
+
+<email>gaspard.ringuenet@umontpellier.fr</email>
+<role vocab="https://credit.niso.org" vocab-term="conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">conceptualization</role>
+<role vocab="https://credit.niso.org" vocab-term="writing – original
+draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">writing</role>
+<role vocab="https://credit.niso.org" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">software</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">visualization</role>
+<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0009-0000-5197-0873</contrib-id>
+<name>
+<surname>Roudaut</surname>
+<given-names>Gildas</given-names>
+</name>
+<string-name>Gildas Roudaut</string-name>
+
+<email>gildas.roudaut@ird.fr</email>
+<role vocab="https://credit.niso.org" vocab-term="data
+curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">data
 curation</role>
-          <xref ref-type="aff" rid="aff-2">b</xref>
-        </contrib>
-        <contrib contrib-type="author">
-          <contrib-id contrib-id-type="orcid">0000-0001-7864-4381</contrib-id>
-          <name>
-            <surname>Ariza</surname>
-            <given-names>Alejandro</given-names>
-          </name>
-          <string-name>Alejandro Ariza</string-name>
-          <email>alejandro.ariza@ifremer.fr</email>
-          <role vocab="https://credit.niso.org" vocab-term="writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">editing</role>
-          <role vocab="https://credit.niso.org" vocab-term="supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">supervision</role>
-          <xref ref-type="aff" rid="aff-3">c</xref>
-        </contrib>
-        <contrib contrib-type="author">
-          <contrib-id contrib-id-type="orcid">0000-0003-4723-179X</contrib-id>
-          <name>
-            <surname>Bertrand</surname>
-            <given-names>Arnaud</given-names>
-          </name>
-          <string-name>Arnaud Bertrand</string-name>
-          <email>arnaud.bertrand@ird.fr</email>
-          <role vocab="https://credit.niso.org" vocab-term="project administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">project
+<xref ref-type="aff" rid="aff-2">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0001-7864-4381</contrib-id>
+<name>
+<surname>Ariza</surname>
+<given-names>Alejandro</given-names>
+</name>
+<string-name>Alejandro Ariza</string-name>
+
+<email>alejandro.ariza@ifremer.fr</email>
+<role vocab="https://credit.niso.org" vocab-term="writing – review &amp;
+editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">editing</role>
+<role vocab="https://credit.niso.org" vocab-term="supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">supervision</role>
+<xref ref-type="aff" rid="aff-3">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0003-4723-179X</contrib-id>
+<name>
+<surname>Bertrand</surname>
+<given-names>Arnaud</given-names>
+</name>
+<string-name>Arnaud Bertrand</string-name>
+
+<email>arnaud.bertrand@ird.fr</email>
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">project
 administration</role>
-          <role vocab="https://credit.niso.org" vocab-term="writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">editing</role>
-          <role vocab="https://credit.niso.org" vocab-term="supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">supervision</role>
-          <xref ref-type="aff" rid="aff-1">a</xref>
-        </contrib>
-      </contrib-group>
-      <aff id="aff-1">
-        <institution-wrap>
-          <institution>MARBEC, University of Montpellier, CNRS, Ifremer, IRD,
+<role vocab="https://credit.niso.org" vocab-term="writing – review &amp;
+editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">editing</role>
+<role vocab="https://credit.niso.org" vocab-term="supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">supervision</role>
+<xref ref-type="aff" rid="aff-1">a</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1">
+<institution-wrap>
+<institution>MARBEC, University of Montpellier, CNRS, Ifremer, IRD,
 Montpellier, France</institution>
-        </institution-wrap>
-      </aff>
-      <aff id="aff-2">
-        <institution-wrap>
-          <institution>LEMAR, UBO, IFREMER, IRD, CNRS, Technopole Brest Iroise,
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<aff id="aff-2">
+<institution-wrap>
+<institution>LEMAR, UBO, IFREMER, IRD, CNRS, Technopole Brest Iroise,
 Plouzané, France</institution>
-        </institution-wrap>
-      </aff>
-      <aff id="aff-3">
-        <institution-wrap>
-          <institution>DECOD, Ifremer, INRAE, Institut Agro, Nantes,
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<aff id="aff-3">
+<institution-wrap>
+<institution>DECOD, Ifremer, INRAE, Institut Agro, Nantes,
 France</institution>
-        </institution-wrap>
-      </aff>
-      <author-notes>
-        <corresp id="cor-1">gaspard.ringuenet@umontpellier.fr</corresp>
-      </author-notes>
-      <history/>
-      <abstract>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1">gaspard.ringuenet@umontpellier.fr</corresp>
+</author-notes>
+
+
+
+
+
+
+
+
+
+<history></history>
+
+
+<abstract>
 Active acoustic systems are essential for studying aquatic ecosystems,
 delivering high-resolution information over large spatial scales. Yet
 processing these data still relies heavily on manual annotation, and no
@@ -108,88 +156,88 @@ analysis. Echolabel is particularly well suited to delineating
 irregular, fuzzy objects such as sound-scattering layers, and thus
 facilitates the sonar-based investigation of aquatic ecosystems.
 </abstract>
-      <kwd-group kwd-group-type="author">
-        <kwd>Active acoustics</kwd>
-        <kwd>Multifrequency</kwd>
-        <kwd>Echogram annotation</kwd>
-        <kwd>Aquatic ecology</kwd>
-        <kwd>Open source</kwd>
-      </kwd-group>
-    </article-meta>
-  </front>
-  <body>
-    <sec id="metadata">
-      <title>Metadata</title>
-      <table-wrap>
-        <table>
-          <thead>
-            <tr>
-              <th>Nr</th>
-              <th>Code metadata description</th>
-              <th>Metadata</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>C1</td>
-              <td>Current code version</td>
-              <td>V1.0.0</td>
-            </tr>
-            <tr>
-              <td>C2</td>
-              <td>Permanent link to code/repository used for this code
+<kwd-group kwd-group-type="author">
+<kwd>Active acoustics</kwd>
+<kwd>Multifrequency</kwd>
+<kwd>Echogram annotation</kwd>
+<kwd>Aquatic ecology</kwd>
+<kwd>Open source</kwd>
+</kwd-group>
+
+
+
+
+</article-meta>
+
+</front>
+
+<body>
+<sec id="metadata">
+  <title>Metadata</title>
+  <table-wrap>
+    <table>
+      <thead>
+        <tr>
+          <th>Nr</th>
+          <th>Code metadata description</th>
+          <th>Metadata</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C1</td>
+          <td>Current code version</td>
+          <td>V1.0.0</td>
+        </tr>
+        <tr>
+          <td>C2</td>
+          <td>Permanent link to code/repository used for this code
           version</td>
-              <td>
-                <ext-link ext-link-type="uri" xlink:href="https://github.com/gaspardringuenet/echolabel">https://github.com/gaspardringuenet/echolabel</ext-link>
-              </td>
-            </tr>
-            <tr>
-              <td>C3</td>
-              <td>Permanent link to reproducible capsule</td>
-              <td/>
-            </tr>
-            <tr>
-              <td>C4</td>
-              <td>Legal code license</td>
-              <td/>
-            </tr>
-            <tr>
-              <td>C5</td>
-              <td>Code versioning system used</td>
-              <td>Git</td>
-            </tr>
-            <tr>
-              <td>C6</td>
-              <td>Software code languages, tools and services used</td>
-              <td>Python</td>
-            </tr>
-            <tr>
-              <td>C7</td>
-              <td>Compilation requirements, operating environments and
+          <td><ext-link ext-link-type="uri" xlink:href="https://github.com/gaspardringuenet/echolabel">https://github.com/gaspardringuenet/echolabel</ext-link></td>
+        </tr>
+        <tr>
+          <td>C3</td>
+          <td>Permanent link to reproducible capsule</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>C4</td>
+          <td>Legal code license</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>C5</td>
+          <td>Code versioning system used</td>
+          <td>Git</td>
+        </tr>
+        <tr>
+          <td>C6</td>
+          <td>Software code languages, tools and services used</td>
+          <td>Python</td>
+        </tr>
+        <tr>
+          <td>C7</td>
+          <td>Compilation requirements, operating environments and
           dependencies</td>
-              <td/>
-            </tr>
-            <tr>
-              <td>C8</td>
-              <td>If available, link to developer documentation/manual</td>
-              <td>
-                <ext-link ext-link-type="uri" xlink:href="https://echolabel.readthedocs.io/">https://echolabel.readthedocs.io/</ext-link>
-              </td>
-            </tr>
-            <tr>
-              <td>C9</td>
-              <td>Support email for questions</td>
-              <td>
-                <email>gaspard.ringuenet@umontpellier.fr</email>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </table-wrap>
-    </sec>
-    <sec id="motivation-and-significance">
-      <title>1 Motivation and Significance</title>
-      <p>Aquatic ecosystems, from lakes and rivers to coastal waters and the
+          <td></td>
+        </tr>
+        <tr>
+          <td>C8</td>
+          <td>If available, link to developer documentation/manual</td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://echolabel.readthedocs.io/">https://echolabel.readthedocs.io/</ext-link></td>
+        </tr>
+        <tr>
+          <td>C9</td>
+          <td>Support email for questions</td>
+          <td><email>gaspard.ringuenet@umontpellier.fr</email></td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+</sec>
+<sec id="motivation-and-significance">
+  <title>1 Motivation and Significance</title>
+  <p>Aquatic ecosystems, from lakes and rivers to coastal waters and the
   open ocean, are largely hidden from direct observation. Many of their
   organisms live in the water column, which direct sampling with nets or
   traps covers only sparsely, at high cost and often invasively. In this
@@ -199,7 +247,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   distribution and behavior at the spatial and temporal scales at which
   physical and ecological processes occur
   [<xref alt="1" rid="ref-benoit-bird2016" ref-type="bibr">1</xref>].</p>
-      <p>Although the tool presented here applies to echograms from any
+  <p>Although the tool presented here applies to echograms from any
   aquatic environment, the examples in this paper come from the pelagic
   ocean. The pelagic zone designates the water column away from the
   seabed. This vast three-dimensional habitat represents more than 90 %
@@ -218,14 +266,14 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   to technical limitations in investigating deep waters. Active
   acoustics is particularly valuable here, as echosounders can sample
   the water column up to ~1000 m with high resolution.</p>
-      <p>However, extracting ecological information from acoustic data
+  <p>However, extracting ecological information from acoustic data
   remains a major challenge. Manual delineation of features in echograms
   has long been a common practice in marine acoustics. Targeted
   biological features are most often aggregations such as fish schools
   or krill swarms, but may also include sound-scattering layers, which
   comprise a wide variety of organisms, from invertebrates to fish,
   distributed horizontally in the water column.</p>
-      <p>Annotating these features is part of the daily routine in ecosystem
+  <p>Annotating these features is part of the daily routine in ecosystem
   acoustic surveys, whether for subsequent analyses of distribution and
   biomass or to populate libraries used to train machine learning models
   for species identification. Several software solutions are currently
@@ -239,7 +287,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   open-source software requiring a proprietary MATLAB license, such as
   ESP3 and Matecho
   [<xref alt="12" rid="ref-ladroit2020" ref-type="bibr">12</xref>,<xref alt="13" rid="ref-perrot2018" ref-type="bibr">13</xref>].</p>
-      <p>In recent years, there has been significant development of free,
+  <p>In recent years, there has been significant development of free,
   open-source, cross-platform software for ecosystem acoustics. The most
   notable example, both in terms of development and engagement from the
   scientific community, is Echostack, a suite of Python packages for
@@ -254,7 +302,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   solution is available for such annotations yet, despite this being one
   of the areas most in demand by the scientific community in ecosystem
   acoustics.</p>
-      <p>To bridge this gap, we propose Echolabel, a minimalist Python app
+  <p>To bridge this gap, we propose Echolabel, a minimalist Python app
   for echogram annotation, built to be interoperable with Echostack /
   Echoregions. Its scope is narrower than that of most GUI-based
   acoustic software, which provide suites of analysis-ready computation
@@ -268,15 +316,15 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   open-source, cross-platform, and free of proprietary dependencies. It
   requires little computing power, and offers an easy-to-use GUI for
   annotation</p>
-    </sec>
-    <sec id="software-description">
-      <title>2 Software description</title>
-      <sec id="software-architecture">
-        <title>2.1 Software architecture</title>
-        <p>The software is written in Python, with separate modules
+</sec>
+<sec id="software-description">
+  <title>2 Software description</title>
+  <sec id="software-architecture">
+    <title>2.1 Software architecture</title>
+    <p>The software is written in Python, with separate modules
     responsible for app configuration, command-line inputs, cached data
     management, and parsing annotation files.</p>
-        <p>It is minimalist, comprising 13 Python source files, totalling
+    <p>It is minimalist, comprising 13 Python source files, totalling
     &lt; 1000 lines of code, and avoids re-implementing existing
     functionalities as much as possible. The annotation interface is
     entirely provided by LabelMe v6.0.0, and Echolabel focuses on
@@ -285,7 +333,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     and mimics Echoregions’ code to parse Echoview annotation data, with
     the aim of providing clear insight into the application’s
     purpose.</p>
-        <p>Echolabel has been developed to be primarily used from the
+    <p>Echolabel has been developed to be primarily used from the
     command-line interface (CLI; see
     <xref alt="Listing 1" rid="lst-escore-demo">Listing 1</xref>). The
     main <monospace>process</monospace> command triggers conversion of
@@ -297,19 +345,19 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     interface remains available with the
     <monospace>EcholabelApp</monospace> and
     <monospace>Config</monospace> classes at the top level.</p>
-        <p>A series of unit tests ensure that core features are preserved
+    <p>A series of unit tests ensure that core features are preserved
     across future updates. Tested functionalities include configuration,
     data loading, image-dataset management, and annotation parsing. Git
     is used for version control.</p>
-      </sec>
-      <sec id="software-functionalities">
-        <title>2.2 Software functionalities</title>
-        <p>Echolabel wraps LabelMe. It loads acoustic data, chunks it into a
+  </sec>
+  <sec id="software-functionalities">
+    <title>2.2 Software functionalities</title>
+    <p>Echolabel wraps LabelMe. It loads acoustic data, chunks it into a
     dataset of echogram images, and runs LabelMe. When the user exits
     the LabelMe GUI, the image-based annotations are converted to
     physical (time, depth) coordinates and saved in a format that can be
     read using Echoregions.</p>
-        <p>Echolabel works with processed, gridded volume backscattering
+    <p>Echolabel works with processed, gridded volume backscattering
     strength data (Sv, dB)
     [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>],
     i.e., the widely used acoustic measure for characterizing the
@@ -327,7 +375,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     accepted as input formats. Several files in the same directory may
     be loaded as a single dataset as long as their coordinates are
     compatible.</p>
-        <p>Common echogram visualization options are provided. The user can
+    <p>Common echogram visualization options are provided. The user can
     select the visualized frequency and specify value bounds as well as
     the colormap. A wide range of matplotlib colormaps can be selected
     using their names. In addition to single-frequency echograms,
@@ -340,7 +388,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     The background (defined as where no channel is active) colour can
     also be specified in the configuration (as a matplotlib-compatible
     string or tuple).</p>
-        <p>Running the app triggers data loading and the building and
+    <p>Running the app triggers data loading and the building and
     caching of an echogram image dataset using visualization options.
     Echogram images are the representation of acoustic data once colour
     mapping has been applied. Each pixel represents a sampled volume.
@@ -351,7 +399,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     large-scale surveys with high resolution data. To avoid rebuilding
     the images at each session, Echolabel enables reuse of the cached
     images, allowing the GUI to launch almost instantaneously.</p>
-        <p>A prominent feature of Echolabel is the LabelMe graphical user
+    <p>A prominent feature of Echolabel is the LabelMe graphical user
     interface (GUI;
     <xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>), which is
     used to create annotations. This relies on the prior conversion of
@@ -365,7 +413,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     edit the LabelMe configuration file on their system. Since Echolabel
     runs LabelMe as a subprocess and only operates on annotation files,
     modifying the LabelMe configuration should not create conflicts.</p>
-        <p>When closing the GUI, shape annotations are parsed and saved as a
+    <p>When closing the GUI, shape annotations are parsed and saved as a
     CSV file compatible with the
     <ext-link ext-link-type="uri" xlink:href="https://github.com/echostack-org/echoregions/blob/main/echoregions/regions2d/regions2d.py"><monospace>echoregions.Regions2D</monospace></ext-link>
     class. This conversion uses the saved image coordinates to convert
@@ -376,7 +424,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     is ignored). Once the annotation-format conversion is done, the CSV
     file is created or updated. It is ready to be loaded into
     Echoregions in a single line.</p>
-        <p>Additional features include a <monospace>demo</monospace> command
+    <p>Additional features include a <monospace>demo</monospace> command
     that downloads and processes demonstration data. It is also worth
     noting that LabelMe provides an AI polygon creation tool. The tool
     installs an image segmentation model (Meta’s Segment Anything Model
@@ -385,13 +433,13 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     on natural images, they appear much less useful on echograms.
     However, since the tool produces polygons, annotations are correctly
     parsed by Echolabel.</p>
-      </sec>
-    </sec>
-    <sec id="illustrative-examples">
-      <title>3 Illustrative examples</title>
-      <sec id="polygon-annotation-on-rgb-echogram">
-        <title>3.1 Polygon annotation on RGB echogram</title>
-        <p>The ABRAÇOS II survey was conducted off the north-eastern coast
+  </sec>
+</sec>
+<sec id="illustrative-examples">
+  <title>3 Illustrative examples</title>
+  <sec id="polygon-annotation-on-rgb-echogram">
+    <title>3.1 Polygon annotation on RGB echogram</title>
+    <p>The ABRAÇOS II survey was conducted off the north-eastern coast
     of Brazil during the Austral fall of 2017 (April 9<sup>th</sup> –
     May 7<sup>th</sup>). Research vessel Antea of the French
     oceanographic fleet operated a hull-mounted EK60 echosounder at four
@@ -411,7 +459,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     demonstration data used thereafter are a 10-hour subset of the
     ABRAÇOS II survey, spanning both open ocean and a ~50 m deep
     seamount.</p>
-        <p>Several objects of interest are selected from the demonstration
+    <p>Several objects of interest are selected from the demonstration
     dataset using Echolabel. The GUI is launched from the terminal using
     a simple command, rendering an RGB composite echogram showing 38,
     70, and 120 kHz channels simultaneously
@@ -424,20 +472,17 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     instrument (“Artifact”), and rectangle areas of varying hue
     (“Unknown”). The eight annotated regions are saved as a CSV file
     when closing the graphical interface.</p>
-        <fig id="lst-escore-demo">
-          <caption>
-            <p>Listing 1: Example bash command to build an RGB
-      echogram and run the ROI demonstration.</p>
-          </caption>
-          <code language="bash">echolabel process \
+    <fig id="lst-escore-demo">
+      <caption><p>Listing 1: Example bash command to build an RGB
+      echogram and run the ROI demonstration.</p></caption>
+      <code language="bash">echolabel process \
 -s data/demo.zarr \                 # acoustic data store
 -o data/demo_regions.csv \          # annotation file
 -f 38000 -f 70000 -f 120000 \       # mapped frequencies (Hz)
 --cmap RGB                          # RGB composite echogram</code>
-        </fig>
-        <fig id="fig-demo-gui">
-          <caption>
-            <p>Figure 1: LabelMe graphical user interface showing
+    </fig>
+    <fig id="fig-demo-gui">
+      <caption><p>Figure 1: LabelMe graphical user interface showing
       drawn regions on an RGB composite echogram (R: 38 kHz; G: 70 kHz;
       B: 120 kHz - as specified in
       <xref alt="Listing 1" rid="lst-escore-demo">Listing 1</xref>) in
@@ -448,18 +493,17 @@ facilitates the sonar-based investigation of aquatic ecosystems.
       the echogram. Labels are associated with the rectangle shapes
       (visible in the “Annotation List” panel, and as a non-duplicated
       list in the “Label List” panel). The “File List” panel shows all
-      available echogram images.</p>
-          </caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="images/region_selection.png"/>
-        </fig>
-        <p>Echolabel solely focuses on creating the annotations, but the
+      available echogram images.</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="images/region_selection.png" />
+    </fig>
+    <p>Echolabel solely focuses on creating the annotations, but the
     software’s strength lies in its immediate compatibility with the
     Echoregions package. Hence, the following sections demonstrate
     first-order use cases for such annotations using Echoregions.</p>
-      </sec>
-      <sec id="use-case-1---routine-tasks">
-        <title>3.2 Use case 1 - Routine tasks</title>
-        <p><xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> shows
+  </sec>
+  <sec id="use-case-1---routine-tasks">
+    <title>3.2 Use case 1 - Routine tasks</title>
+    <p><xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> shows
     regions with the “Unknown”, “Artifact”, and “School” labels (a),
     along with processing or data analysis steps corresponding to the
     underlying echogram features (b-g): frequency response
@@ -469,7 +513,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <ext-link ext-link-type="uri" xlink:href="https://regionmask.readthedocs.io">regionmask</ext-link>
     package) package) and each requires no more than a dozen lines of
     code to compute (omitting figure building).</p>
-        <p>The most basic task is computing the frequency responses of an
+    <p>The most basic task is computing the frequency responses of an
     echogram region. The influence of the organisms’ anatomy on their
     back-scattering properties has long been acknowledged, and is the
     motivation for multifrequency acoustics
@@ -484,7 +528,9 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     regions, in different oceanographic setups (pelagic or on seamount
     edge), depths (150 m or 50 m) and intensity (seemingly stronger near
     the seamount) by computing the frequency response relative to the 38
-    kHz channel (<inline-formula><alternatives><tex-math><![CDATA[R(f) = \Delta \text{MVBS}_{f - 38 \text{kHz}} = S_{v}(f) - S_{v}(38 \text{ kHz})]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>R</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mi>f</mml:mi><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>38</mml:mn><mml:mrow><mml:mspace width="0.333em"/><mml:mtext mathvariant="normal"> kHz</mml:mtext></mml:mrow><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    kHz channel (<inline-formula><alternatives>
+    <tex-math><![CDATA[R(f) = \Delta \text{MVBS}_{f - 38 \text{kHz}} = S_{v}(f) - S_{v}(38 \text{ kHz})]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mi>f</mml:mi><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>38</mml:mn><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> kHz</mml:mtext></mml:mrow><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
     ; see
     [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>]
     for notation) for all regions. Green regions contain similar R(f).
@@ -493,7 +539,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     Further analysis using this kind of regions of interest may include
     target strength (TS) modelling, or building a training set for a
     multifrequency classification algorithm.</p>
-        <p>In spite of a thorough cleaning of acoustic data, some unwanted
+    <p>In spite of a thorough cleaning of acoustic data, some unwanted
     signal or noise may remain in the final product. This is accentuated
     by the context-dependence of unwanted signal. Manual cleaning of the
     echo-integrated product can easily be conducted with the combination
@@ -501,7 +547,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> d,e in
     which the back-scattering of a probable CTD profiler is removed
     using a polygonal shape.</p>
-        <p>On the contrary, one may want to extract the mask of a biological
+    <p>On the contrary, one may want to extract the mask of a biological
     aggregation of interest. This is common for fish schools and shoals,
     and illustrated in
     <xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> f,g. A
@@ -509,40 +555,38 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     training. Computation of acoustic variables, or post processing of
     the mask (for instance to remove unwanted pixels) may also apply to
     fish aggregations.</p>
-        <fig id="fig-basic-tasks">
-          <caption>
-            <p>Figure 2: Annotated echogram regions and simple use
+    <fig id="fig-basic-tasks">
+      <caption><p>Figure 2: Annotated echogram regions and simple use
       cases. (a) Annotated polygonal regions displayed on top of an RGB
       echogram, with the dashed line representing the “Layer” polygon.
       (b-g) Use cases: the annotated rectangles (b) can be used to
       compute the mean and standard deviation of relative frequency
       responses of data within (c); a v-shaped anomaly, typical of a
       lowered instrument (d) can be masked out (e); the binary mask (g)
-      of a fish aggregation (f) can be computed.</p>
-          </caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="images/basic-annotation-tasks-wlayer-e.png"/>
-        </fig>
-      </sec>
-      <sec id="use-case-2---analysis-of-a-sound-scattering-layer">
-        <title>3.3 Use case 2 - Analysis of a sound-scattering layer</title>
-        <fig id="fig-layer-analysis">
-          <caption>
-            <p>Figure 3: Example first-order analysis of a diffuse
+      of a fish aggregation (f) can be computed.</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="images/basic-annotation-tasks-wlayer-e.png" />
+    </fig>
+  </sec>
+  <sec id="use-case-2---analysis-of-a-sound-scattering-layer">
+    <title>3.3 Use case 2 - Analysis of a sound-scattering layer</title>
+    <fig id="fig-layer-analysis">
+      <caption><p>Figure 3: Example first-order analysis of a diffuse
       sound-scattering layer (selected as the “Layer” polygon in
       <xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>). (a) Time
       series of the depth of the layer’s center of gravity
       (NASC-weighted mean depth), smoothed with a 50-timestamp rolling
       mean. The colour indicates the sign and magnitude of the relative
       frequency response. (b) Scatter plot of
-      <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
       , against downward vertical speed. The red line shows the linear
       regression fit, and the fitted equation is given in the top left
       corner. Grey lines indicate the means of both
-      variables.</p>
-          </caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="images/fuzzy-layer-analysis_2-e.png"/>
-        </fig>
-        <p>A wide variety of data analyses can be conducted using masked
+      variables.</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="images/fuzzy-layer-analysis_2-e.png" />
+    </fig>
+    <p>A wide variety of data analyses can be conducted using masked
     echograms. We briefly demonstrate how Echolabel, together with
     Echoregions, can be used to test a simple hypothesis. A close
     inspection of the data within the “Layer” polygon on the RGB
@@ -553,47 +597,63 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     <xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> a). We
     hypothesize that changes in frequency response are linked to changes
     in the mean tilt angle of mesopelagic organisms (presumably fish in
-    this case). To test this, we compare <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>,
+    this case). To test this, we compare <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>,
     to the vertical speed of the layer (positive downward), assuming
     vertical speed is tightly linked to the average tilt angle of the
     fish.</p>
-        <p>The layer is delineated manually using Echolabel, as shown in
+    <p>The layer is delineated manually using Echolabel, as shown in
     <xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>, and the
     corresponding mask is generated with Echoregions. The irregular and
     fuzzy nature of the extracted object calls for manual extraction,
     making this an exemplary ecological use case for our software. For
     each timestamp, the mean depth of the layer is computed, weighted by
     the nautical area scattering coefficient
-    (<inline-formula><alternatives><tex-math><![CDATA[\text{NASC } [\text{m}^2 \text{ nmi}^{-2}]]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mrow><mml:mtext mathvariant="normal">NASC </mml:mtext><mml:mspace width="0.333em"/></mml:mrow><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:msup><mml:mtext mathvariant="normal">m</mml:mtext><mml:mn>2</mml:mn></mml:msup><mml:msup><mml:mrow><mml:mspace width="0.333em"/><mml:mtext mathvariant="normal"> nmi</mml:mtext></mml:mrow><mml:mrow><mml:mi>−</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>,
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[\text{NASC } [\text{m}^2 \text{ nmi}^{-2}]]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mrow><mml:mtext mathvariant="normal">NASC </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:msup><mml:mtext mathvariant="normal">m</mml:mtext><mml:mn>2</mml:mn></mml:msup><mml:msup><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> nmi</mml:mtext></mml:mrow><mml:mrow><mml:mi>−</mml:mi><mml:mn>2</mml:mn></mml:mrow></mml:msup><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>,
     a linear measure of the back-scattered energy
     [<xref alt="17" rid="ref-maclennan2002" ref-type="bibr">17</xref>]).
     The computed line is smoothed using a rolling mean spanning 50
     timestamps. From this vector, the layer’s downward migration speed
     is obtained by differentiation with respect to time. The
-    depth-averaged <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    depth-averaged <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
     is visually compared to both migration depth and speed
     (<xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref>). A
     linear regression is used to test the dependence of frequency
     response on vertical speed.</p>
-        <p><xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a
+    <p><xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a
     supports the visual impression given by the RGB echogram. Marked
     upward-swimming events correspond to a higher response at 38 kHz
     than at 70 kHz. Indeed, those events are the only occurrences of
-    extreme (-4 to -2 dB) <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>,
+    extreme (-4 to -2 dB) <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>,
     while a large proportion of points have smaller frequency response
     differences. This is consistent with the scatter plot in
     <xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> b,
     that most data fall within a small range of
-    <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
     (-1 to 1 dB) and vertical speed (-5 to 5 cm s<sup>-1</sup>) values.
     A minority of points show extreme values of both variables, with
     concordant signs (both negative or both positive). Even accounting
     for the mass of near-zero points, the linear model shows a positive
-    dependence of <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
-    on downward speed (<inline-formula><alternatives><tex-math><![CDATA[p < 10^{-3}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>p</mml:mi><mml:mo>&lt;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mi>−</mml:mi><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>),
+    dependence of <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    on downward speed (<inline-formula><alternatives>
+    <tex-math><![CDATA[p < 10^{-3}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mo>&lt;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mi>−</mml:mi><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>),
     with satisfactory residual distributions.</p>
-        <p>This exploratory analysis visually identifies a correlation
-    between vertical speed and <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    <p>This exploratory analysis visually identifies a correlation
+    between vertical speed and <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
     and shows the statistical dependence of the latter on the former.
     This result is consistent with the tilt-angle hypothesis, i.e.,
     variations in frequency response are here associated with the
@@ -608,7 +668,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     same direction. We also observe that the organisms eventually return
     to a depth consistent with a first-order u-shaped diel vertical
     migration.</p>
-        <p>Light level is the main driver of diel vertical migration, with
+    <p>Light level is the main driver of diel vertical migration, with
     organisms seeking refuge in deeper waters during the day to avoid
     visual predators
     [<xref alt="24" rid="ref-brierley2014" ref-type="bibr">24</xref>].
@@ -623,11 +683,11 @@ facilitates the sonar-based investigation of aquatic ecosystems.
     properly. This analysis nonetheless illustrates the potential of
     manual acoustic data annotation, and so of Echolabel, to address
     questions in pelagic behavioural ecology.</p>
-      </sec>
-    </sec>
-    <sec id="impact">
-      <title>4 Impact</title>
-      <p>Echolabel bridges a gap for aquatic scientists using Python who
+  </sec>
+</sec>
+<sec id="impact">
+  <title>4 Impact</title>
+  <p>Echolabel bridges a gap for aquatic scientists using Python who
   want to integrate acoustic annotation into Echoregions-dependent
   pipelines. The flexible acoustic dataset loading framework allows most
   acoustic NetCDF conventions to be loaded, and the use of Echoregions’
@@ -637,7 +697,7 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   smooth and fast LabelMe GUI, this enables efficient echogram
   annotation. The RGB composite mode also makes frequency-response-aware
   labelling possible.</p>
-      <p>Echolabel is a single-purpose tool, and it is not designed to
+  <p>Echolabel is a single-purpose tool, and it is not designed to
   replace acoustic processing software. This tool was primarily
   developed for an internal purpose. Its core functionality, i.e.,
   annotating polygonal shapes on echograms, can be achieved using most
@@ -645,14 +705,14 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   echograms remains relatively uncommon among them). However, the
   outputs of few such software packages can currently be parsed by
   Echoregions.</p>
-      <p>Nevertheless, we believe that a minimalist and fast tool might be
+  <p>Nevertheless, we believe that a minimalist and fast tool might be
   of use to the community. It is particularly well-suited to individual
   researchers wanting to annotate a large number of echogram features
   that do not require inspecting data/metadata values during annotation
   (image files do not provide such information; such information can,
   however, be accessed during subsequent processing with
   Echoregions).</p>
-      <p>Future development of open-source acoustic tools might render
+  <p>Future development of open-source acoustic tools might render
   Echolabel obsolete. Echoregions might extend its supported annotation
   formats. Other tools might arise for the annotation of dynamic
   echograms, possibly in Python using datashader-based mechanisms to
@@ -665,22 +725,22 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   for acoustic data analysis. To our knowledge, Echolabel remains the
   only open-source echogram annotation software directly compatible with
   Echoregions.</p>
-    </sec>
-    <sec id="conclusions">
-      <title>5 Conclusions</title>
-      <p>Echolabel provides a simple command-line interface for echogram
+</sec>
+<sec id="conclusions">
+  <title>5 Conclusions</title>
+  <p>Echolabel provides a simple command-line interface for echogram
   annotation, producing outputs that integrate into Echostack,
   specifically the Echoregions package, a Python ecosystem for
   processing and analysing active acoustic data that is expected to
   become a standard in the</p>
-      <p>Our tool leverages a widely used image annotation software package
+  <p>Our tool leverages a widely used image annotation software package
   by converting acoustic data into echogram image files and using
   LabelMe to annotate them. NetCDF and Zarr formats are accepted, and
   most conventions can be used as input (IMOS SOOP-BA and Echopype
   conventions are accepted by default). No innovation is claimed with
   respect to echogram generation: the software provides either basic
   single-channel mapping or tri-frequency RGB echograms.</p>
-      <p>Example use cases demonstrate the ease with which various echogram
+  <p>Example use cases demonstrate the ease with which various echogram
   features can be selected, and how the underlying data may be processed
   or analysed with minimal effort using the masking functionality of
   Echoregions after annotation with Echolabel. Such manual annotation
@@ -693,1312 +753,622 @@ facilitates the sonar-based investigation of aquatic ecosystems.
   the absence of rendering cost after generating images, together with
   the widespread use of LabelMe within the computer vision community,
   supports the practical usability of the approach.</p>
-      <p>The scope of Echolabel is deliberately limited to echogram images
+  <p>The scope of Echolabel is deliberately limited to echogram images
   generation and annotation. Strong limitations are inherent to the
   image-based design: the loss of direct access to data and metadata
   values, and the division of the dataset into individual frames.
   LabelMe also renders images using bilinear interpolation, causing
   pixel-scale blurring that may affect the precision of fine-scale
   annotations.</p>
-      <p>While Echolabel has clear limitations, it provides an efficient and
+  <p>While Echolabel has clear limitations, it provides an efficient and
   convenient solution for tasks requiring the rapid annotation of large
   numbers of shapes. Future developments in the open-source active
   acoustics community may eventually provide more comprehensive
   alternatives, but Echolabel currently offers a lightweight,
   cross-platform, and Echoregions-compatible solution for this specific
   use case.</p>
-    </sec>
-    <sec id="availability">
-      <title>Availability</title>
-      <p>Echolabel is open-source and available at
+</sec>
+<sec id="availability">
+  <title>Availability</title>
+  <p>Echolabel is open-source and available at
   <ext-link ext-link-type="uri" xlink:href="https://github.com/gaspardringuenet/echolabel">https://github.com/gaspardringuenet/echolabel</ext-link>.
   Additional source code, scripts and data used to demonstrate Echolabel
   are available at this manuscript’s quarto project repository
   (<ext-link ext-link-type="uri" xlink:href="https://github.com/gaspardringuenet/echolabel-manuscript">https://github.com/gaspardringuenet/echolabel-manuscript</ext-link>).</p>
-    </sec>
-    <sec id="funding">
-      <title>Funding</title>
-      <p>This research received no specific grant from any funding agency in
+</sec>
+<sec id="funding">
+  <title>Funding</title>
+  <p>This research received no specific grant from any funding agency in
   the public, commercial, or not-for-profit sectors.</p>
-    </sec>
-    <sec id="artificial-intelligence-ai-use-statement">
-      <title>Artificial intelligence (AI) use statement</title>
-      <p>AI-based tools were used to assist with planning, code review,
+</sec>
+<sec id="artificial-intelligence-ai-use-statement">
+  <title>Artificial intelligence (AI) use statement</title>
+  <p>AI-based tools were used to assist with planning, code review,
   improvement suggestions, and writing tests during software
   development. All AI-written code has been reviewed. AI tools were used
   for review only during manuscript preparation, and for clarity
   improvement in the abstract section.</p>
-    </sec>
-    <sec id="declaration-of-competing-interest">
-      <title>Declaration of competing interest</title>
-      <p>The author declares that they have no known competing financial
+</sec>
+<sec id="declaration-of-competing-interest">
+  <title>Declaration of competing interest</title>
+  <p>The author declares that they have no known competing financial
   interests or personal relationships that could have appeared to
   influence the work reported in this paper.</p>
-    </sec>
-    <sec id="acknowledgement">
-      <title>Acknowledgement</title>
-      <p>We acknowledge the French oceanographic fleet for funding ABRAÇOS
+</sec>
+<sec id="acknowledgement">
+  <title>Acknowledgement</title>
+  <p>We acknowledge the French oceanographic fleet for funding ABRAÇOS
   II ship-time and the officers and crew of the R/V Antea for their
   contribution to the success of the operations. This work is a
   contribution to and was supported by the International Joint
   Laboratory TAPIOCA
   (<ext-link ext-link-type="uri" xlink:href="https://www.tapioca.ird.fr">www.tapioca.ird.fr</ext-link>).</p>
-    </sec>
-    <sec id="references">
-      <title>References</title>
-    </sec>
-    <sec id="supplementary">
-      <title>6 Supplementary</title>
-      <fig id="fig-layer-analysis-supp">
-        <caption>
-          <p>Figure 4: Example first-order analysis of a diffuse
+</sec>
+<sec id="references">
+  <title>References</title>
+</sec>
+<sec id="supplementary">
+  <title>6 Supplementary</title>
+  <fig id="fig-layer-analysis-supp">
+    <caption><p>Figure 4: Example first-order analysis of a diffuse
     sound-scattering layer (selected as the “layer” polygon in
     <xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>). (a) RGB
     echogram of data within the layer mask. See
     <xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref> for color
     bar. The red line indicates the smoothed
-    <inline-formula><alternatives><tex-math><![CDATA[s_A]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:msub><mml:mi>s</mml:mi><mml:mi>A</mml:mi></mml:msub></mml:math></alternatives></inline-formula>-weighted
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[s_A]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>s</mml:mi><mml:mi>A</mml:mi></mml:msub></mml:math></alternatives></inline-formula>-weighted
     mean depth. (b) Comparison of downward vertical speed (compute from
-    the smoothed mean depth) with <inline-formula><alternatives><tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}} \text{[dB]}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mtext mathvariant="normal">[dB]</mml:mtext></mml:mrow></mml:math></alternatives></inline-formula>.</p>
-        </caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/fuzzy-layer-analysis-e.png"/>
-      </fig>
-    </sec>
-  </body>
-  <back>
-    <ref-list>
-      <title/>
-      <ref id="ref-lee2024">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Lee</surname>
-              <given-names>Wu-Jung</given-names>
-            </name>
-            <name>
-              <surname>Staneva</surname>
-              <given-names>Valentina</given-names>
-            </name>
-            <name>
-              <surname>Setiawan</surname>
-              <given-names>Landung “Don”</given-names>
-            </name>
-            <name>
-              <surname>Mayorga</surname>
-              <given-names>Emilio</given-names>
-            </name>
-            <name>
-              <surname>Tuguinay</surname>
-              <given-names>Caesar</given-names>
-            </name>
-            <name>
-              <surname>Butala</surname>
-              <given-names>Soham</given-names>
-            </name>
-            <name>
-              <surname>Lucca</surname>
-              <given-names>Brandyn</given-names>
-            </name>
-            <name>
-              <surname>Lei</surname>
-              <given-names>Dingrui</given-names>
-            </name>
-          </person-group>
-          <article-title>Echostack: A flexible and scalable open-source software suite for echosounder data processing</article-title>
-          <source>Python in Science Conference</source>
-          <year iso-8601-date="2024-06-03">2024</year>
-          <month>06</month>
-          <day>03</day>
-          <uri>https://proceedings.scipy.org/articles/WXRH8633</uri>
-          <pub-id pub-id-type="doi">10.25080/WXRH8633</pub-id>
-          <fpage>386</fpage>
-          <lpage>397</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-lee2024a">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Lee</surname>
-              <given-names>Wu-Jung</given-names>
-            </name>
-            <name>
-              <surname>Setiawan</surname>
-              <given-names>Landung</given-names>
-            </name>
-            <name>
-              <surname>Tuguinay</surname>
-              <given-names>Caesar</given-names>
-            </name>
-            <name>
-              <surname>Mayorga</surname>
-              <given-names>Emilio</given-names>
-            </name>
-            <name>
-              <surname>Staneva</surname>
-              <given-names>Valentina</given-names>
-            </name>
-          </person-group>
-          <article-title>Interoperable and scalable echosounder data processing with echopype</article-title>
-          <source>ICES Journal of Marine Science</source>
-          <year iso-8601-date="2024-12-01">2024</year>
-          <month>12</month>
-          <day>01</day>
-          <volume>81</volume>
-          <issue>10</issue>
-          <uri>https://doi.org/10.1093/icesjms/fsae133</uri>
-          <pub-id pub-id-type="doi">10.1093/icesjms/fsae133</pub-id>
-          <fpage>1941</fpage>
-          <lpage>1951</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-kentaro">
-        <element-citation publication-type="software">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Wada</surname>
-              <given-names>Kentaro</given-names>
-            </name>
-          </person-group>
-          <article-title>Labelme: Image polygonal annotation with python</article-title>
-          <year iso-8601-date="2026-03-28">2026</year>
-          <month>03</month>
-          <day>28</day>
-          <uri>https://github.com/wkentaro/labelme</uri>
-          <pub-id pub-id-type="doi">10.5281/zenodo.5711226</pub-id>
-        </element-citation>
-      </ref>
-      <ref id="ref-maclennan2002">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Maclennan</surname>
-              <given-names>David N.</given-names>
-            </name>
-            <name>
-              <surname>Fernandes</surname>
-              <given-names>Paul G.</given-names>
-            </name>
-            <name>
-              <surname>Dalen</surname>
-              <given-names>John</given-names>
-            </name>
-          </person-group>
-          <article-title>A consistent approach to definitions and symbols in fisheries acoustics</article-title>
-          <source>ICES Journal of Marine Science</source>
-          <year iso-8601-date="2002-01-01">2002</year>
-          <month>01</month>
-          <day>01</day>
-          <volume>59</volume>
-          <issue>2</issue>
-          <uri>https://doi.org/10.1006/jmsc.2001.1158</uri>
-          <pub-id pub-id-type="doi">10.1006/jmsc.2001.1158</pub-id>
-          <fpage>365</fpage>
-          <lpage>369</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-kunnath2018">
-        <element-citation publication-type="book">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Kunnath</surname>
-              <given-names>Haris</given-names>
-            </name>
-            <name>
-              <surname>Kloser</surname>
-              <given-names>Rudy</given-names>
-            </name>
-            <name>
-              <surname>Ryan</surname>
-              <given-names>Tim</given-names>
-            </name>
-          </person-group>
-          <source>IMOS SOOP-BA netCDF conventions. Version 2.2</source>
-          <publisher-name>Commonwealth Scientific; Industrial Research Organisation</publisher-name>
-          <publisher-loc>Hobart, TAS</publisher-loc>
-          <year iso-8601-date="2018">2018</year>
-        </element-citation>
-      </ref>
-      <ref id="ref-ariza2022">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Ariza</surname>
-              <given-names>Alejandro</given-names>
-            </name>
-            <name>
-              <surname>Lebourges-Dhaussy</surname>
-              <given-names>Anne</given-names>
-            </name>
-            <name>
-              <surname>Nerini</surname>
-              <given-names>David</given-names>
-            </name>
-            <name>
-              <surname>Pauthenet</surname>
-              <given-names>Etienne</given-names>
-            </name>
-            <name>
-              <surname>Roudaut</surname>
-              <given-names>Gildas</given-names>
-            </name>
-            <name>
-              <surname>Assunção</surname>
-              <given-names>Ramilla</given-names>
-            </name>
-            <name>
-              <surname>Tosetto</surname>
-              <given-names>Everton</given-names>
-            </name>
-            <name>
-              <surname>Bertrand</surname>
-              <given-names>Arnaud</given-names>
-            </name>
-          </person-group>
-          <article-title>Acoustic seascape partitioning through functional data analysis</article-title>
-          <source>Journal of Biogeography</source>
-          <year iso-8601-date="2022-11-23">2022</year>
-          <month>11</month>
-          <day>23</day>
-          <uri>https://onlinelibrary.wiley.com/doi/10.1111/jbi.14534</uri>
-          <pub-id pub-id-type="doi">10.1111/jbi.14534</pub-id>
-          <fpage>jbi.14534</fpage>
-          <lpage/>
-        </element-citation>
-      </ref>
-      <ref id="ref-annasawmy2019">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Annasawmy</surname>
-              <given-names>Pavanee</given-names>
-            </name>
-            <name>
-              <surname>Ternon</surname>
-              <given-names>Jean-François</given-names>
-            </name>
-            <name>
-              <surname>Cotel</surname>
-              <given-names>Pascal</given-names>
-            </name>
-            <name>
-              <surname>Cherel</surname>
-              <given-names>Yves</given-names>
-            </name>
-            <name>
-              <surname>Romanov</surname>
-              <given-names>Evgeny V.</given-names>
-            </name>
-            <name>
-              <surname>Roudaut</surname>
-              <given-names>Gildas</given-names>
-            </name>
-            <name>
-              <surname>Lebourges-Dhaussy</surname>
-              <given-names>Anne</given-names>
-            </name>
-            <name>
-              <surname>Ménard</surname>
-              <given-names>Fréderic</given-names>
-            </name>
-            <name>
-              <surname>Marsac</surname>
-              <given-names>Francis</given-names>
-            </name>
-          </person-group>
-          <article-title>Micronekton distributions and assemblages at two shallow seamounts of the south-western indian ocean: Insights from acoustics and mesopelagic trawl data</article-title>
-          <source>Progress in Oceanography</source>
-          <year iso-8601-date="2019-11-01">2019</year>
-          <month>11</month>
-          <day>01</day>
-          <volume>178</volume>
-          <uri>https://www.sciencedirect.com/science/article/pii/S0079661118302313</uri>
-          <pub-id pub-id-type="doi">10.1016/j.pocean.2019.102161</pub-id>
-          <fpage>102161</fpage>
-          <lpage/>
-        </element-citation>
-      </ref>
-      <ref id="ref-echoview">
-        <element-citation publication-type="webpage">
-          <article-title>Echoview</article-title>
-          <date-in-citation content-type="access-date">
-            <year iso-8601-date="2026-07-31">2026</year>
-            <month>07</month>
-            <day>31</day>
-          </date-in-citation>
-          <uri>https://echoview.com/support/release-notes/</uri>
-        </element-citation>
-      </ref>
-      <ref id="ref-korneliussen2006">
-        <element-citation publication-type="paper-conference">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Korneliussen</surname>
-              <given-names>R. J.</given-names>
-            </name>
-            <name>
-              <surname>Ona</surname>
-              <given-names>E.</given-names>
-            </name>
-            <name>
-              <surname>Eliassen</surname>
-              <given-names>I.</given-names>
-            </name>
-            <name>
-              <surname>Heggelund</surname>
-              <given-names>Y.</given-names>
-            </name>
-            <name>
-              <surname>Patel</surname>
-              <given-names>R.</given-names>
-            </name>
-            <name>
-              <surname>Godø</surname>
-              <given-names>O. R.</given-names>
-            </name>
-            <name>
-              <surname>Giertsen</surname>
-              <given-names>C.</given-names>
-            </name>
-            <name>
-              <surname>Patel</surname>
-              <given-names>D.</given-names>
-            </name>
-            <name>
-              <surname>Nornes</surname>
-              <given-names>E.</given-names>
-            </name>
-            <name>
-              <surname>Bekkvik</surname>
-              <given-names>T.</given-names>
-            </name>
-            <name>
-              <surname>Knudsen</surname>
-              <given-names>H. P.</given-names>
-            </name>
-            <name>
-              <surname>Lien</surname>
-              <given-names>G.</given-names>
-            </name>
-          </person-group>
-          <article-title>The large scale survey system - LSSS</article-title>
-          <year iso-8601-date="2006-01-29">2006</year>
-          <month>01</month>
-          <day>29</day>
-          <uri>https://www.academia.edu/143858735/The_large_scale_survey_system_LSSS</uri>
-        </element-citation>
-      </ref>
-      <ref id="ref-trenkel2009">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Trenkel</surname>
-              <given-names>Verena M.</given-names>
-            </name>
-            <name>
-              <surname>Berger</surname>
-              <given-names>Laurent</given-names>
-            </name>
-            <name>
-              <surname>Bourguignon</surname>
-              <given-names>Sébastien</given-names>
-            </name>
-            <name>
-              <surname>Doray</surname>
-              <given-names>Mathieu</given-names>
-            </name>
-            <name>
-              <surname>Et.</surname>
-              <given-names>Al</given-names>
-            </name>
-          </person-group>
-          <article-title>Overview of recent progress in fisheries acoustics made by ifremer with examples from the bay of biscay</article-title>
-          <source>Aquatic Living Resources</source>
-          <year iso-8601-date="2009">2009</year>
-          <uri>https://sci-hub.fr/10.1051/alr/2009027</uri>
-          <pub-id pub-id-type="doi">10.1051/alr/2009027</pub-id>
-        </element-citation>
-      </ref>
-      <ref id="ref-perrot2018">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Perrot</surname>
-              <given-names>Yannick</given-names>
-            </name>
-            <name>
-              <surname>Brehmer</surname>
-              <given-names>Patrice</given-names>
-            </name>
-            <name>
-              <surname>Habasque</surname>
-              <given-names>Jérémie</given-names>
-            </name>
-            <name>
-              <surname>Roudaut</surname>
-              <given-names>Gildas</given-names>
-            </name>
-            <name>
-              <surname>Behagle</surname>
-              <given-names>Nolwenn</given-names>
-            </name>
-            <name>
-              <surname>Sarré</surname>
-              <given-names>Abdoulaye</given-names>
-            </name>
-            <name>
-              <surname>Lebourges-Dhaussy</surname>
-              <given-names>Anne</given-names>
-            </name>
-          </person-group>
-          <article-title>Matecho: An open-source tool for processing fisheries acoustics data</article-title>
-          <source>Acoustics Australia</source>
-          <year iso-8601-date="2018-08-01">2018</year>
-          <month>08</month>
-          <day>01</day>
-          <volume>46</volume>
-          <issue>2</issue>
-          <uri>https://doi.org/10.1007/s40857-018-0135-x</uri>
-          <pub-id pub-id-type="doi">10.1007/s40857-018-0135-x</pub-id>
-          <fpage>241</fpage>
-          <lpage>248</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-ladroit2020">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Ladroit</surname>
-              <given-names>Yoann</given-names>
-            </name>
-            <name>
-              <surname>Escobar-Flores</surname>
-              <given-names>Pablo C.</given-names>
-            </name>
-            <name>
-              <surname>Schimel</surname>
-              <given-names>Alexandre C. G.</given-names>
-            </name>
-            <name>
-              <surname>O’Driscoll</surname>
-              <given-names>Richard L.</given-names>
-            </name>
-          </person-group>
-          <article-title>ESP3: An open-source software for the quantitative processing of hydro-acoustic data</article-title>
-          <source>SoftwareX</source>
-          <year iso-8601-date="2020-07-01">2020</year>
-          <month>07</month>
-          <day>01</day>
-          <volume>12</volume>
-          <uri>https://www.sciencedirect.com/science/article/pii/S2352711020302946</uri>
-          <pub-id pub-id-type="doi">10.1016/j.softx.2020.100581</pub-id>
-          <fpage>100581</fpage>
-          <lpage/>
-        </element-citation>
-      </ref>
-      <ref id="ref-demer2015">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Demer</surname>
-              <given-names>David A.</given-names>
-            </name>
-            <name>
-              <surname>Berger</surname>
-              <given-names>Laurent</given-names>
-            </name>
-            <name>
-              <surname>Bernasconi</surname>
-              <given-names>Matteo</given-names>
-            </name>
-            <name>
-              <surname>Bethke</surname>
-              <given-names>Eckhard</given-names>
-            </name>
-            <name>
-              <surname>Boswell</surname>
-              <given-names>Kevin</given-names>
-            </name>
-            <name>
-              <surname>Chu</surname>
-              <given-names>Dezhang</given-names>
-            </name>
-            <name>
-              <surname>Domokos</surname>
-              <given-names>Reka</given-names>
-            </name>
-            <name>
-              <surname>Dunford</surname>
-              <given-names>Adam</given-names>
-            </name>
-            <name>
-              <surname>Fassler</surname>
-              <given-names>Sascha</given-names>
-            </name>
-            <name>
-              <surname>Gauthier</surname>
-              <given-names>Stephane</given-names>
-            </name>
-            <name>
-              <surname>Hufnagle</surname>
-              <given-names>Lawrence T.</given-names>
-            </name>
-            <name>
-              <surname>Jech</surname>
-              <given-names>J. Michael</given-names>
-            </name>
-            <name>
-              <surname>Bouffant</surname>
-              <given-names>Naigle</given-names>
-            </name>
-            <name>
-              <surname>Lebourges-Dhaussy</surname>
-              <given-names>Anne</given-names>
-            </name>
-            <name>
-              <surname>Lurton</surname>
-              <given-names>Xavier</given-names>
-            </name>
-            <name>
-              <surname>Macaulay</surname>
-              <given-names>Gavin J.</given-names>
-            </name>
-            <name>
-              <surname>Perrot</surname>
-              <given-names>Yannick</given-names>
-            </name>
-            <name>
-              <surname>Ryan</surname>
-              <given-names>Tim</given-names>
-            </name>
-            <name>
-              <surname>Parker-Stetter</surname>
-              <given-names>Sandra</given-names>
-            </name>
-            <name>
-              <surname>Stienessen</surname>
-              <given-names>Sarah</given-names>
-            </name>
-            <name>
-              <surname>Weber</surname>
-              <given-names>Thomas</given-names>
-            </name>
-            <name>
-              <surname>Williamson</surname>
-              <given-names>Neal</given-names>
-            </name>
-          </person-group>
-          <article-title>Calibration of acoustic instruments.</article-title>
-          <year iso-8601-date="2015">2015</year>
-          <uri>https://repository.oceanbestpractices.org/handle/11329/626</uri>
-        </element-citation>
-      </ref>
-      <ref id="ref-abracos2cruise">
-        <element-citation>
-          <person-group person-group-type="author">
-            <name>
-              <surname>Bertrand</surname>
-              <given-names>Arnaud</given-names>
-            </name>
-          </person-group>
-          <article-title>ABRACOS 2 cruise, RV antea</article-title>
-          <year iso-8601-date="2017">2017</year>
-          <pub-id pub-id-type="doi">10.17600/17004100</pub-id>
-        </element-citation>
-      </ref>
-      <ref id="ref-eduardo2025">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Eduardo</surname>
-              <given-names>Leandro Nolé</given-names>
-            </name>
-            <name>
-              <surname>Bertrand</surname>
-              <given-names>Arnaud</given-names>
-            </name>
-          </person-group>
-          <article-title>Deep-pelagic ecosystems should be considered as socialecological systems</article-title>
-          <source>Nature Ecology &amp; Evolution</source>
-          <year iso-8601-date="2025-05">2025</year>
-          <month>05</month>
-          <volume>9</volume>
-          <issue>5</issue>
-          <uri>https://www.nature.com/articles/s41559-025-02692-w</uri>
-          <pub-id pub-id-type="doi">10.1038/s41559-025-02692-w</pub-id>
-          <fpage>745</fpage>
-          <lpage>748</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-eduardo2024">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Eduardo</surname>
-              <given-names>Leandro Nolé</given-names>
-            </name>
-            <name>
-              <surname>Mincarone</surname>
-              <given-names>Michael Maia</given-names>
-            </name>
-            <name>
-              <surname>Sutton</surname>
-              <given-names>Tracey</given-names>
-            </name>
-            <name>
-              <surname>Bertrand</surname>
-              <given-names>Arnaud</given-names>
-            </name>
-          </person-group>
-          <article-title>Deep-pelagic fishes are anything but similar: A global synthesis</article-title>
-          <source>Ecology Letters</source>
-          <year iso-8601-date="2024">2024</year>
-          <volume>27</volume>
-          <issue>9</issue>
-          <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/ele.14510</uri>
-          <pub-id pub-id-type="doi">10.1111/ele.14510</pub-id>
-          <fpage>e14510</fpage>
-          <lpage/>
-        </element-citation>
-      </ref>
-      <ref id="ref-martin2020">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Martin</surname>
-              <given-names>Adrian</given-names>
-            </name>
-            <name>
-              <surname>Boyd</surname>
-              <given-names>Philip</given-names>
-            </name>
-            <name>
-              <surname>Buesseler</surname>
-              <given-names>Ken</given-names>
-            </name>
-            <name>
-              <surname>Cetinic</surname>
-              <given-names>Ivona</given-names>
-            </name>
-            <name>
-              <surname>Claustre</surname>
-              <given-names>Hervé</given-names>
-            </name>
-            <name>
-              <surname>Giering</surname>
-              <given-names>Sari</given-names>
-            </name>
-            <name>
-              <surname>Henson</surname>
-              <given-names>Stephanie</given-names>
-            </name>
-            <name>
-              <surname>Irigoien</surname>
-              <given-names>Xabier</given-names>
-            </name>
-            <name>
-              <surname>Kriest</surname>
-              <given-names>Iris</given-names>
-            </name>
-            <name>
-              <surname>Memery</surname>
-              <given-names>Laurent</given-names>
-            </name>
-            <name>
-              <surname>Robinson</surname>
-              <given-names>Carol</given-names>
-            </name>
-            <name>
-              <surname>Saba</surname>
-              <given-names>Grace</given-names>
-            </name>
-            <name>
-              <surname>Sanders</surname>
-              <given-names>Richard</given-names>
-            </name>
-            <name>
-              <surname>Siegel</surname>
-              <given-names>David</given-names>
-            </name>
-            <name>
-              <surname>Villa-Alfageme</surname>
-              <given-names>María</given-names>
-            </name>
-            <name>
-              <surname>Guidi</surname>
-              <given-names>Lionel</given-names>
-            </name>
-          </person-group>
-          <article-title>The oceans’ twilight zone must be studied now, before it is too late</article-title>
-          <source>Nature</source>
-          <year iso-8601-date="2020-04">2020</year>
-          <month>04</month>
-          <volume>580</volume>
-          <issue>7801</issue>
-          <uri>https://www.nature.com/articles/d41586-020-00915-7</uri>
-          <pub-id pub-id-type="doi">10.1038/d41586-020-00915-7</pub-id>
-          <fpage>26</fpage>
-          <lpage>28</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-robinson2010">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Robinson</surname>
-              <given-names>Carol</given-names>
-            </name>
-            <name>
-              <surname>Steinberg</surname>
-              <given-names>Deborah K.</given-names>
-            </name>
-            <name>
-              <surname>Anderson</surname>
-              <given-names>Thomas R.</given-names>
-            </name>
-            <name>
-              <surname>Arístegui</surname>
-              <given-names>Javier</given-names>
-            </name>
-            <name>
-              <surname>Carlson</surname>
-              <given-names>Craig A.</given-names>
-            </name>
-            <name>
-              <surname>Frost</surname>
-              <given-names>Jessica R.</given-names>
-            </name>
-            <name>
-              <surname>Ghiglione</surname>
-              <given-names>Jean-François</given-names>
-            </name>
-            <name>
-              <surname>Hernández-León</surname>
-              <given-names>Santiago</given-names>
-            </name>
-            <name>
-              <surname>Jackson</surname>
-              <given-names>George A.</given-names>
-            </name>
-            <name>
-              <surname>Koppelmann</surname>
-              <given-names>Rolf</given-names>
-            </name>
-            <name>
-              <surname>Quéguiner</surname>
-              <given-names>Bernard</given-names>
-            </name>
-            <name>
-              <surname>Ragueneau</surname>
-              <given-names>Olivier</given-names>
-            </name>
-            <name>
-              <surname>Rassoulzadegan</surname>
-              <given-names>Fereidoun</given-names>
-            </name>
-            <name>
-              <surname>Robison</surname>
-              <given-names>Bruce H.</given-names>
-            </name>
-            <name>
-              <surname>Tamburini</surname>
-              <given-names>Christian</given-names>
-            </name>
-            <name>
-              <surname>Tanaka</surname>
-              <given-names>Tsuneo</given-names>
-            </name>
-            <name>
-              <surname>Wishner</surname>
-              <given-names>Karen F.</given-names>
-            </name>
-            <name>
-              <surname>Zhang</surname>
-              <given-names>Jing</given-names>
-            </name>
-          </person-group>
-          <article-title>Mesopelagic zone ecology and biogeochemistry  a synthesis</article-title>
-          <source>Deep Sea Research Part II: Topical Studies in Oceanography</source>
-          <year iso-8601-date="2010-08">2010</year>
-          <month>08</month>
-          <volume>57</volume>
-          <issue>16</issue>
-          <uri>https://linkinghub.elsevier.com/retrieve/pii/S0967064510000846</uri>
-          <pub-id pub-id-type="doi">10.1016/j.dsr2.2010.02.018</pub-id>
-          <fpage>1504</fpage>
-          <lpage>1518</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-passow2012">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Passow</surname>
-              <given-names>U.</given-names>
-            </name>
-            <name>
-              <surname>Carlson</surname>
-              <given-names>C. A.</given-names>
-            </name>
-          </person-group>
-          <article-title>The biological pump in a high CO2 world</article-title>
-          <source>Marine Ecology Progress Series</source>
-          <year iso-8601-date="2012">2012</year>
-          <uri>https://sci-hub.fr/10.3354/meps09985</uri>
-          <pub-id pub-id-type="doi">10.3354/meps09985</pub-id>
-        </element-citation>
-      </ref>
-      <ref id="ref-benoit-bird2016">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Benoit-Bird</surname>
-              <given-names>Kelly J.</given-names>
-            </name>
-            <name>
-              <surname>Lawson</surname>
-              <given-names>Gareth L.</given-names>
-            </name>
-          </person-group>
-          <article-title>Ecological insights from pelagic habitats acquired using active acoustic techniques</article-title>
-          <source>Annual Review of Marine Science</source>
-          <year iso-8601-date="2016-01-03">2016</year>
-          <month>01</month>
-          <day>03</day>
-          <volume>8</volume>
-          <issue>1</issue>
-          <uri>https://www.annualreviews.org/doi/10.1146/annurev-marine-122414-034001</uri>
-          <pub-id pub-id-type="doi">10.1146/annurev-marine-122414-034001</pub-id>
-          <fpage>463</fpage>
-          <lpage>490</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-irigoien2014">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Irigoien</surname>
-              <given-names>Xabier</given-names>
-            </name>
-            <name>
-              <surname>Klevjer</surname>
-              <given-names>T. A.</given-names>
-            </name>
-            <name>
-              <surname>Røstad</surname>
-              <given-names>A.</given-names>
-            </name>
-            <name>
-              <surname>Martinez</surname>
-              <given-names>U.</given-names>
-            </name>
-            <name>
-              <surname>Boyra</surname>
-              <given-names>G.</given-names>
-            </name>
-            <name>
-              <surname>Acuña</surname>
-              <given-names>J. L.</given-names>
-            </name>
-            <name>
-              <surname>Bode</surname>
-              <given-names>A.</given-names>
-            </name>
-            <name>
-              <surname>Echevarria</surname>
-              <given-names>F.</given-names>
-            </name>
-            <name>
-              <surname>Gonzalez-Gordillo</surname>
-              <given-names>J. I.</given-names>
-            </name>
-            <name>
-              <surname>Hernandez-Leon</surname>
-              <given-names>S.</given-names>
-            </name>
-            <name>
-              <surname>Agusti</surname>
-              <given-names>S.</given-names>
-            </name>
-            <name>
-              <surname>Aksnes</surname>
-              <given-names>D. L.</given-names>
-            </name>
-            <name>
-              <surname>Duarte</surname>
-              <given-names>C. M.</given-names>
-            </name>
-            <name>
-              <surname>Kaartvedt</surname>
-              <given-names>S.</given-names>
-            </name>
-          </person-group>
-          <article-title>Large mesopelagic fishes biomass and trophic efficiency in the open ocean</article-title>
-          <source>Nature Communications</source>
-          <year iso-8601-date="2014-02-07">2014</year>
-          <month>02</month>
-          <day>07</day>
-          <volume>5</volume>
-          <issue>1</issue>
-          <uri>https://www.nature.com/articles/ncomms4271</uri>
-          <pub-id pub-id-type="doi">10.1038/ncomms4271</pub-id>
-          <fpage>3271</fpage>
-          <lpage/>
-        </element-citation>
-      </ref>
-      <ref id="ref-haddock2024">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Haddock</surname>
-              <given-names>Steven H. D.</given-names>
-            </name>
-            <name>
-              <surname>Choy</surname>
-              <given-names>C. Anela</given-names>
-            </name>
-          </person-group>
-          <article-title>Life in the midwater: The ecology of deep pelagic animals</article-title>
-          <source>Annual Review of Marine Science</source>
-          <year iso-8601-date="2024-01-17">2024</year>
-          <month>01</month>
-          <day>17</day>
-          <volume>16</volume>
-          <issue>Volume 16, 2024</issue>
-          <uri>https://www.annualreviews.org/content/journals/10.1146/annurev-marine-031623-095435</uri>
-          <pub-id pub-id-type="doi">10.1146/annurev-marine-031623-095435</pub-id>
-          <fpage>383</fpage>
-          <lpage>416</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-bertrand2026">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Bertrand</surname>
-              <given-names>Arnaud</given-names>
-            </name>
-            <name>
-              <surname>Simier</surname>
-              <given-names>Monique</given-names>
-            </name>
-            <name>
-              <surname>Afonso</surname>
-              <given-names>Gabriel Vinicius Felix</given-names>
-            </name>
-            <name>
-              <surname>Alory</surname>
-              <given-names>Gael</given-names>
-            </name>
-            <name>
-              <surname>Ariza</surname>
-              <given-names>Alejandro</given-names>
-            </name>
-            <name>
-              <surname>Assunção</surname>
-              <given-names>Ramilla</given-names>
-            </name>
-            <name>
-              <surname>Auguet</surname>
-              <given-names>Jean-Christophe</given-names>
-            </name>
-            <name>
-              <surname>Baurand</surname>
-              <given-names>François</given-names>
-            </name>
-            <name>
-              <surname>Bec</surname>
-              <given-names>Beatrice</given-names>
-            </name>
-            <name>
-              <surname>Bonnet</surname>
-              <given-names>Delphine</given-names>
-            </name>
-            <name>
-              <surname>Cabanez</surname>
-              <given-names>Léandro Ferreira</given-names>
-            </name>
-            <name>
-              <surname>Carré</surname>
-              <given-names>Claire</given-names>
-            </name>
-            <name>
-              <surname>Chaigneau</surname>
-              <given-names>Alexis</given-names>
-            </name>
-            <name>
-              <surname>Cocentino</surname>
-              <given-names>Adilma de Lourdes Montenegro</given-names>
-            </name>
-            <name>
-              <surname>Cordeiro</surname>
-              <given-names>Isis Amalia</given-names>
-            </name>
-            <name>
-              <surname>Costa da Silva</surname>
-              <given-names>Alex</given-names>
-            </name>
-            <name>
-              <surname>Coubard</surname>
-              <given-names>Martin</given-names>
-            </name>
-            <name>
-              <surname>Melo Junior</surname>
-              <given-names>Mauro de</given-names>
-            </name>
-            <name>
-              <surname>Molinero</surname>
-              <given-names>Juan-Carlos</given-names>
-            </name>
-            <name>
-              <surname>Devesa</surname>
-              <given-names>Jeremy</given-names>
-            </name>
-            <name>
-              <surname>Domalain</surname>
-              <given-names>Gilles</given-names>
-            </name>
-            <name>
-              <surname>Eduardo</surname>
-              <given-names>Leandro Nole</given-names>
-            </name>
-            <name>
-              <surname>Eldin</surname>
-              <given-names>Gérard</given-names>
-            </name>
-            <name>
-              <surname>Farias</surname>
-              <given-names>Gabriel Bittencourt</given-names>
-            </name>
-            <name>
-              <surname>Ferreira</surname>
-              <given-names>Guilherme</given-names>
-            </name>
-            <name>
-              <surname>Figueiredo</surname>
-              <given-names>Gabriela Guerra Araújo Abrantes</given-names>
-            </name>
-            <name>
-              <surname>Frédou</surname>
-              <given-names>Thierry</given-names>
-            </name>
-            <name>
-              <surname>Garcia</surname>
-              <given-names>Diaz Xiomara</given-names>
-            </name>
-            <name>
-              <surname>Giachini Tosetto</surname>
-              <given-names>Everton</given-names>
-            </name>
-            <name>
-              <surname>Gonzalez</surname>
-              <given-names>Júlio Guazzelli</given-names>
-            </name>
-            <name>
-              <surname>Grelet</surname>
-              <given-names>Jacques</given-names>
-            </name>
-            <name>
-              <surname>Hillion</surname>
-              <given-names>Sandrine</given-names>
-            </name>
-            <name>
-              <surname>Justino</surname>
-              <given-names>Anne</given-names>
-            </name>
-            <name>
-              <surname>Jales</surname>
-              <given-names>Marina Cavalcanti</given-names>
-            </name>
-            <name>
-              <surname>Lacerda</surname>
-              <given-names>Sírleis Rodrigues</given-names>
-            </name>
-            <name>
-              <surname>Le Loc’h</surname>
-              <given-names>François</given-names>
-            </name>
-            <name>
-              <surname>Lebourges-Dhaussy</surname>
-              <given-names>Anne</given-names>
-            </name>
-            <name>
-              <surname>Lima</surname>
-              <given-names>Rayssa Siqueira</given-names>
-            </name>
-            <name>
-              <surname>Lins-Silva</surname>
-              <given-names>Nathalia</given-names>
-            </name>
-            <name>
-              <surname>Lira</surname>
-              <given-names>Alex Souza</given-names>
-            </name>
-            <name>
-              <surname>Lira</surname>
-              <given-names>Simone Maria de Albuquerque</given-names>
-            </name>
-            <name>
-              <surname>Marcolin da Rocha</surname>
-              <given-names>Catarina</given-names>
-            </name>
-            <name>
-              <surname>Martins</surname>
-              <given-names>Júlia Rodrigues</given-names>
-            </name>
-            <name>
-              <surname>Médieu</surname>
-              <given-names>Anais</given-names>
-            </name>
-            <name>
-              <surname>Melo</surname>
-              <given-names>Catarina</given-names>
-            </name>
-            <name>
-              <surname>Melo</surname>
-              <given-names>Pedro Augusto Mendes de Castro</given-names>
-            </name>
-            <name>
-              <surname>Mincarone</surname>
-              <given-names>Michael Maia</given-names>
-            </name>
-            <name>
-              <surname>Monnier</surname>
-              <given-names>Magali</given-names>
-            </name>
-            <name>
-              <surname>Munaron</surname>
-              <given-names>Jean-Marie</given-names>
-            </name>
-            <name>
-              <surname>Neumann-Leitão</surname>
-              <given-names>Sigrid</given-names>
-            </name>
-            <name>
-              <surname>Nogueira</surname>
-              <given-names>Junior Miodeli</given-names>
-            </name>
-            <name>
-              <surname>Oliveira</surname>
-              <given-names>Matheus</given-names>
-            </name>
-            <name>
-              <surname>Padovani Ferreira</surname>
-              <given-names>Beatrice</given-names>
-            </name>
-            <name>
-              <surname>Pelage</surname>
-              <given-names>Latifa</given-names>
-            </name>
-            <name>
-              <surname>Point</surname>
-              <given-names>David</given-names>
-            </name>
-            <name>
-              <surname>Pinheiro</surname>
-              <given-names>Ulisses</given-names>
-            </name>
-            <name>
-              <surname>Roubaud</surname>
-              <given-names>Fabrice</given-names>
-            </name>
-            <name>
-              <surname>Roudaut</surname>
-              <given-names>Gildas</given-names>
-            </name>
-            <name>
-              <surname>Rousselot</surname>
-              <given-names>Pierre</given-names>
-            </name>
-            <name>
-              <surname>Santana</surname>
-              <given-names>Julianna de Lemos</given-names>
-            </name>
-            <name>
-              <surname>Schwamborn</surname>
-              <given-names>Ralf</given-names>
-            </name>
-            <name>
-              <surname>Silva-Cunha</surname>
-              <given-names>Maria da Glória Gonçalves</given-names>
-            </name>
-            <name>
-              <surname>Soares</surname>
-              <given-names>Andrey</given-names>
-            </name>
-            <name>
-              <surname>Souza Filho</surname>
-              <given-names>Jesser Fidelis</given-names>
-            </name>
-            <name>
-              <surname>Ternon</surname>
-              <given-names>Jean-François</given-names>
-            </name>
-            <name>
-              <surname>Travassos</surname>
-              <given-names>Paulo</given-names>
-            </name>
-            <name>
-              <surname>Vargas</surname>
-              <given-names>Gary</given-names>
-            </name>
-            <name>
-              <surname>Vaske Jr.</surname>
-              <given-names>Teodoro</given-names>
-            </name>
-            <name>
-              <surname>Campelo</surname>
-              <given-names>Renata P. S.</given-names>
-            </name>
-            <name>
-              <surname>Villarins</surname>
-              <given-names>Bárbara Teixeira</given-names>
-            </name>
-            <name>
-              <surname>Lucena-Frédou</surname>
-              <given-names>Flávia</given-names>
-            </name>
-          </person-group>
-          <article-title>The ABRACOS dataset: A multidisciplinary marine ecosystem baseline for the western tropical atlantic (20152017)</article-title>
-          <source>Earth System Science Data Discussions</source>
-          <year iso-8601-date="2026-09-09">2026</year>
-          <month>09</month>
-          <day>09</day>
-          <uri>https://essd.copernicus.org/preprints/essd-2026-512/</uri>
-          <pub-id pub-id-type="doi">10.5194/essd-2026-512</pub-id>
-          <fpage>1</fpage>
-          <lpage>51</lpage>
-        </element-citation>
-      </ref>
-      <ref id="ref-brierley2014">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Brierley</surname>
-              <given-names>Andrew S.</given-names>
-            </name>
-          </person-group>
-          <article-title>Diel vertical migration</article-title>
-          <source>Current Biology</source>
-          <year iso-8601-date="2014-11-17">2014</year>
-          <month>11</month>
-          <day>17</day>
-          <volume>24</volume>
-          <issue>22</issue>
-          <uri>https://www.cell.com/current-biology/abstract/S0960-9822(14)01067-7</uri>
-          <pub-id pub-id-type="doi">10.1016/j.cub.2014.08.054</pub-id>
-          <fpage>R1074</fpage>
-          <lpage>R1076</lpage>
-        </element-citation>
-      </ref>
-    </ref-list>
-    <fn-group>
-      <fn id="fn1">
-        <label>1</label>
-        <p>LSSS now has an open-source version, and it is
+    the smoothed mean depth) with <inline-formula><alternatives>
+    <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}} \text{[dB]}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mtext mathvariant="normal">[dB]</mml:mtext></mml:mrow></mml:math></alternatives></inline-formula>.</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="images/fuzzy-layer-analysis-e.png" />
+  </fig>
+</sec>
+</body>
+
+<back>
+<ref-list>
+  <title></title>
+  <ref id="ref-lee2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Lee</surname><given-names>Wu-Jung</given-names></name>
+        <name><surname>Staneva</surname><given-names>Valentina</given-names></name>
+        <name><surname>Setiawan</surname><given-names>Landung “Don”</given-names></name>
+        <name><surname>Mayorga</surname><given-names>Emilio</given-names></name>
+        <name><surname>Tuguinay</surname><given-names>Caesar</given-names></name>
+        <name><surname>Butala</surname><given-names>Soham</given-names></name>
+        <name><surname>Lucca</surname><given-names>Brandyn</given-names></name>
+        <name><surname>Lei</surname><given-names>Dingrui</given-names></name>
+      </person-group>
+      <article-title>Echostack: A flexible and scalable open-source software suite for echosounder data processing</article-title>
+      <source>Python in Science Conference</source>
+      <year iso-8601-date="2024-06-03">2024</year><month>06</month><day>03</day>
+      <uri>https://proceedings.scipy.org/articles/WXRH8633</uri>
+      <pub-id pub-id-type="doi">10.25080/WXRH8633</pub-id>
+      <fpage>386</fpage>
+      <lpage>397</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-lee2024a">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Lee</surname><given-names>Wu-Jung</given-names></name>
+        <name><surname>Setiawan</surname><given-names>Landung</given-names></name>
+        <name><surname>Tuguinay</surname><given-names>Caesar</given-names></name>
+        <name><surname>Mayorga</surname><given-names>Emilio</given-names></name>
+        <name><surname>Staneva</surname><given-names>Valentina</given-names></name>
+      </person-group>
+      <article-title>Interoperable and scalable echosounder data processing with echopype</article-title>
+      <source>ICES Journal of Marine Science</source>
+      <year iso-8601-date="2024-12-01">2024</year><month>12</month><day>01</day>
+      <volume>81</volume>
+      <issue>10</issue>
+      <uri>https://doi.org/10.1093/icesjms/fsae133</uri>
+      <pub-id pub-id-type="doi">10.1093/icesjms/fsae133</pub-id>
+      <fpage>1941</fpage>
+      <lpage>1951</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-kentaro">
+    <element-citation publication-type="software">
+      <person-group person-group-type="author">
+        <name><surname>Wada</surname><given-names>Kentaro</given-names></name>
+      </person-group>
+      <article-title>Labelme: Image polygonal annotation with python</article-title>
+      <year iso-8601-date="2026-03-28">2026</year><month>03</month><day>28</day>
+      <uri>https://github.com/wkentaro/labelme</uri>
+      <pub-id pub-id-type="doi">10.5281/zenodo.5711226</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-maclennan2002">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Maclennan</surname><given-names>David N.</given-names></name>
+        <name><surname>Fernandes</surname><given-names>Paul G.</given-names></name>
+        <name><surname>Dalen</surname><given-names>John</given-names></name>
+      </person-group>
+      <article-title>A consistent approach to definitions and symbols in fisheries acoustics</article-title>
+      <source>ICES Journal of Marine Science</source>
+      <year iso-8601-date="2002-01-01">2002</year><month>01</month><day>01</day>
+      <volume>59</volume>
+      <issue>2</issue>
+      <uri>https://doi.org/10.1006/jmsc.2001.1158</uri>
+      <pub-id pub-id-type="doi">10.1006/jmsc.2001.1158</pub-id>
+      <fpage>365</fpage>
+      <lpage>369</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-kunnath2018">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Kunnath</surname><given-names>Haris</given-names></name>
+        <name><surname>Kloser</surname><given-names>Rudy</given-names></name>
+        <name><surname>Ryan</surname><given-names>Tim</given-names></name>
+      </person-group>
+      <source>IMOS SOOP-BA netCDF conventions. Version 2.2</source>
+      <publisher-name>Commonwealth Scientific; Industrial Research Organisation</publisher-name>
+      <publisher-loc>Hobart, TAS</publisher-loc>
+      <year iso-8601-date="2018">2018</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-ariza2022">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ariza</surname><given-names>Alejandro</given-names></name>
+        <name><surname>Lebourges-Dhaussy</surname><given-names>Anne</given-names></name>
+        <name><surname>Nerini</surname><given-names>David</given-names></name>
+        <name><surname>Pauthenet</surname><given-names>Etienne</given-names></name>
+        <name><surname>Roudaut</surname><given-names>Gildas</given-names></name>
+        <name><surname>Assunção</surname><given-names>Ramilla</given-names></name>
+        <name><surname>Tosetto</surname><given-names>Everton</given-names></name>
+        <name><surname>Bertrand</surname><given-names>Arnaud</given-names></name>
+      </person-group>
+      <article-title>Acoustic seascape partitioning through functional data analysis</article-title>
+      <source>Journal of Biogeography</source>
+      <year iso-8601-date="2022-11-23">2022</year><month>11</month><day>23</day>
+      <uri>https://onlinelibrary.wiley.com/doi/10.1111/jbi.14534</uri>
+      <pub-id pub-id-type="doi">10.1111/jbi.14534</pub-id>
+      <fpage>jbi.14534</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-annasawmy2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Annasawmy</surname><given-names>Pavanee</given-names></name>
+        <name><surname>Ternon</surname><given-names>Jean-François</given-names></name>
+        <name><surname>Cotel</surname><given-names>Pascal</given-names></name>
+        <name><surname>Cherel</surname><given-names>Yves</given-names></name>
+        <name><surname>Romanov</surname><given-names>Evgeny V.</given-names></name>
+        <name><surname>Roudaut</surname><given-names>Gildas</given-names></name>
+        <name><surname>Lebourges-Dhaussy</surname><given-names>Anne</given-names></name>
+        <name><surname>Ménard</surname><given-names>Fréderic</given-names></name>
+        <name><surname>Marsac</surname><given-names>Francis</given-names></name>
+      </person-group>
+      <article-title>Micronekton distributions and assemblages at two shallow seamounts of the south-western indian ocean: Insights from acoustics and mesopelagic trawl data</article-title>
+      <source>Progress in Oceanography</source>
+      <year iso-8601-date="2019-11-01">2019</year><month>11</month><day>01</day>
+      <volume>178</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0079661118302313</uri>
+      <pub-id pub-id-type="doi">10.1016/j.pocean.2019.102161</pub-id>
+      <fpage>102161</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-echoview">
+    <element-citation publication-type="webpage">
+      <article-title>Echoview</article-title>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2026-07-31">2026</year><month>07</month><day>31</day></date-in-citation>
+      <uri>https://echoview.com/support/release-notes/</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-korneliussen2006">
+    <element-citation publication-type="paper-conference">
+      <person-group person-group-type="author">
+        <name><surname>Korneliussen</surname><given-names>R. J.</given-names></name>
+        <name><surname>Ona</surname><given-names>E.</given-names></name>
+        <name><surname>Eliassen</surname><given-names>I.</given-names></name>
+        <name><surname>Heggelund</surname><given-names>Y.</given-names></name>
+        <name><surname>Patel</surname><given-names>R.</given-names></name>
+        <name><surname>Godø</surname><given-names>O. R.</given-names></name>
+        <name><surname>Giertsen</surname><given-names>C.</given-names></name>
+        <name><surname>Patel</surname><given-names>D.</given-names></name>
+        <name><surname>Nornes</surname><given-names>E.</given-names></name>
+        <name><surname>Bekkvik</surname><given-names>T.</given-names></name>
+        <name><surname>Knudsen</surname><given-names>H. P.</given-names></name>
+        <name><surname>Lien</surname><given-names>G.</given-names></name>
+      </person-group>
+      <article-title>The large scale survey system - LSSS</article-title>
+      <year iso-8601-date="2006-01-29">2006</year><month>01</month><day>29</day>
+      <uri>https://www.academia.edu/143858735/The_large_scale_survey_system_LSSS</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-trenkel2009">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Trenkel</surname><given-names>Verena M.</given-names></name>
+        <name><surname>Berger</surname><given-names>Laurent</given-names></name>
+        <name><surname>Bourguignon</surname><given-names>Sébastien</given-names></name>
+        <name><surname>Doray</surname><given-names>Mathieu</given-names></name>
+        <name><surname>Et.</surname><given-names>Al</given-names></name>
+      </person-group>
+      <article-title>Overview of recent progress in fisheries acoustics made by ifremer with examples from the bay of biscay</article-title>
+      <source>Aquatic Living Resources</source>
+      <year iso-8601-date="2009">2009</year>
+      <uri>https://sci-hub.fr/10.1051/alr/2009027</uri>
+      <pub-id pub-id-type="doi">10.1051/alr/2009027</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-perrot2018">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Perrot</surname><given-names>Yannick</given-names></name>
+        <name><surname>Brehmer</surname><given-names>Patrice</given-names></name>
+        <name><surname>Habasque</surname><given-names>Jérémie</given-names></name>
+        <name><surname>Roudaut</surname><given-names>Gildas</given-names></name>
+        <name><surname>Behagle</surname><given-names>Nolwenn</given-names></name>
+        <name><surname>Sarré</surname><given-names>Abdoulaye</given-names></name>
+        <name><surname>Lebourges-Dhaussy</surname><given-names>Anne</given-names></name>
+      </person-group>
+      <article-title>Matecho: An open-source tool for processing fisheries acoustics data</article-title>
+      <source>Acoustics Australia</source>
+      <year iso-8601-date="2018-08-01">2018</year><month>08</month><day>01</day>
+      <volume>46</volume>
+      <issue>2</issue>
+      <uri>https://doi.org/10.1007/s40857-018-0135-x</uri>
+      <pub-id pub-id-type="doi">10.1007/s40857-018-0135-x</pub-id>
+      <fpage>241</fpage>
+      <lpage>248</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-ladroit2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ladroit</surname><given-names>Yoann</given-names></name>
+        <name><surname>Escobar-Flores</surname><given-names>Pablo C.</given-names></name>
+        <name><surname>Schimel</surname><given-names>Alexandre C. G.</given-names></name>
+        <name><surname>O’Driscoll</surname><given-names>Richard L.</given-names></name>
+      </person-group>
+      <article-title>ESP3: An open-source software for the quantitative processing of hydro-acoustic data</article-title>
+      <source>SoftwareX</source>
+      <year iso-8601-date="2020-07-01">2020</year><month>07</month><day>01</day>
+      <volume>12</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S2352711020302946</uri>
+      <pub-id pub-id-type="doi">10.1016/j.softx.2020.100581</pub-id>
+      <fpage>100581</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-demer2015">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Demer</surname><given-names>David A.</given-names></name>
+        <name><surname>Berger</surname><given-names>Laurent</given-names></name>
+        <name><surname>Bernasconi</surname><given-names>Matteo</given-names></name>
+        <name><surname>Bethke</surname><given-names>Eckhard</given-names></name>
+        <name><surname>Boswell</surname><given-names>Kevin</given-names></name>
+        <name><surname>Chu</surname><given-names>Dezhang</given-names></name>
+        <name><surname>Domokos</surname><given-names>Reka</given-names></name>
+        <name><surname>Dunford</surname><given-names>Adam</given-names></name>
+        <name><surname>Fassler</surname><given-names>Sascha</given-names></name>
+        <name><surname>Gauthier</surname><given-names>Stephane</given-names></name>
+        <name><surname>Hufnagle</surname><given-names>Lawrence T.</given-names></name>
+        <name><surname>Jech</surname><given-names>J. Michael</given-names></name>
+        <name><surname>Bouffant</surname><given-names>Naigle</given-names></name>
+        <name><surname>Lebourges-Dhaussy</surname><given-names>Anne</given-names></name>
+        <name><surname>Lurton</surname><given-names>Xavier</given-names></name>
+        <name><surname>Macaulay</surname><given-names>Gavin J.</given-names></name>
+        <name><surname>Perrot</surname><given-names>Yannick</given-names></name>
+        <name><surname>Ryan</surname><given-names>Tim</given-names></name>
+        <name><surname>Parker-Stetter</surname><given-names>Sandra</given-names></name>
+        <name><surname>Stienessen</surname><given-names>Sarah</given-names></name>
+        <name><surname>Weber</surname><given-names>Thomas</given-names></name>
+        <name><surname>Williamson</surname><given-names>Neal</given-names></name>
+      </person-group>
+      <article-title>Calibration of acoustic instruments.</article-title>
+      <year iso-8601-date="2015">2015</year>
+      <uri>https://repository.oceanbestpractices.org/handle/11329/626</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-abracos2cruise">
+    <element-citation>
+      <person-group person-group-type="author">
+        <name><surname>Bertrand</surname><given-names>Arnaud</given-names></name>
+      </person-group>
+      <article-title>ABRACOS 2 cruise, RV antea</article-title>
+      <year iso-8601-date="2017">2017</year>
+      <pub-id pub-id-type="doi">10.17600/17004100</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-eduardo2025">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Eduardo</surname><given-names>Leandro Nolé</given-names></name>
+        <name><surname>Bertrand</surname><given-names>Arnaud</given-names></name>
+      </person-group>
+      <article-title>Deep-pelagic ecosystems should be considered as socialecological systems</article-title>
+      <source>Nature Ecology &amp; Evolution</source>
+      <year iso-8601-date="2025-05">2025</year><month>05</month>
+      <volume>9</volume>
+      <issue>5</issue>
+      <uri>https://www.nature.com/articles/s41559-025-02692-w</uri>
+      <pub-id pub-id-type="doi">10.1038/s41559-025-02692-w</pub-id>
+      <fpage>745</fpage>
+      <lpage>748</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-eduardo2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Eduardo</surname><given-names>Leandro Nolé</given-names></name>
+        <name><surname>Mincarone</surname><given-names>Michael Maia</given-names></name>
+        <name><surname>Sutton</surname><given-names>Tracey</given-names></name>
+        <name><surname>Bertrand</surname><given-names>Arnaud</given-names></name>
+      </person-group>
+      <article-title>Deep-pelagic fishes are anything but similar: A global synthesis</article-title>
+      <source>Ecology Letters</source>
+      <year iso-8601-date="2024">2024</year>
+      <volume>27</volume>
+      <issue>9</issue>
+      <uri>https://onlinelibrary.wiley.com/doi/abs/10.1111/ele.14510</uri>
+      <pub-id pub-id-type="doi">10.1111/ele.14510</pub-id>
+      <fpage>e14510</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-martin2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Martin</surname><given-names>Adrian</given-names></name>
+        <name><surname>Boyd</surname><given-names>Philip</given-names></name>
+        <name><surname>Buesseler</surname><given-names>Ken</given-names></name>
+        <name><surname>Cetinic</surname><given-names>Ivona</given-names></name>
+        <name><surname>Claustre</surname><given-names>Hervé</given-names></name>
+        <name><surname>Giering</surname><given-names>Sari</given-names></name>
+        <name><surname>Henson</surname><given-names>Stephanie</given-names></name>
+        <name><surname>Irigoien</surname><given-names>Xabier</given-names></name>
+        <name><surname>Kriest</surname><given-names>Iris</given-names></name>
+        <name><surname>Memery</surname><given-names>Laurent</given-names></name>
+        <name><surname>Robinson</surname><given-names>Carol</given-names></name>
+        <name><surname>Saba</surname><given-names>Grace</given-names></name>
+        <name><surname>Sanders</surname><given-names>Richard</given-names></name>
+        <name><surname>Siegel</surname><given-names>David</given-names></name>
+        <name><surname>Villa-Alfageme</surname><given-names>María</given-names></name>
+        <name><surname>Guidi</surname><given-names>Lionel</given-names></name>
+      </person-group>
+      <article-title>The oceans’ twilight zone must be studied now, before it is too late</article-title>
+      <source>Nature</source>
+      <year iso-8601-date="2020-04">2020</year><month>04</month>
+      <volume>580</volume>
+      <issue>7801</issue>
+      <uri>https://www.nature.com/articles/d41586-020-00915-7</uri>
+      <pub-id pub-id-type="doi">10.1038/d41586-020-00915-7</pub-id>
+      <fpage>26</fpage>
+      <lpage>28</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-robinson2010">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Robinson</surname><given-names>Carol</given-names></name>
+        <name><surname>Steinberg</surname><given-names>Deborah K.</given-names></name>
+        <name><surname>Anderson</surname><given-names>Thomas R.</given-names></name>
+        <name><surname>Arístegui</surname><given-names>Javier</given-names></name>
+        <name><surname>Carlson</surname><given-names>Craig A.</given-names></name>
+        <name><surname>Frost</surname><given-names>Jessica R.</given-names></name>
+        <name><surname>Ghiglione</surname><given-names>Jean-François</given-names></name>
+        <name><surname>Hernández-León</surname><given-names>Santiago</given-names></name>
+        <name><surname>Jackson</surname><given-names>George A.</given-names></name>
+        <name><surname>Koppelmann</surname><given-names>Rolf</given-names></name>
+        <name><surname>Quéguiner</surname><given-names>Bernard</given-names></name>
+        <name><surname>Ragueneau</surname><given-names>Olivier</given-names></name>
+        <name><surname>Rassoulzadegan</surname><given-names>Fereidoun</given-names></name>
+        <name><surname>Robison</surname><given-names>Bruce H.</given-names></name>
+        <name><surname>Tamburini</surname><given-names>Christian</given-names></name>
+        <name><surname>Tanaka</surname><given-names>Tsuneo</given-names></name>
+        <name><surname>Wishner</surname><given-names>Karen F.</given-names></name>
+        <name><surname>Zhang</surname><given-names>Jing</given-names></name>
+      </person-group>
+      <article-title>Mesopelagic zone ecology and biogeochemistry  a synthesis</article-title>
+      <source>Deep Sea Research Part II: Topical Studies in Oceanography</source>
+      <year iso-8601-date="2010-08">2010</year><month>08</month>
+      <volume>57</volume>
+      <issue>16</issue>
+      <uri>https://linkinghub.elsevier.com/retrieve/pii/S0967064510000846</uri>
+      <pub-id pub-id-type="doi">10.1016/j.dsr2.2010.02.018</pub-id>
+      <fpage>1504</fpage>
+      <lpage>1518</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-passow2012">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Passow</surname><given-names>U.</given-names></name>
+        <name><surname>Carlson</surname><given-names>C. A.</given-names></name>
+      </person-group>
+      <article-title>The biological pump in a high CO2 world</article-title>
+      <source>Marine Ecology Progress Series</source>
+      <year iso-8601-date="2012">2012</year>
+      <uri>https://sci-hub.fr/10.3354/meps09985</uri>
+      <pub-id pub-id-type="doi">10.3354/meps09985</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-benoit-bird2016">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Benoit-Bird</surname><given-names>Kelly J.</given-names></name>
+        <name><surname>Lawson</surname><given-names>Gareth L.</given-names></name>
+      </person-group>
+      <article-title>Ecological insights from pelagic habitats acquired using active acoustic techniques</article-title>
+      <source>Annual Review of Marine Science</source>
+      <year iso-8601-date="2016-01-03">2016</year><month>01</month><day>03</day>
+      <volume>8</volume>
+      <issue>1</issue>
+      <uri>https://www.annualreviews.org/doi/10.1146/annurev-marine-122414-034001</uri>
+      <pub-id pub-id-type="doi">10.1146/annurev-marine-122414-034001</pub-id>
+      <fpage>463</fpage>
+      <lpage>490</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-irigoien2014">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Irigoien</surname><given-names>Xabier</given-names></name>
+        <name><surname>Klevjer</surname><given-names>T. A.</given-names></name>
+        <name><surname>Røstad</surname><given-names>A.</given-names></name>
+        <name><surname>Martinez</surname><given-names>U.</given-names></name>
+        <name><surname>Boyra</surname><given-names>G.</given-names></name>
+        <name><surname>Acuña</surname><given-names>J. L.</given-names></name>
+        <name><surname>Bode</surname><given-names>A.</given-names></name>
+        <name><surname>Echevarria</surname><given-names>F.</given-names></name>
+        <name><surname>Gonzalez-Gordillo</surname><given-names>J. I.</given-names></name>
+        <name><surname>Hernandez-Leon</surname><given-names>S.</given-names></name>
+        <name><surname>Agusti</surname><given-names>S.</given-names></name>
+        <name><surname>Aksnes</surname><given-names>D. L.</given-names></name>
+        <name><surname>Duarte</surname><given-names>C. M.</given-names></name>
+        <name><surname>Kaartvedt</surname><given-names>S.</given-names></name>
+      </person-group>
+      <article-title>Large mesopelagic fishes biomass and trophic efficiency in the open ocean</article-title>
+      <source>Nature Communications</source>
+      <year iso-8601-date="2014-02-07">2014</year><month>02</month><day>07</day>
+      <volume>5</volume>
+      <issue>1</issue>
+      <uri>https://www.nature.com/articles/ncomms4271</uri>
+      <pub-id pub-id-type="doi">10.1038/ncomms4271</pub-id>
+      <fpage>3271</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-haddock2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Haddock</surname><given-names>Steven H. D.</given-names></name>
+        <name><surname>Choy</surname><given-names>C. Anela</given-names></name>
+      </person-group>
+      <article-title>Life in the midwater: The ecology of deep pelagic animals</article-title>
+      <source>Annual Review of Marine Science</source>
+      <year iso-8601-date="2024-01-17">2024</year><month>01</month><day>17</day>
+      <volume>16</volume>
+      <issue>Volume 16, 2024</issue>
+      <uri>https://www.annualreviews.org/content/journals/10.1146/annurev-marine-031623-095435</uri>
+      <pub-id pub-id-type="doi">10.1146/annurev-marine-031623-095435</pub-id>
+      <fpage>383</fpage>
+      <lpage>416</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-bertrand2026">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Bertrand</surname><given-names>Arnaud</given-names></name>
+        <name><surname>Simier</surname><given-names>Monique</given-names></name>
+        <name><surname>Afonso</surname><given-names>Gabriel Vinicius Felix</given-names></name>
+        <name><surname>Alory</surname><given-names>Gael</given-names></name>
+        <name><surname>Ariza</surname><given-names>Alejandro</given-names></name>
+        <name><surname>Assunção</surname><given-names>Ramilla</given-names></name>
+        <name><surname>Auguet</surname><given-names>Jean-Christophe</given-names></name>
+        <name><surname>Baurand</surname><given-names>François</given-names></name>
+        <name><surname>Bec</surname><given-names>Beatrice</given-names></name>
+        <name><surname>Bonnet</surname><given-names>Delphine</given-names></name>
+        <name><surname>Cabanez</surname><given-names>Léandro Ferreira</given-names></name>
+        <name><surname>Carré</surname><given-names>Claire</given-names></name>
+        <name><surname>Chaigneau</surname><given-names>Alexis</given-names></name>
+        <name><surname>Cocentino</surname><given-names>Adilma de Lourdes Montenegro</given-names></name>
+        <name><surname>Cordeiro</surname><given-names>Isis Amalia</given-names></name>
+        <name><surname>Costa da Silva</surname><given-names>Alex</given-names></name>
+        <name><surname>Coubard</surname><given-names>Martin</given-names></name>
+        <name><surname>Melo Junior</surname><given-names>Mauro de</given-names></name>
+        <name><surname>Molinero</surname><given-names>Juan-Carlos</given-names></name>
+        <name><surname>Devesa</surname><given-names>Jeremy</given-names></name>
+        <name><surname>Domalain</surname><given-names>Gilles</given-names></name>
+        <name><surname>Eduardo</surname><given-names>Leandro Nole</given-names></name>
+        <name><surname>Eldin</surname><given-names>Gérard</given-names></name>
+        <name><surname>Farias</surname><given-names>Gabriel Bittencourt</given-names></name>
+        <name><surname>Ferreira</surname><given-names>Guilherme</given-names></name>
+        <name><surname>Figueiredo</surname><given-names>Gabriela Guerra Araújo Abrantes</given-names></name>
+        <name><surname>Frédou</surname><given-names>Thierry</given-names></name>
+        <name><surname>Garcia</surname><given-names>Diaz Xiomara</given-names></name>
+        <name><surname>Giachini Tosetto</surname><given-names>Everton</given-names></name>
+        <name><surname>Gonzalez</surname><given-names>Júlio Guazzelli</given-names></name>
+        <name><surname>Grelet</surname><given-names>Jacques</given-names></name>
+        <name><surname>Hillion</surname><given-names>Sandrine</given-names></name>
+        <name><surname>Justino</surname><given-names>Anne</given-names></name>
+        <name><surname>Jales</surname><given-names>Marina Cavalcanti</given-names></name>
+        <name><surname>Lacerda</surname><given-names>Sírleis Rodrigues</given-names></name>
+        <name><surname>Le Loc’h</surname><given-names>François</given-names></name>
+        <name><surname>Lebourges-Dhaussy</surname><given-names>Anne</given-names></name>
+        <name><surname>Lima</surname><given-names>Rayssa Siqueira</given-names></name>
+        <name><surname>Lins-Silva</surname><given-names>Nathalia</given-names></name>
+        <name><surname>Lira</surname><given-names>Alex Souza</given-names></name>
+        <name><surname>Lira</surname><given-names>Simone Maria de Albuquerque</given-names></name>
+        <name><surname>Marcolin da Rocha</surname><given-names>Catarina</given-names></name>
+        <name><surname>Martins</surname><given-names>Júlia Rodrigues</given-names></name>
+        <name><surname>Médieu</surname><given-names>Anais</given-names></name>
+        <name><surname>Melo</surname><given-names>Catarina</given-names></name>
+        <name><surname>Melo</surname><given-names>Pedro Augusto Mendes de Castro</given-names></name>
+        <name><surname>Mincarone</surname><given-names>Michael Maia</given-names></name>
+        <name><surname>Monnier</surname><given-names>Magali</given-names></name>
+        <name><surname>Munaron</surname><given-names>Jean-Marie</given-names></name>
+        <name><surname>Neumann-Leitão</surname><given-names>Sigrid</given-names></name>
+        <name><surname>Nogueira</surname><given-names>Junior Miodeli</given-names></name>
+        <name><surname>Oliveira</surname><given-names>Matheus</given-names></name>
+        <name><surname>Padovani Ferreira</surname><given-names>Beatrice</given-names></name>
+        <name><surname>Pelage</surname><given-names>Latifa</given-names></name>
+        <name><surname>Point</surname><given-names>David</given-names></name>
+        <name><surname>Pinheiro</surname><given-names>Ulisses</given-names></name>
+        <name><surname>Roubaud</surname><given-names>Fabrice</given-names></name>
+        <name><surname>Roudaut</surname><given-names>Gildas</given-names></name>
+        <name><surname>Rousselot</surname><given-names>Pierre</given-names></name>
+        <name><surname>Santana</surname><given-names>Julianna de Lemos</given-names></name>
+        <name><surname>Schwamborn</surname><given-names>Ralf</given-names></name>
+        <name><surname>Silva-Cunha</surname><given-names>Maria da Glória Gonçalves</given-names></name>
+        <name><surname>Soares</surname><given-names>Andrey</given-names></name>
+        <name><surname>Souza Filho</surname><given-names>Jesser Fidelis</given-names></name>
+        <name><surname>Ternon</surname><given-names>Jean-François</given-names></name>
+        <name><surname>Travassos</surname><given-names>Paulo</given-names></name>
+        <name><surname>Vargas</surname><given-names>Gary</given-names></name>
+        <name><surname>Vaske Jr.</surname><given-names>Teodoro</given-names></name>
+        <name><surname>Campelo</surname><given-names>Renata P. S.</given-names></name>
+        <name><surname>Villarins</surname><given-names>Bárbara Teixeira</given-names></name>
+        <name><surname>Lucena-Frédou</surname><given-names>Flávia</given-names></name>
+      </person-group>
+      <article-title>The ABRACOS dataset: A multidisciplinary marine ecosystem baseline for the western tropical atlantic (20152017)</article-title>
+      <source>Earth System Science Data Discussions</source>
+      <year iso-8601-date="2026-09-09">2026</year><month>09</month><day>09</day>
+      <uri>https://essd.copernicus.org/preprints/essd-2026-512/</uri>
+      <pub-id pub-id-type="doi">10.5194/essd-2026-512</pub-id>
+      <fpage>1</fpage>
+      <lpage>51</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-brierley2014">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Brierley</surname><given-names>Andrew S.</given-names></name>
+      </person-group>
+      <article-title>Diel vertical migration</article-title>
+      <source>Current Biology</source>
+      <year iso-8601-date="2014-11-17">2014</year><month>11</month><day>17</day>
+      <volume>24</volume>
+      <issue>22</issue>
+      <uri>https://www.cell.com/current-biology/abstract/S0960-9822(14)01067-7</uri>
+      <pub-id pub-id-type="doi">10.1016/j.cub.2014.08.054</pub-id>
+      <fpage>R1074</fpage>
+      <lpage>R1076</lpage>
+    </element-citation>
+  </ref>
+</ref-list>
+<fn-group>
+  <fn id="fn1">
+    <label>1</label><p>LSSS now has an open-source version, and it is
     available for linux and macOs
     (<ext-link ext-link-type="uri" xlink:href="https://marec.no/downloads.htm">https://marec.no/downloads.htm</ext-link>).</p>
-      </fn>
-    </fn-group>
-  </back>
+  </fn>
+</fn-group>
+</back>
+
+
+
 </article>
