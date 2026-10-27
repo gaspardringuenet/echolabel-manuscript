@@ -52,6 +52,7 @@ def plot_rgb(
         "vmax": -50,
         "shading": "nearest",
         "figsize": (8, 4),
+        "rasterized": True,
     }
     plot_kwrgs = default_plot_kwrgs | plot_kwrgs
 
@@ -164,7 +165,7 @@ cbar_title_ax.text(
 # Annotated regions
 for _, row in regions_closed.iterrows():
     linestyle = "dashed" if row["region_class"] == "Layer" else "solid"
-    
+
     ax.plot(
         row["time"],
         row["depth"],
@@ -198,7 +199,7 @@ da_Sv_zoomed = da_Sv.sel(
     depth=slice(None, 200),
 )
 X, Y, Z = build_rgb_array(da_Sv_zoomed, [0, 1, 2], -90, -50)
-left_ax.pcolormesh(X, Y, Z, shading="nearest")
+left_ax.pcolormesh(X, Y, Z, shading="nearest", rasterized=True)
 left_ax.set_ylabel("Depth [m]")
 left_ax.set_xlabel("Time")
 left_ax.xaxis.set_major_locator(MinuteLocator(byminute=[15, 30, 45, 0]))
@@ -243,7 +244,7 @@ ds_zoomed = ds_Sv.sel(
 
 # Plot RGB echogram with shape
 X, Y, Z = build_rgb_array(ds_zoomed.Sv, [0, 1, 2], -90, -50)
-left_ax.pcolormesh(X, Y, Z, shading="nearest")
+left_ax.pcolormesh(X, Y, Z, shading="nearest", rasterized=True)
 left_ax.set_ylabel("Depth [m]")
 left_ax.set_xlabel("Time")
 left_ax.xaxis.set_major_locator(MinuteLocator(byminute=[20, 21, 22, 23, 24, 25]))
@@ -255,7 +256,7 @@ left_ax.plot(row["time"], row["depth"], fillstyle="full", markersize=0.5, c="red
 # Plot RGB echogram cleaned
 ds_clean = ds_zoomed.where(mask_3d.sel(region_id=2) == 0)
 X, Y, Z = build_rgb_array(ds_clean.Sv, [0, 1, 2], -90, -50)
-right_ax.pcolormesh(X, Y, Z, shading="nearest")
+right_ax.pcolormesh(X, Y, Z, shading="nearest", rasterized=True)
 right_ax.set_ylabel("Depth [m]")
 right_ax.set_xlabel("Time")
 right_ax.xaxis.set_major_locator(MinuteLocator(byminute=[20, 21, 22, 23, 24, 25]))
@@ -273,7 +274,7 @@ ds_zoomed = ds_Sv.sel(
 )
 # Zoomed RGB echogram with shape
 X, Y, Z = build_rgb_array(ds_zoomed.Sv, [0, 1, 2], -90, -50)
-left_ax.pcolormesh(X, Y, Z, shading="nearest")
+left_ax.pcolormesh(X, Y, Z, shading="nearest", rasterized=True)
 left_ax.set_ylabel("Depth [m]")
 left_ax.set_xlabel("Time")
 left_ax.xaxis.set_major_locator(MinuteLocator(byminute=[30, 35, 40]))
@@ -288,7 +289,7 @@ mask_zoomed = mask_3d.sel(
     ping_time=slice("2017-04-26 16:30", "2017-04-26 16:43"),
     depth=slice(40, 100),
 )
-im = mask_zoomed.plot(ax=right_ax, yincrease=False)
+im = mask_zoomed.plot(ax=right_ax, yincrease=False, rasterized=True)
 right_ax.set_ylabel("Depth [m]")
 right_ax.set_xlabel("Time")
 right_ax.set_title("")
@@ -297,7 +298,7 @@ right_ax.xaxis.set_major_locator(MinuteLocator(byminute=[30, 35, 40]))
 right_ax.xaxis.set_major_formatter(DateFormatter("%H:%M"))
 
 plt.show()
-fig.savefig("./images/basic-annotation-tasks-wlayer.png", dpi=300)
+fig.savefig("./images/basic-annotation-tasks-wlayer.svg")
 
 
 # --- NEW FIG --- #
@@ -370,7 +371,7 @@ right_ax.set_title("")
 right_ax.set_xlabel("Time")
 
 plt.show()
-fig.savefig("./images/fuzzy-layer-analysis.png", dpi=300)
+fig.savefig("./images/fuzzy-layer-analysis.svg")
 
 
 # --- NEW FIG --- #
@@ -450,7 +451,7 @@ right_ax.set_ylabel(r"$\Delta$MVBS$_{70-38 \text{kHz}}$ [dB]")
 right_ax.set_xlabel(r"Vertical speed [m.s$^{-1}$]")
 
 plt.show()
-fig.savefig("./images/fuzzy-layer-analysis_2.png", dpi=300)
+fig.savefig("./images/fuzzy-layer-analysis.svg")
 
 # Save for statistical analysis in R
 import pandas as pd

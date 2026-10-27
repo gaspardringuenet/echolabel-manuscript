@@ -15,5 +15,6 @@
 **/*.quarto_ipynb
 .venv
 .private
-/data
+/data/demo.zarr
+/data/__MACOSX
 _freeze

@@ -15,14 +15,8 @@ uv venv --clear
 uv pip install https://github.com/gaspardringuenet/echolabel.git ipykernel nbformat nbclient
 source .venv/bin/activate
 
-# Create Jupyter kernel for Quarto notebooks
-python -m ipykernel install --user --name=echolabel-manuscript-venv --display-name "Python (echolabel-manuscript-venv)"
-
 # Download demo data
 echo "Fetching demo data..."
-
-# Create data dir in project
-mkdir -p data
 
 # Run Python
 python -c "

@@ -36,7 +36,7 @@ regions_closed = regions.close_region()
 
 # Compute masks for
 region_mask_ds, region_points = regions.region_mask(
-    ds_Sv["Sv"].isel(channel=0).drop_vars("channel").compute(),
+    da_Sv.isel(channel=0).drop_vars("channel").compute(),  # type: ignore
     collapse_to_2d=False,
 )
 mask_3d = region_mask_ds["mask_3d"]
@@ -55,6 +55,7 @@ def plot_rgb(
         "vmax": -50,
         "shading": "nearest",
         "figsize": (8, 4),
+        "rasterize": True,
     }
     plot_kwrgs = default_plot_kwrgs | plot_kwrgs
 
