@@ -39,7 +39,7 @@ author:
       - project administration
       - editing
       - supervision
-      
+
 date: last-modified
 bibliography: references.bib
 csl: elsevier_num_wtitles.csl
@@ -57,62 +57,62 @@ abstract: "Active acoustic systems are essential for studying aquatic ecosystems
 
 ## Metadata {.unnumbered}
 
-::: list-table
-- 
+::: {.list-table widths="1,3,6"}
+-
 
   - Nr
   - Code metadata description
   - Metadata
 
-- 
+-
 
   - C1
   - Current code version
-  - V1.0.0
+  - V0.1.0
 
-- 
+-
 
   - C2
   - Permanent link to code/repository used for this code version
   - <https://github.com/gaspardringuenet/echolabel>
 
-- 
+-
 
   - C3
   - Permanent link to reproducible capsule
-  - 
+  -
 
-- 
+-
 
   - C4
   - Legal code license
-  - 
+  - GPL-3.0 license
 
-- 
+-
 
   - C5
   - Code versioning system used
   - Git
 
-- 
+-
 
   - C6
   - Software code languages, tools and services used
   - Python
 
-- 
+-
 
   - C7
   - Compilation requirements, operating environments and dependencies
-  - 
+  - Requires Python $\geq$ 3.12
 
-- 
+-
 
   - C8
   - If available, link to developer documentation/manual
-  - <https://echolabel.readthedocs.io/>
+  - <https://github.com/gaspardringuenet/echolabel/README.md>
 
-- 
+-
 
   - C9
   - Support email for questions

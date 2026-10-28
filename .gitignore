@@ -4,7 +4,6 @@
 /.quarto/
 /_manuscript
 
-/agujournal2019.cls
 /trackchanges.sty
 .Rproj.user
 .Rhistory
@@ -18,3 +17,7 @@
 /data/demo.zarr
 /data/__MACOSX
 _freeze
+site_libs
+elsarticle.cls
+elsarticle-num.bst
+index.spl

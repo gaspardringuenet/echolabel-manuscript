@@ -9,6 +9,12 @@ format:
     toc: true
     comments:
       hypothesis: true
+  elsevier-pdf:
+    keep-tex: true
+    journal:
+        formatting: preprint
+        model: 3p
+        cite-style: number
   docx: default
   jats: default
 
