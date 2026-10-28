@@ -203,6 +203,11 @@ ecosystems.
   <title>Metadata</title>
   <table-wrap>
     <table>
+      <colgroup>
+        <col width="10%" />
+        <col width="30%" />
+        <col width="60%" />
+      </colgroup>
       <thead>
         <tr>
           <th>Nr</th>
@@ -214,7 +219,7 @@ ecosystems.
         <tr>
           <td>C1</td>
           <td>Current code version</td>
-          <td>V1.0.0</td>
+          <td>V0.1.0</td>
         </tr>
         <tr>
           <td>C2</td>
@@ -230,7 +235,7 @@ ecosystems.
         <tr>
           <td>C4</td>
           <td>Legal code license</td>
-          <td></td>
+          <td>GPL-3.0 license</td>
         </tr>
         <tr>
           <td>C5</td>
@@ -246,12 +251,15 @@ ecosystems.
           <td>C7</td>
           <td>Compilation requirements, operating environments and
           dependencies</td>
-          <td></td>
+          <td>Requires Python <inline-formula><alternatives>
+          <tex-math><![CDATA[\geq]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mo>≥</mml:mo></mml:math></alternatives></inline-formula>
+          3.12</td>
         </tr>
         <tr>
           <td>C8</td>
           <td>If available, link to developer documentation/manual</td>
-          <td><ext-link ext-link-type="uri" xlink:href="https://echolabel.readthedocs.io/">https://echolabel.readthedocs.io/</ext-link></td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://github.com/gaspardringuenet/echolabel/README.md">https://github.com/gaspardringuenet/echolabel/README.md</ext-link></td>
         </tr>
         <tr>
           <td>C9</td>
@@ -894,7 +902,7 @@ ecosystems.
     </element-citation>
   </ref>
   <ref id="ref-kentaro">
-    <element-citation publication-type="software">
+    <element-citation>
       <person-group person-group-type="author">
         <name><surname>Wada</surname><given-names>Kentaro</given-names></name>
       </person-group>
@@ -904,7 +912,7 @@ ecosystems.
     </element-citation>
   </ref>
   <ref id="ref-kentaro2">
-    <element-citation publication-type="software">
+    <element-citation>
       <person-group person-group-type="author">
         <name><surname>Wada</surname><given-names>Kentaro</given-names></name>
       </person-group>
@@ -990,9 +998,9 @@ ecosystems.
   </ref>
   <ref id="ref-echoview">
     <element-citation publication-type="webpage">
-      <article-title>Echoview</article-title>
+      <article-title>&quot;Echoview&quot;</article-title>
       <date-in-citation content-type="access-date"><year iso-8601-date="2026-07-31">2026</year><month>07</month><day>31</day></date-in-citation>
-      <uri>https://echoview.com/support/release-notes/</uri>
+      <uri>https://echoview.com</uri>
     </element-citation>
   </ref>
   <ref id="ref-korneliussen2006">
@@ -1012,8 +1020,13 @@ ecosystems.
         <name><surname>Lien</surname><given-names>G.</given-names></name>
       </person-group>
       <article-title>The large scale survey system - LSSS</article-title>
-      <year iso-8601-date="2006-01-29">2006</year><month>01</month><day>29</day>
+      <source>Proceedings of the 29th scandinavian symposium on physical acoustic</source>
+      <publisher-loc>Ustaoset</publisher-loc>
+      <year iso-8601-date="2006">2006</year>
+      <volume>29</volume>
       <uri>https://www.academia.edu/143858735/The_large_scale_survey_system_LSSS</uri>
+      <fpage>6</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-trenkel2009">
@@ -1073,7 +1086,7 @@ ecosystems.
     </element-citation>
   </ref>
   <ref id="ref-demer2015">
-    <element-citation publication-type="article-journal">
+    <element-citation publication-type="report">
       <person-group person-group-type="author">
         <name><surname>Demer</surname><given-names>David A.</given-names></name>
         <name><surname>Berger</surname><given-names>Laurent</given-names></name>
@@ -1099,8 +1112,11 @@ ecosystems.
         <name><surname>Williamson</surname><given-names>Neal</given-names></name>
       </person-group>
       <article-title>Calibration of acoustic instruments.</article-title>
+      <publisher-name>ICES Cooperative Research Report</publisher-name>
       <year iso-8601-date="2015">2015</year>
       <uri>https://repository.oceanbestpractices.org/handle/11329/626</uri>
+      <fpage>133</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-abracos2cruise">
