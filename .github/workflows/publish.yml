@@ -20,6 +20,8 @@ jobs:
           version: pre-release
           tinytex: true
 
+      - name: Install SVG conversion dependency
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
