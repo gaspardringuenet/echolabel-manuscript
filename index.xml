@@ -718,9 +718,8 @@ ecosystems.
     more than 50 m above its nominal depth
     (<xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a).
     The sudden and coordinated nature of these events could suggest that
-    the layer is reacting to a threat (predators usually attack from
-    bellow, which is coherent with upward fleeing behaviour
-    <ext-link ext-link-type="uri" xlink:href="">ref</ext-link>) or
+    the layer is reacting to a threat
+    [<xref alt="26" rid="ref-urmy2021" ref-type="bibr">26</xref>] or
     avoiding a physical barrier. Another explanation could be weather
     events changing skylight intensity, as animals may also avoid
     darkening waters. Further analysis and evidence are required to
@@ -1388,6 +1387,23 @@ ecosystems.
       <pub-id pub-id-type="doi">10.1016/j.cub.2014.08.054</pub-id>
       <fpage>R1074</fpage>
       <lpage>R1076</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-urmy2021">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Urmy</surname><given-names>Samuel S.</given-names></name>
+        <name><surname>Benoit-Bird</surname><given-names>Kelly J.</given-names></name>
+      </person-group>
+      <article-title>Fear dynamically structures the ocean’s pelagic zone</article-title>
+      <source>Current Biology</source>
+      <year iso-8601-date="2021-11-22">2021</year><month>11</month><day>22</day>
+      <volume>31</volume>
+      <issue>22</issue>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0960982221012434</uri>
+      <pub-id pub-id-type="doi">10.1016/j.cub.2021.09.003</pub-id>
+      <fpage>5086</fpage>
+      <lpage>5092.e3</lpage>
     </element-citation>
   </ref>
 </ref-list>
