@@ -12,7 +12,7 @@ echo "Building venv in project dir: $(pwd)"
 
 # Create venv and install echolabel
 uv venv --clear
-uv pip install https://github.com/gaspardringuenet/echolabel.git ipykernel nbformat nbclient
+uv pip install "git+https://github.com/gaspardringuenet/echolabel.git"
 source .venv/bin/activate
 
 # Download demo data
