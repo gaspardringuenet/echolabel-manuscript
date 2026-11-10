@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.7">
+<meta name="generator" content="quarto-1.12.1">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,7 +11,7 @@
 <meta name="author" content="Gildas Roudaut">
 <meta name="author" content="William Puech">
 <meta name="author" content="Arnaud Bertrand">
-<meta name="dcterms.date" content="2026-10-28">
+<meta name="dcterms.date" content="2026-11-10">
 <meta name="keywords" content="Active acoustics, Multifrequency, Echogram annotation, Aquatic ecology, Open source">
 
 <title>Echolabel: Image-based echogram annotation tool for aquatic ecology</title>
@@ -99,10 +99,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-768b63afd51a7c6ff1dffc8c85096f30.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-6f4d992786adc40a866529610d8cdb02.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f4ef2a65d7d28f18fdd2260e353579ad.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-808fa2b54be4417f9355fb1d1925d19c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -151,10 +151,10 @@ window.Quarto = {
 <meta name="citation_author" content="Gildas Roudaut">
 <meta name="citation_author" content="William Puech">
 <meta name="citation_author" content="Arnaud Bertrand">
-<meta name="citation_publication_date" content="2026-10-28">
-<meta name="citation_cover_date" content="2026-10-28">
+<meta name="citation_publication_date" content="2026-11-10">
+<meta name="citation_cover_date" content="2026-11-10">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-10-28">
+<meta name="citation_online_date" content="2026-11-10">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Echostack: A flexible and scalable open-source software suite for echosounder data processing; citation_author=Wu-Jung Lee; citation_author=Valentina Staneva; citation_author=Landung “Don” Setiawan; citation_author=Emilio Mayorga; citation_author=Caesar Tuguinay; citation_author=Soham Butala; citation_author=Brandyn Lucca; citation_author=Dingrui Lei; citation_publication_date=2024-06-03; citation_cover_date=2024-06-03; citation_year=2024; citation_fulltext_html_url=https://proceedings.scipy.org/articles/WXRH8633; citation_doi=10.25080/WXRH8633; citation_language=en; citation_firstpage=386; citation_lastpage=397; citation_journal_title=Python in Science Conference;">
 <meta name="citation_reference" content="citation_title=Interoperable and scalable echosounder data processing with echopype; citation_author=Wu-Jung Lee; citation_author=Landung Setiawan; citation_author=Caesar Tuguinay; citation_author=Emilio Mayorga; citation_author=Valentina Staneva; citation_publication_date=2024-12-01; citation_cover_date=2024-12-01; citation_year=2024; citation_fulltext_html_url=https://doi.org/10.1093/icesjms/fsae133; citation_issue=10; citation_doi=10.1093/icesjms/fsae133; citation_volume=81; citation_firstpage=1941; citation_lastpage=1951; citation_journal_title=ICES Journal of Marine Science;">
@@ -247,7 +247,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">October 28, 2026</p>
+              <p class="date">November 10, 2026</p>
             </div>
           </div>
           
@@ -337,7 +337,7 @@ window.Quarto = {
 <tr class="odd">
 <td>C3</td>
 <td>Permanent link to reproducible capsule</td>
-<td></td>
+<td><a href="https://doi.org/10.5281/zenodo.24088063" class="uri">https://doi.org/10.5281/zenodo.24088063</a></td>
 </tr>
 <tr class="even">
 <td>C4</td>
@@ -377,7 +377,7 @@ window.Quarto = {
 <p>Aquatic ecosystems, from lakes and rivers to coastal waters and the open ocean, are largely hidden from direct observation. Many of their organisms live in the water column, which direct sampling with nets or traps covers only sparsely, at high cost and often invasively. In this context, active acoustic systems (sonars) provide crucial information: by sounding the water column at high resolution, they are the only technology capable of providing continuous observations of organism distribution and behavior at the spatial and temporal scales at which physical and ecological processes occur <span class="citation" data-cites="benoit-bird2016">[<a href="#ref-benoit-bird2016" role="doc-biblioref">1</a>]</span>.</p>
 <p>Although the tool presented in this paper applies to echograms from any aquatic environment, the examples come from the pelagic ocean. The pelagic zone designates the water column away from the seabed. This vast three-dimensional habitat represents more than 90 % of the available living volume on the planet. Lacking hard physical structures in comparison to the benthic zone (i.e., the seabed) or land, it can be divided into depth layers based on light penetration. The mesopelagic, where less than 1 % of light reaches, typically spans from 200 m to 1000 m. Its significance is evident from its large biomass and diversity <span class="citation" data-cites="irigoien2014 eduardo2024 haddock2024">[<a href="#ref-irigoien2014" role="doc-biblioref">2</a>–<a href="#ref-haddock2024" role="doc-biblioref">4</a>]</span>, its crucial role in ocean functioning <span class="citation" data-cites="robinson2010 passow2012">[<a href="#ref-robinson2010" role="doc-biblioref">5</a>,<a href="#ref-passow2012" role="doc-biblioref">6</a>]</span>, and its interdependence with human societies <span class="citation" data-cites="martin2020 eduardo2025">[<a href="#ref-martin2020" role="doc-biblioref">7</a>,<a href="#ref-eduardo2025" role="doc-biblioref">8</a>]</span>. Despite this, the “twilight zone” remains understudied, primarily due to technical limitations in investigating deep waters. Active acoustics is particularly valuable here, as echosounders can sample the water column up to ~1000 m with high resolution.</p>
 <p>However, extracting ecological information from acoustic data remains a major challenge. Manual delineation of features in echograms has long been a common practice in marine acoustics. Targeted biological features are most often aggregations such as fish schools or krill swarms, but may also include sound-scattering layers, which comprise a wide variety of organisms, from invertebrates to fish, distributed horizontally in the water column.</p>
-<p>Annotating these features is part of the daily routine in ecosystem acoustic surveys, whether for subsequent analyses of distribution and biomass or to populate libraries used to train machine learning models for species identification. Several software solutions are currently available for this purpose: commercial options such as Echoview <span class="citation" data-cites="echoview">[<a href="#ref-echoview" role="doc-biblioref">9</a>]</span>; free but closed-source Windows-based software such as LSSS<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="citation" data-cites="korneliussen2006">[<a href="#ref-korneliussen2006" role="doc-biblioref">10</a>]</span> and Movies3D <span class="citation" data-cites="trenkel2009">[<a href="#ref-trenkel2009" role="doc-biblioref">11</a>]</span>; or open-source software requiring a proprietary MATLAB license, such as ESP3 and Matecho <span class="citation" data-cites="ladroit2020 perrot2018">[<a href="#ref-ladroit2020" role="doc-biblioref">12</a>,<a href="#ref-perrot2018" role="doc-biblioref">13</a>]</span>.</p>
+<p>Annotating these features is part of the daily routine in ecosystem acoustic surveys, whether for subsequent analyses of distribution and biomass or to populate libraries used to train machine learning models for species identification. Several software solutions are currently available for this purpose: commercial options such as Echoview <span class="citation" data-cites="echoview">[<a href="#ref-echoview" role="doc-biblioref">9</a>]</span>; free but closed-source Windows-based software such as LSSS <span class="citation" data-cites="korneliussen2006">[<a href="#ref-korneliussen2006" role="doc-biblioref">10</a>]</span> and Movies3D <span class="citation" data-cites="trenkel2009">[<a href="#ref-trenkel2009" role="doc-biblioref">11</a>]</span>; or open-source software requiring a proprietary MATLAB license, such as ESP3 and Matecho <span class="citation" data-cites="ladroit2020 perrot2018">[<a href="#ref-ladroit2020" role="doc-biblioref">12</a>,<a href="#ref-perrot2018" role="doc-biblioref">13</a>]</span>.</p>
 <p>In recent years, there has been significant development of free, open-source, cross-platform software for ecosystem acoustics. The most notable example, both in terms of development and engagement from the scientific community, is Echostack, a suite of Python packages for performing various routine tasks with scientific echosounder data <span class="citation" data-cites="lee2024 lee2024a">[<a href="#ref-lee2024" role="doc-biblioref">14</a>,<a href="#ref-lee2024a" role="doc-biblioref">15</a>]</span>. Echostack includes the <a href="https://github.com/OSOceanAcoustics/echoregions">Echoregions</a> package, designed to parse acoustic annotations and interface them with the gridded acoustic data. The package contains functions to create masks for machine learning models training or for routine processing tasks such as biomass estimation. However, no open-source solution is available for such annotations yet, despite this being one of the tasks that acoustic operators spend the most time on, and the first step in ecosystem acoustic processing.</p>
 <p>To bridge this gap, we propose Echolabel, a minimalist Python application for echogram annotation, built to be interoperable with Echostack / Echoregions. Its scope is narrower than that of most GUI-based acoustic software, which provide suites of analysis-ready computation tools. Echolabel rather focuses on the annotation task only, and is thought as a module in open-source acoustic processing pipelines. To do so it leverages the power of LabelMe <span class="citation" data-cites="kentaro">[<a href="#ref-kentaro" role="doc-biblioref">16</a>]</span>, a widely used open-source Python application for image annotation, by converting acoustic data into a set of echogram images. The output is an Echoregions-compatible CSV file, ensuring integration into the Python acoustic data processing environment. Echolabel is free, open-source, cross-platform, and free of proprietary dependencies. It requires little computing power, and offers an easy-to-use GUI for annotation</p>
 </section>
@@ -495,7 +495,7 @@ Figure&nbsp;3: Example first-order analysis of a diffuse sound-scattering layer 
 </section>
 <section id="artificial-intelligence-ai-use-statement" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="artificial-intelligence-ai-use-statement">Artificial intelligence (AI) use statement</h2>
-<p>AI-based tools were used throughout software development to assist with planning, code review, improvement suggestions, debugging and writing tests. All AI-written code has been reviewed. AI tools were used for review only during manuscript preparation, and for clarity improvement in the abstract section.</p>
+<p>AI-based tools were used throughout software development to assist with planning, code review, improvement suggestions, debugging and writing tests. All AI-written source code has been reviewed. AI tools were used for review only during manuscript preparation, and for clarity improvement in the abstract section.</p>
 </section>
 <section id="declaration-of-competing-interest" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="declaration-of-competing-interest">Declaration of competing interest</h2>
@@ -589,13 +589,7 @@ Figure&nbsp;3: Example first-order analysis of a diffuse sound-scattering layer 
 </div>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>LSSS now has an open-source version, and it is available for linux and macOs (<a href="https://marec.no/downloads.htm" class="uri">https://marec.no/downloads.htm</a>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -671,6 +665,28 @@ Figure&nbsp;3: Example first-order analysis of a diffuse sound-scattering layer 
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -687,6 +703,9 @@ Figure&nbsp;3: Example first-order analysis of a diffuse sound-scattering layer 
           }
           if (!link.classList.contains('no-external-icon')) {
           }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
         }
       }
       };
@@ -924,44 +943,54 @@ Figure&nbsp;3: Example first-order analysis of a diffuse sound-scattering layer 
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };

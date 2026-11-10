@@ -230,7 +230,7 @@ ecosystems.
         <tr>
           <td>C3</td>
           <td>Permanent link to reproducible capsule</td>
-          <td></td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://doi.org/10.5281/zenodo.24088063">https://doi.org/10.5281/zenodo.24088063</ext-link></td>
         </tr>
         <tr>
           <td>C4</td>
@@ -314,8 +314,7 @@ ecosystems.
   for species identification. Several software solutions are currently
   available for this purpose: commercial options such as Echoview
   [<xref alt="9" rid="ref-echoview" ref-type="bibr">9</xref>]; free but
-  closed-source Windows-based software such as
-  LSSS<xref ref-type="fn" rid="fn1">1</xref>
+  closed-source Windows-based software such as LSSS
   [<xref alt="10" rid="ref-korneliussen2006" ref-type="bibr">10</xref>]
   and Movies3D
   [<xref alt="11" rid="ref-trenkel2009" ref-type="bibr">11</xref>]; or
@@ -836,9 +835,9 @@ ecosystems.
   <title>Artificial intelligence (AI) use statement</title>
   <p>AI-based tools were used throughout software development to assist
   with planning, code review, improvement suggestions, debugging and
-  writing tests. All AI-written code has been reviewed. AI tools were
-  used for review only during manuscript preparation, and for clarity
-  improvement in the abstract section.</p>
+  writing tests. All AI-written source code has been reviewed. AI tools
+  were used for review only during manuscript preparation, and for
+  clarity improvement in the abstract section.</p>
 </sec>
 <sec id="declaration-of-competing-interest">
   <title>Declaration of competing interest</title>
@@ -1423,13 +1422,6 @@ ecosystems.
     </element-citation>
   </ref>
 </ref-list>
-<fn-group>
-  <fn id="fn1">
-    <label>1</label><p>LSSS now has an open-source version, and it is
-    available for linux and macOs
-    (<ext-link ext-link-type="uri" xlink:href="https://marec.no/downloads.htm">https://marec.no/downloads.htm</ext-link>).</p>
-  </fn>
-</fn-group>
 </back>
 
 
