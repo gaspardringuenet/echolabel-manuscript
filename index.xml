@@ -161,27 +161,18 @@ France</institution>
 
 <abstract>
 Active acoustic systems are essential for studying aquatic ecosystems,
-delivering high-resolution information over large spatial scales. Yet
-processing these data still relies heavily on manual annotation, and to
-the best of our knowledge, no open-source software currently exists for
-this task. We present Echolabel, an open-source, cross-platform tool for
-fast echogram visualization and annotation, which produces CSV outputs
-directly compatible with Echoregions, an annotation handling package
-within Echostack, the emerging Python toolkit for echosounder data.
-Echolabel is deliberately minimal and task-specific, and is not intended
-to substitute for a general-purpose acoustic processing software. The
-tool is available as a command-line interface and as a Python
-application programming interface. It builds on the LabelMe graphical
-user interface to annotate cached echogram images and transparently
-converts between images and physical (time, depth) coordinates.
-Visualization options include RGB-composite echograms, which combine
-several acoustic frequencies and enable annotations informed by the
-frequency response of the imaged targets. We demonstrate the practical
-utility of Echolabel, combined with Echoregions, on routine annotation
-tasks and a brief ecological analysis. Echolabel is particularly well
-suited to delineating irregular, fuzzy objects such as sound-scattering
-layers, and thus facilitates the sonar-based investigation of aquatic
-ecosystems.
+yet processing these data still relies heavily on manual annotation, and
+to our knowledge no open-source software exists for this task. We
+present Echolabel, an open-source, cross-platform tool for fast echogram
+visualization and annotation, producing CSV outputs compatible with
+Echoregions, an annotation package in Echostack. Deliberately minimal
+and task-specific, it offers a command-line interface and Python API and
+builds on the LabelMe interface to annotate cached echogram images,
+converting between image and physical (time, depth) coordinates.
+Visualization includes RGB-composite echograms. We demonstrate the
+tool’s utility with Echoregions on routine annotation tasks and a brief
+ecological analysis, and show that it is suitable for delineating
+irregular, fuzzy objects such as sound-scattering layers.
 </abstract>
 <kwd-group kwd-group-type="author">
 <kwd>Active acoustics</kwd>
@@ -273,41 +264,39 @@ ecosystems.
 <sec id="motivation-and-significance">
   <title>1 Motivation and Significance</title>
   <p>Aquatic ecosystems, from lakes and rivers to coastal waters and the
-  open ocean, are largely hidden from direct observation. Many of their
-  organisms live in the water column, which direct sampling with nets or
-  traps covers only sparsely, at high cost and often invasively. In this
-  context, active acoustic systems (sonars) provide crucial information:
-  by sounding the water column at high resolution, they are the only
-  technology capable of providing continuous observations of organism
-  distribution and behavior at the spatial and temporal scales at which
-  physical and ecological processes occur
+  open ocean, are largely hidden from direct observation. Many organisms
+  live in the water column, which nets and traps sample sparsely, at
+  high cost and often invasively. Active acoustic systems (sonars)
+  provide crucial information: by sounding the water column at high
+  resolution, they are the only technology capable of continuously
+  observing organism distribution and behaviour at the spatial and
+  temporal scales of physical and ecological processes
   [<xref alt="1" rid="ref-benoit-bird2016" ref-type="bibr">1</xref>].</p>
-  <p>Although the tool presented in this paper applies to echograms from
-  any aquatic environment, the examples come from the pelagic ocean. The
-  pelagic zone designates the water column away from the seabed. This
-  vast three-dimensional habitat represents more than 90 % of the
-  available living volume on the planet. Lacking hard physical
-  structures in comparison to the benthic zone (i.e., the seabed) or
-  land, it can be divided into depth layers based on light penetration.
-  The mesopelagic, where less than 1 % of light reaches, typically spans
-  from 200 m to 1000 m. Its significance is evident from its large
-  biomass and diversity
+  <p>Although this tool applies to echograms from any aquatic
+  environment, the examples come from the pelagic ocean. The pelagic
+  zone is the water column away from the seabed. This vast habitat
+  represents over 90% of the planet’s living volume. Unlike the benthic
+  zone (i.e., the seabed) or land, it lacks hard physical structures and
+  can be divided into depth layers based on light penetration. The
+  mesopelagic, where less than 1% of light reaches, typically spans
+  200–1000 m. Its significance is evident from its large biomass and
+  diversity
   [<xref alt="2" rid="ref-irigoien2014" ref-type="bibr">2</xref>–<xref alt="4" rid="ref-haddock2024" ref-type="bibr">4</xref>],
-  its crucial role in ocean functioning
+  crucial role in ocean functioning
   [<xref alt="5" rid="ref-robinson2010" ref-type="bibr">5</xref>,<xref alt="6" rid="ref-passow2012" ref-type="bibr">6</xref>],
-  and its interdependence with human societies
+  and interdependence with human societies
   [<xref alt="7" rid="ref-martin2020" ref-type="bibr">7</xref>,<xref alt="8" rid="ref-eduardo2025" ref-type="bibr">8</xref>].
   Despite this, the “twilight zone” remains understudied, primarily due
   to technical limitations in investigating deep waters. Active
   acoustics is particularly valuable here, as echosounders can sample
-  the water column up to ~1000 m with high resolution.</p>
+  the water column to depths of ~1000 m at high resolution.</p>
   <p>However, extracting ecological information from acoustic data
   remains a major challenge. Manual delineation of features in echograms
   has long been a common practice in marine acoustics. Targeted
   biological features are most often aggregations such as fish schools
-  or krill swarms, but may also include sound-scattering layers, which
-  comprise a wide variety of organisms, from invertebrates to fish,
-  distributed horizontally in the water column.</p>
+  or krill swarms, but may also include sound-scattering layers
+  comprising organisms from invertebrates to fish distributed
+  horizontally in the water column.</p>
   <p>Annotating these features is part of the daily routine in ecosystem
   acoustic surveys, whether for subsequent analyses of distribution and
   biomass or to populate libraries used to train machine learning models
@@ -321,36 +310,34 @@ ecosystems.
   open-source software requiring a proprietary MATLAB license, such as
   ESP3 and Matecho
   [<xref alt="12" rid="ref-ladroit2020" ref-type="bibr">12</xref>,<xref alt="13" rid="ref-perrot2018" ref-type="bibr">13</xref>].</p>
-  <p>In recent years, there has been significant development of free,
-  open-source, cross-platform software for ecosystem acoustics. The most
-  notable example, both in terms of development and engagement from the
-  scientific community, is Echostack, a suite of Python packages for
-  performing various routine tasks with scientific echosounder data
+  <p>Free, open-source, cross-platform ecosystem-acoustics software has
+  developed significantly in recent years. The most notable example, in
+  both development and scientific-community engagement, is Echostack, a
+  suite of Python packages for routine tasks with scientific echosounder
+  data
   [<xref alt="14" rid="ref-lee2024" ref-type="bibr">14</xref>,<xref alt="15" rid="ref-lee2024a" ref-type="bibr">15</xref>].
   Echostack includes the
   <ext-link ext-link-type="uri" xlink:href="https://github.com/OSOceanAcoustics/echoregions">Echoregions</ext-link>
   package, designed to parse acoustic annotations and interface them
-  with the gridded acoustic data. The package contains functions to
-  create masks for machine learning models training or for routine
-  processing tasks such as biomass estimation. However, no open-source
-  solution is available for such annotations yet, despite this being one
-  of the tasks that acoustic operators spend the most time on, and the
-  first step in ecosystem acoustic processing.</p>
+  with gridded acoustic data. The package contains functions to create
+  masks for machine-learning model training and routine processing tasks
+  such as biomass estimation. However, no open-source solution is yet
+  available for such annotations, although annotation is one of the
+  tasks acoustic operators spend the most time on and the first step in
+  ecosystem acoustic processing.</p>
   <p>To bridge this gap, we propose Echolabel, a minimalist Python
-  application for echogram annotation, built to be interoperable with
-  Echostack / Echoregions. Its scope is narrower than that of most
-  GUI-based acoustic software, which provide suites of analysis-ready
-  computation tools. Echolabel rather focuses on the annotation task
-  only, and is thought as a module in open-source acoustic processing
-  pipelines. To do so it leverages the power of LabelMe
+  application for echogram annotation, interoperable with Echostack and
+  Echoregions. Unlike most GUI-based acoustic software, which provides
+  suites of analysis-ready tools, Echolabel focuses solely on annotation
+  for open-source acoustic-processing pipelines. It leverages LabelMe
   [<xref alt="16" rid="ref-kentaro" ref-type="bibr">16</xref>], a widely
-  used open-source Python application for image annotation, by
-  converting acoustic data into a set of echogram images. The output is
-  an Echoregions-compatible CSV file, ensuring integration into the
-  Python acoustic data processing environment. Echolabel is free,
-  open-source, cross-platform, and free of proprietary dependencies. It
-  requires little computing power, and offers an easy-to-use GUI for
-  annotation</p>
+  used open-source Python image-annotation application, by converting
+  acoustic data into echogram images. The output is an
+  Echoregions-compatible CSV file for integration into Python
+  acoustic-processing workflows. Echolabel is free, open-source,
+  cross-platform, and has no proprietary dependencies. It requires
+  little computing power and offers an easy-to-use GUI for
+  annotation.</p>
 </sec>
 <sec id="software-description">
   <title>2 Software description</title>
@@ -359,16 +346,14 @@ ecosystems.
     <p>The software is written in Python, with separate modules
     responsible for application configuration, command-line inputs,
     cached data management, and parsing annotation files.</p>
-    <p>It is minimalist, comprising 13 Python modules with rougly 100 -
-    200 lines of code each, and avoids re-implementing existing
-    functionalities as much as possible. The annotation interface is
-    entirely provided by LabelMe v6.0.0
-    [<xref alt="17" rid="ref-kentaro2" ref-type="bibr">17</xref>], and
-    Echolabel focuses on parsing annotations between LabelMe and
-    Echoregions. The annotation parsing module is called
-    <monospace>regions2d_extension</monospace> and mimics Echoregions’
-    code to parse Echoview annotation data, with the aim of providing
-    clear insight into the application’s purpose.</p>
+    <p>It comprises 14 Python modules of roughly 100–200 lines each and
+    avoids reimplementing existing functionality. The annotation
+    interface is provided entirely by LabelMe v6.0.0
+    [<xref alt="17" rid="ref-kentaro2" ref-type="bibr">17</xref>], while
+    Echolabel parses annotations between LabelMe and Echoregions. The
+    parsing module, <monospace>regions2d_extension</monospace>, mimics
+    Echoregions’ code for parsing Echoview annotation data, clarifying
+    the application’s purpose.</p>
     <p>Echolabel has been developed to be primarily used from the
     command-line interface (CLI; see
     <xref alt="Listing 1" rid="lst-escore-demo">Listing 1</xref>). The
@@ -388,12 +373,11 @@ ecosystems.
   </sec>
   <sec id="software-functionalities">
     <title>2.2 Software functionalities</title>
-    <p>Echolabel wrapps around LabelMe, essentially handling shapes
-    coordinates conversion logic. It loads acoustic data, chunks it into
-    a dataset of echogram images, and runs LabelMe. When the user exits
-    the LabelMe GUI, the image-based annotations are converted to
-    physical (time, depth) coordinates and saved in a format that can be
-    read using Echoregions.</p>
+    <p>Echolabel wraps LabelMe, handling shape-coordinate conversion. It
+    loads acoustic data, chunks it into echogram images, and runs
+    LabelMe. When the user exits the GUI, image-based annotations are
+    converted to physical (time, depth) coordinates and saved in a
+    format readable by Echoregions.</p>
     <p>Echolabel works with processed, gridded volume backscattering
     strength data (Sv, dB)
     [<xref alt="18" rid="ref-maclennan2002" ref-type="bibr">18</xref>],
@@ -413,30 +397,25 @@ ecosystems.
     stores are accepted as input formats. Several files in the same
     directory may be loaded as a single dataset as long as their
     coordinates are compatible.</p>
-    <p>Common echogram visualization options are provided. Indeed, the
-    user can select the visualized frequency and specify value bounds as
-    well as the colormap. A wide range of matplotlib colormaps can be
-    selected using their names. In addition to single-frequency
-    echograms, Echolabel offers a triple-frequency RGB echogram mode in
-    which three channels are mapped to each of the red, green, and blue
-    channels (with equal bounds). This visualization method is very
-    effective for assessing the distribution of frequency responses
-    across the echogram (for examples see
+    <p>Users can select the visualized frequency, value bounds, and
+    colormap by name. In addition to single-frequency echograms,
+    Echolabel offers a triple-frequency RGB mode, mapping three
+    frequencies to the red, green, and blue channels with equal bounds.
+    This visualization helps assess frequency-response distributions
+    across the echogram (see examples in
     [<xref alt="20" rid="ref-ariza2022" ref-type="bibr">20</xref>,<xref alt="21" rid="ref-annasawmy2019" ref-type="bibr">21</xref>]).
-    The background (where no channel is active) colour can also be
-    specified in the configuration (as a matplotlib-compatible string or
-    tuple).</p>
+    The background colour for inactive pixels is configurable as a
+    matplotlib-compatible string or tuple.</p>
     <p>Running the application triggers data loading and the building
     and caching of an echogram image dataset using visualization
     options. Echogram images are the representation of acoustic data
     once colour mapping has been applied. Each pixel represents a
     sampled volume. Each image’s physical (time and depth) coordinates
-    are saved in cache. The image dataset building step is the only step
-    involving significant computation. While lazy-loading of the
-    acoustic dataset prevents memory overload, this step may take up to
-    a few minutes for large-scale surveys with high resolution data. To
-    avoid rebuilding the images at each session, Echolabel enables reuse
-    of the cached images, allowing the GUI to launch almost
+    are saved in cache. Image-dataset construction is the only
+    computationally intensive step. Although lazy-loading prevents
+    memory overload, construction may take a few minutes for large
+    surveys with high-resolution data. Cached images can be reused
+    between sessions, allowing the GUI to launch almost
     instantaneously.</p>
     <p>A prominent feature of Echolabel is the LabelMe graphical user
     interface (GUI;
@@ -479,38 +458,37 @@ ecosystems.
   <sec id="polygon-annotation-on-rgb-echogram">
     <title>3.1 Polygon annotation on RGB echogram</title>
     <p>The ABRAÇOS II survey was conducted off the north-eastern coast
-    of Brazil during the Austral fall of 2017 (April 9<sup>th</sup> –
-    May 7<sup>th</sup>). Research vessel Antea of the French
-    oceanographic fleet operated a hull-mounted EK60 echosounder at four
-    frequencies (38, 70, 120, and 200 kHz) with a pulse length of 512 μs
+    of Brazil during the Austral fall of 2017 (April 9<sup>th</sup>–May
+    7<sup>th</sup>). Research vessel Antea of the French oceanographic
+    fleet operated a hull-mounted EK60 echosounder at four frequencies
+    (38, 70, 120, and 200 kHz) with a pulse length of 512 μs
     [<xref alt="22" rid="ref-abracos2cruise" ref-type="bibr">22</xref>,<xref alt="23" rid="ref-bertrand2026" ref-type="bibr">23</xref>].
-    Two configurations were used: a ping rate of 0.45 s for seabed depth
-    less than 150 m, and a ping rate of 2.4 s for deeper areas,
-    recording to depth up to 750 m. The echosounder was calibrated
-    mid-survey in Fernando de Noronha using standard protocols
+    Two configurations were used: a ping rate of 0.45 s for seabed
+    depths below 150 m and 2.4 s for deeper areas, recording to depths
+    of 750 m. The echosounder was calibrated mid-survey in Fernando de
+    Noronha using standard protocols
     [<xref alt="24" rid="ref-demer2015" ref-type="bibr">24</xref>].
-    Acoustic data processing was conducted using the Matecho software.
-    Noise and artifact removal was performed using a combination of
-    automated and manual cleaning tools. Volume backscattering strength
-    was echo-integrated with a minimum threshold of -90 dB in 3-pings by
-    1-m cells. A conversion from the MATLAB format used by Matecho to a
-    Zarr store was applied to the echo-integrated product. The
-    demonstration data used thereafter are a 10-hour subset of the
-    ABRAÇOS II survey, spanning both open ocean and part of the shelf of
-    the Fernando de Noronha island up to ~50 m deep.</p>
+    Acoustic data were processed using Matecho. Noise and artifacts were
+    removed using automated and manual cleaning tools. Volume
+    backscattering strength was echo-integrated with a minimum threshold
+    of -90 dB in 3-ping by 1-m cells. The echo-integrated product was
+    converted from Matecho’s MATLAB format to a Zarr store. The
+    demonstration data are a 10-hour subset of the ABRAÇOS II survey,
+    spanning open ocean and part of the Fernando de Noronha island
+    shelf, up to ~50 m deep.</p>
     <p>Several objects of interest are selected from the demonstration
-    dataset using Echolabel. The GUI is launched from the terminal using
-    a simple command, rendering an RGB composite echogram showing 38,
-    70, and 120 kHz channels simultaneously
+    dataset using Echolabel. A simple terminal command launches the GUI
+    and renders an RGB composite echogram showing the 38, 70, and 120
+    kHz channels simultaneously
     (<xref alt="Listing 1" rid="lst-escore-demo">Listing 1</xref>).
     Selected features are delineated using the “Create Polygons” and
     “Create Rectangles” tools and assigned text labels
     (<xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>): a
     sound-scattering layer (“Layer”), a probable fish aggregation
     (“School”), a v-shaped anomaly probably caused by a lowered
-    instrument (“Artifact”), and rectangle areas of varying hue
+    instrument (“Artifact”), and rectangular areas of varying hue
     (“Unknown”). The eight annotated regions are saved as a CSV file
-    when closing the graphical interface.</p>
+    when the GUI closes.</p>
     <fig id="lst-escore-demo">
       <caption><p>Listing 1: Example bash command to build an RGB
       echogram and run the ROI demonstration.</p></caption>
@@ -519,24 +497,24 @@ ecosystems.
 -o data/demo_regions.csv \          # annotation file
 -f 38000 -f 70000 -f 120000 \       # mapped frequencies (Hz)
 --cmap RGB \                        # RGB composite echogram
---vmin -90 --vmax -50               # Color scale bounds</code>
+--vmin -90 --vmax -50               # Colour scale bounds</code>
     </fig>
     <fig id="fig-demo-gui">
       <caption><p>Figure 1: LabelMe graphical user interface showing
       drawn regions on an RGB composite echogram (R: 38 kHz; G: 70 kHz;
-      B: 120 kHz - as specified in
+      B: 120 kHz, as specified in
       <xref alt="Listing 1" rid="lst-escore-demo">Listing 1</xref>) in
-      the image panel (center). The elongated grey shape is masked out
-      double echo data. The second grey shape on the right of the
-      echogram indicates pixels below the ocean floor. Horizontal colour
-      boundaries result from the channels’ range limits (e.g. the 120
-      kHz channel becomes to noisy around 250 m deep and data is removed
-      below). Manually created polygonal shapes are overlayed on top of
-      the echogram. The associated labels with are visible in the
-      “Annotation List” panel, and as a non-duplicated list in the
-      “Label List” panel. A “Layer” annotation and the corresponding
-      polygon are being edited and so they are highlighted. The “File
-      List” panel shows all available echogram images.</p></caption>
+      the image panel (centre). The elongated grey shape masks
+      double-echo data. The second grey shape on the right indicates
+      pixels below the ocean floor. Horizontal colour boundaries result
+      from the channels’ range limits (e.g., the 120 kHz channel becomes
+      too noisy around 250 m, so data are removed below that depth).
+      Manually created polygonal shapes are overlaid on the echogram.
+      Their labels are visible in the “Annotation List” panel and as a
+      non-duplicated list in the “Label List” panel. A “Layer”
+      annotation and its polygon are being edited and are therefore
+      highlighted. The “File List” panel shows all available echogram
+      images.</p></caption>
       <graphic mimetype="image" mime-subtype="png" xlink:href="images/region_selection.png" />
     </fig>
     <p>Echolabel solely focuses on creating the annotations, but the
@@ -551,11 +529,11 @@ ecosystems.
     along with processing or data analysis steps corresponding to the
     underlying echogram features (b-g): frequency response
     investigation, artifact removal, and aggregation mask extraction,
-    respectively. All of those are made possible by the masking
-    functionality of Echoregions (using the
+    respectively. These tasks are enabled by Echoregions’ masking
+    functionality (using the
     <ext-link ext-link-type="uri" xlink:href="https://regionmask.readthedocs.io">regionmask</ext-link>
-    package) package) and each requires no more than a dozen lines of
-    code to compute (omitting figure building).</p>
+    package), and each requires no more than a dozen lines of code
+    (excluding figure construction).</p>
     <p>The most basic task is computing the frequency responses of an
     echogram region. The influence of the organisms’ anatomy on their
     back-scattering properties has long been acknowledged, and is the
@@ -567,21 +545,21 @@ ecosystems.
     this contrast, a quantitative comparison of back-scattering between
     regions of interest provides a more exhaustive and objective
     insight. <xref alt="Figure 2" rid="fig-basic-tasks">Figure 2</xref>
-    b,c compares two reddish (38 kHz dominant) and two greenish (70 kHz
-    dominant) regions, in different oceanographic setups (pelagic or on
-    shelf edge), depths (150 m or 50 m) and intensity (seemingly
-    stronger near the shelf) by computing the frequency response
-    relative to the 38 kHz channel (<inline-formula><alternatives>
+    b,c compare two reddish (38 kHz-dominant) and two greenish (70
+    kHz-dominant) regions across oceanographic settings (pelagic or
+    shelf edge), depths (150 m or 50 m), and intensities (apparently
+    stronger near the shelf). We compute frequency response relative to
+    the 38 kHz channel (<inline-formula><alternatives>
     <tex-math><![CDATA[R(f) = \Delta \text{MVBS}_{f - 38 \text{kHz}} = S_{v}(f) - S_{v}(38 \text{ kHz})]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mi>f</mml:mi><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>38</mml:mn><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> kHz</mml:mtext></mml:mrow><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-    ; see
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mi>f</mml:mi><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>f</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>−</mml:mo><mml:msub><mml:mi>S</mml:mi><mml:mi>v</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>38</mml:mn><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> kHz</mml:mtext></mml:mrow><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>;
+    see
     [<xref alt="18" rid="ref-maclennan2002" ref-type="bibr">18</xref>]
-    for notation) for all regions. Green regions contain similar R(f).
-    On the other hand, red regions show great differences, especially at
-    120 and 200 kHz, suggesting a very different biological composition.
-    Further analysis using this kind of regions of interest may include
-    target strength (TS) modelling, or building a training set for a
-    multifrequency classification algorithm.</p>
+    for notation). Green regions have similar R(f) values, whereas red
+    regions differ substantially, especially at 120 and 200 kHz,
+    suggesting different biological compositions. Further analysis using
+    this kind of regions of interest may include target strength (TS)
+    modelling, or building a training set for a multifrequency
+    classification algorithm.</p>
     <p>Despite a thorough cleaning of acoustic data, some unwanted
     signal or noise may still be present in the final product. This is
     accentuated by the context-dependence of unwanted signal. Manual
@@ -616,15 +594,14 @@ ecosystems.
       <caption><p>Figure 3: Example first-order analysis of a diffuse
       sound-scattering layer (selected as the “Layer” polygon in
       <xref alt="Figure 1" rid="fig-demo-gui">Figure 1</xref>). (a) Time
-      series of the depth of the layer’s center of gravity
-      (NASC-weighted mean depth), smoothed with a 50-timestamp rolling
-      mean. The colour indicates the sign and magnitude of the relative
-      frequency response. (b) Scatter plot of
-      <inline-formula><alternatives>
+      series of the layer’s center-of-gravity depth (NASC-weighted mean
+      depth), smoothed with a 50-timestamp rolling mean. Colour
+      indicates the sign and magnitude of the relative frequency
+      response. (b) Scatter plot of <inline-formula><alternatives>
       <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
-      , against downward vertical speed. The red line shows the linear
-      regression fit, and the fitted equation is given in the top left
+      against downward vertical speed. The red line shows the linear
+      regression fit; the fitted equation appears in the top left
       corner. Grey lines indicate the means of both
       variables.</p></caption>
       <graphic mimetype="image" mime-subtype="svg+xml" xlink:href="images/fuzzy-layer-analysis.svg" />
@@ -674,21 +651,21 @@ ecosystems.
     <p><xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a
     supports the visual intuition given by the RGB echogram. Marked
     upward-swimming events correspond to a higher response at 38 kHz
-    than at 70 kHz. Indeed, those events are the only occurrences of
-    extreme (-4 to -2 dB) <inline-formula><alternatives>
+    than at 70 kHz. These are the only occurrences of extreme (-4 to -2
+    dB) <inline-formula><alternatives>
     <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>,
-    while a large proportion of points have smaller frequency response
-    differences. This is consistent with the scatter plot in
+    while most points have smaller frequency-response differences. This
+    is consistent with the scatter plot in
     <xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> b,
-    that most data fall within a small range of
+    where most data fall within a small range of
     <inline-formula><alternatives>
     <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
-    (-1 to 1 dB) and vertical speed (-5 to 5 cm s<sup>-1</sup>) values.
-    A minority of points show extreme values of both variables, with
+    (-1 to 1 dB) and vertical speed (-5 to 5 cm s<sup>-1</sup>). A
+    minority of points show extreme values of both variables, with
     concordant signs (both negative or both positive). Even accounting
-    for the mass of near-zero points, the linear model shows a positive
+    for the near-zero points, the linear model shows a positive
     dependence of <inline-formula><alternatives>
     <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
@@ -696,26 +673,26 @@ ecosystems.
     <tex-math><![CDATA[p < 10^{-3}]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mo>&lt;</mml:mo><mml:msup><mml:mn>10</mml:mn><mml:mrow><mml:mi>−</mml:mi><mml:mn>3</mml:mn></mml:mrow></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>),
     with satisfactory residual distributions.</p>
-    <p>This exploratory analysis visually identifies a correlation
-    between vertical speed and <inline-formula><alternatives>
+    <p>This exploratory analysis identifies a correlation between
+    vertical speed and <inline-formula><alternatives>
     <tex-math><![CDATA[\Delta \text{MVBS}_{70 - 38 \text{kHz}}]]></tex-math>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="normal">Δ</mml:mi><mml:msub><mml:mtext mathvariant="normal">MVBS</mml:mtext><mml:mrow><mml:mn>70</mml:mn><mml:mo>−</mml:mo><mml:mn>38</mml:mn><mml:mtext mathvariant="normal">kHz</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
-    and shows the statistical dependence of the latter on the former.
-    Under our assumptions, this result is consistent with the tilt-angle
-    hypothesis, i.e., variations in frequency response are here
-    associated with the movements of the fish rather than with changes
-    in species composition, although the latter cannot be ruled out
-    entirely. The correlation also provides evidence that we observe the
-    actual speed of organisms and not spatial variability, supporting
-    both work assumptions. In addition, the stronger effect during swift
-    upward-swimming events (visible in
+    and shows their statistical dependence. Under our assumptions, this
+    result is consistent with the tilt-angle hypothesis:
+    frequency-response variations are associated with fish movements
+    rather than changes in species composition, although the latter
+    cannot be ruled out. The correlation also suggests that we observe
+    organism speed rather than spatial variability, supporting both
+    assumptions. The stronger effect during swift upward-swimming events
+    (visible in
     <xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> a at
-    12:30, 13:00 and 15:00, and in the poorer model fit for small values
-    in <xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> b)
+    12:30, 13:00, and 15:00, and in the poorer model fit for small
+    values in
+    <xref alt="Figure 3" rid="fig-layer-analysis">Figure 3</xref> b)
     could indicate that these events are more coordinated than downward
-    migrations events, with more animals aligned and swimming in the
-    same direction. We also observe that the organisms eventually return
-    to a depth consistent with a first-order u-shaped diel vertical
+    migrations, with more animals aligned and swimming in the same
+    direction. We also observe that the organisms eventually return to a
+    depth consistent with a first-order u-shaped diel vertical
     migration.</p>
     <p>Light level is the main driver of diel vertical migration, with
     organisms seeking refuge in deeper waters during the day to avoid
@@ -782,7 +759,7 @@ ecosystems.
   annotation, producing outputs that integrate into Echostack,
   specifically the Echoregions package, a Python ecosystem for
   processing and analysing active acoustic data that is expected to
-  become a standard in the</p>
+  become a standard in the field.</p>
   <p>Our tool leverages a widely used image annotation software package
   by converting acoustic data into echogram image files and using
   LabelMe to annotate them. NetCDF and Zarr formats are accepted, and
@@ -803,13 +780,12 @@ ecosystems.
   the absence of rendering cost after generating images, together with
   the widespread use of LabelMe within the computer vision community,
   supports the practical usability of the approach.</p>
-  <p>The scope of Echolabel is deliberately limited to echogram images
-  generation and annotation. Strong limitations are inherent to the
-  image-based design, such as the loss of direct access to data and
-  metadata values, and the division of the dataset into individual
-  frames. LabelMe also renders images using bilinear interpolation,
-  causing pixel-scale blurring that may affect the precision of
-  fine-scale annotations.</p>
+  <p>The scope of Echolabel is deliberately limited to echogram-image
+  generation and annotation. Its image-based design entails limitations,
+  including loss of direct access to data and metadata values and
+  division of the dataset into individual frames. LabelMe also renders
+  images using bilinear interpolation, causing pixel-scale blurring that
+  may affect the precision of fine-scale annotations.</p>
   <p>While Echolabel has clear limitations, it provides an efficient and
   convenient solution for tasks requiring the rapid annotation of large
   numbers of shapes. Future developments in the open-source active
@@ -836,8 +812,8 @@ ecosystems.
   <p>AI-based tools were used throughout software development to assist
   with planning, code review, improvement suggestions, debugging and
   writing tests. All AI-written source code has been reviewed. AI tools
-  were used for review only during manuscript preparation, and for
-  clarity improvement in the abstract section.</p>
+  were used for review and trimming during manuscript preparation, and
+  for clarity improvement in the abstract section.</p>
 </sec>
 <sec id="declaration-of-competing-interest">
   <title>Declaration of competing interest</title>
